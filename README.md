@@ -34,8 +34,8 @@ For example, you can request a list of all public holidays for a given year. An 
 # The 4 classes that implement the AnnualEvent interface
  These classes are used to manipulate "annual events", such as holidays, celebrations, or events where calculating the date is a bit complicated (like "The Tuesday after the first Monday of November, for the U.S. Election Day").
 
-| Class               |For                       
-|----------------|-------------------------------|-----------------------------|
+| Class|For                       
+|----------------|------------------------------- |
 |AnnualEventFix  |for events whose date is calculated using a fixed month and day (Independence Day, Christmas, etc.)          |
 |AnnualEventEaster |for events whose date is calculated based on Easter (Mardi Gras, Ash Wednesday, etc.)                      |
 |AnnualEventOrthodoxEaster         |for events whose date is calculated based on Orthodox Easter 
@@ -162,33 +162,34 @@ This code return "F05;25;0|0001-01-01|3999-12-31"
 Returns the object as a variant
 
 Example :
-Events() is a array of AnnualEvent
+AnnualEvents() is a array of AnnualEvent
 
 		Var dFix as AnnualEventFix 
 		Var dEaster as AnnualEventEaster
 		Var dEasterOrthodox as AnnualEventOrthodoxEaster
 		Var dWeekDay as AnnualEventWeekDay
-    For i as integer = 0 to Events.LastIndex
+    For i as integer = 0 to AnnualEvents.LastIndex
     
-    	Select Case Events(i)
+    	Select Case AnnualEvents(i)
     	
     	Case IsA AnnualEventFix 
       
-    			dFix = Events(i).DefinitionObject
-      
+    			dFix = AnnualEvents(i).DefinitionObject
+                // Change something in dFix 
     	Case IsA AnnualEventEaster
     	  
-    	   dEaster = Events(i).DefinitionObject
-      
+    	   dEaster = AnnualEvents(i).DefinitionObject
+           // Change something in dEaster
     	Case IsA AnnualEventOrthodoxEaster
           
-		   dEasterOrthodox = Events(i).DefinitionObject
-     
+		   dEasterOrthodox = AnnualEvents(i).DefinitionObject
+           // Change something in dEasterOrthodox
        Case IsA AnnualEventWeekDay
      
-	      dWeekDay =  Events(i).DefinitionObject
-      
-    End  Select
+	      dWeekDay =  AnnualEvents(i).DefinitionObject
+          // Change something in dWeekDay
+    
+	End  Select
     
     Next i
 ### AnnualEventFix Class
@@ -286,7 +287,7 @@ For example, imagine a holiday that falls on the day after February 28th.
     dFixedDay.Day = 28
     dFixedDay.AddDays = 1
 The calculation will give March 1st except for leap years where it will give February 29th.
-### Important note on the combination and order of the shifts
+### :warning: Important note on the combination and order of the shifts
 The calculation function will first consider the MondayIfSunday and FridayIfSaturday properties, which are cumulative. If these properties are used, it will stop there and ignore any other offsets.
 Otherwise, it will apply only ONE of the following conditions in the order below:
 
