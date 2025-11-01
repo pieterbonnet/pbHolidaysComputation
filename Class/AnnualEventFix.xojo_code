@@ -31,14 +31,30 @@ Implements AnnualEvent
 		  If d.DayOfWeek = 7 And Me.MondayIfSaturday Then Return New DateAndCaption(d.AddInterval(0,0,2), Me.mCaption)
 		  If d.DayOfWeek = 1 And Me.MondayIfSunday Then Return New DateAndCaption(d.AddInterval(0,0,1), Me.mCaption)
 		  
-		  if PreviousWeekDay > 0 then
+		  if AlwaysPreviousWeekDay > 0 then
+		    
+		    Do 
+		      d = d.SubtractInterval(0,0,1)
+		    Loop Until d.DayOfWeek = AlwaysPreviousWeekDay
+		    
+		  elseif AlwaysNextWeekDay > 0 then
+		    
+		    Do 
+		      d = d.AddInterval(0,0,1)
+		    Loop Until d.DayOfWeek = AlwaysNextWeekDay
+		    
+		  elseif PreviousWeekDay > 0 then
+		    
 		    Do Until d.DayOfWeek = PreviousWeekDay
 		      d = d.SubtractInterval(0,0,1)
 		    Loop
+		    
 		  elseIf NextWeekDay > 0 Then
+		    
 		    Do Until d.DayOfWeek = NextWeekDay 
 		      d = d.AddInterval(0,0,1)
 		    Loop
+		    
 		  ElseIf AddDays <> 0 Then
 		    d = d.AddInterval(0,0, AddDays)
 		  End
@@ -68,8 +84,18 @@ Implements AnnualEvent
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub Constructor(d as AnnualEvent)
-		  Var vo As AnnualEventFix = d.DefinitionObject
+		Sub Constructor(a as AnnualEvent)
+		  If a = Nil Then 
+		    Raise new NilObjectException
+		    Exit Sub
+		  end
+		  
+		  If not (a IsA AnnualEventFix) Then
+		    Raise New InvalidArgumentException
+		    Exit Sub
+		  end
+		  
+		  Var vo As AnnualEventFix = a.DefinitionObject
 		  
 		  Me.mCaption = vo.Caption
 		  Me.Day = vo.Day
@@ -214,8 +240,15 @@ Implements AnnualEvent
 		  row.Column("saturdaytomonday").BooleanValue = me.MondayIfSaturday
 		  
 		  row.Column("adddays").IntegerValue = me.AddDays
-		  row.Column("nextweekday").IntegerValue = Me.NextWeekDay
-		  row.Column("previousweekday").IntegerValue = Me.PreviousWeekDay
+		  if me.AlwaysNextWeekDay > 0 or me.AlwaysPreviousWeekDay > 0 then
+		    row.Column("nextweekday").IntegerValue = Me.AlwaysNextWeekDay
+		    row.Column("previousweekday").IntegerValue = Me.AlwaysPreviousWeekDay
+		    row.Column("alwaysshift").BooleanValue = True
+		  else
+		    row.Column("nextweekday").IntegerValue = Me.NextWeekDay
+		    row.Column("previousweekday").IntegerValue = Me.PreviousWeekDay
+		    row.Column("alwaysshift").BooleanValue = False
+		  end
 		  
 		  Return row
 		End Function
@@ -243,7 +276,7 @@ Implements AnnualEvent
 	#tag Method, Flags = &h0
 		Function FingerPrint() As string
 		  Return "F" _
-		   + Format(Me.Month, "0#") _
+		  + Format(Me.Month, "0#") _
 		  + ";" + Format(Me.Day, "0#") _
 		  + ";" + me.AddDays.ToString _
 		  + "|" + Me.mStartOfValidity.SQLDate _
@@ -278,7 +311,7 @@ Implements AnnualEvent
 
 	#tag Method, Flags = &h0
 		Function TestDate(d as DateTime) As Boolean
-		  // définition "simple"
+		  // Simple case
 		  
 		  If Me.CycleYearDuration > 1 Then
 		    if me.CycleFirstYear > d.year then Return False
@@ -304,11 +337,37 @@ Implements AnnualEvent
 		  
 		  if not FridayIfSaturday and not MondayIfSunday and not MondayIfSaturday then
 		    
-		    if me.PreviousWeekDay > 0 then
+		    if me.AlwaysPreviousWeekDay > 0 then
 		      
-		      If d.DayOfWeek <> Me.PreviousWeekDay Then Return False // Inutile de continuer
+		      If d.DayOfWeek <> Me.AlwaysPreviousWeekDay Then Return False // No need to continue
 		      
-		      Var dt As New DateTime(d) // On avance les jours
+		      Var dt As New DateTime(d) // We move the days forward
+		      
+		      For x As Integer = 1 To 7
+		        dt = d.AddInterval(0,0,x)
+		        If Me.Day = dt.Day And Me.Month = dt.Month Then Return True 
+		      Next
+		      
+		      Return False
+		      
+		    ElseIf Me.AlwaysNextWeekDay > 0 Then 
+		      
+		      If d.DayOfWeek <> Me.AlwaysNextWeekDay Then Return False // No need to continue
+		      
+		      Var dt As New DateTime(d) // We go back in time
+		      
+		      For x As Integer = 1 To 7
+		        dt = d.SubtractInterval(0,0,x)
+		        If Me.Day = dt.Day And Me.Month = dt.Month Then Return True 
+		      Next
+		      
+		      Return False
+		      
+		    elseif me.PreviousWeekDay > 0 then
+		      
+		      If d.DayOfWeek <> Me.PreviousWeekDay Then Return False // No need to continue
+		      
+		      Var dt As New DateTime(d) // We move the days forward
 		      
 		      For x As Integer = 0 To 6
 		        dt = d.AddInterval(0,0,x)
@@ -319,9 +378,9 @@ Implements AnnualEvent
 		      
 		    elseIf Me.NextWeekDay > 0 Then 
 		      
-		      If d.DayOfWeek <> Me.NextWeekDay Then Return false // Inutile de continuer
+		      If d.DayOfWeek <> Me.NextWeekDay Then Return false // No need to continue
 		      
-		      Var dt As new DateTime(d) // On remonte les jours
+		      Var dt As new DateTime(d) // We go back in time
 		      
 		      For x As Integer = 0 To 6
 		        dt = d.SubtractInterval(0,0,x)
@@ -348,6 +407,14 @@ Implements AnnualEvent
 
 	#tag Property, Flags = &h0
 		AddDays As Integer = 0
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		AlwaysNextWeekDay As Integer = 0
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		AlwaysPreviousWeekDay As Integer = 0
 	#tag EndProperty
 
 	#tag Property, Flags = &h0

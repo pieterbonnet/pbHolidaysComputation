@@ -479,7 +479,7 @@ Begin DesktopWindow wNewOrEditDefinition
       Tooltip         =   ""
       Top             =   101
       Transparent     =   False
-      Value           =   1
+      Value           =   0
       Visible         =   True
       Width           =   560
       Begin DesktopLabel Label1
@@ -2036,6 +2036,36 @@ Begin DesktopWindow wNewOrEditDefinition
          _mName          =   ""
          _mPanelIndex    =   0
       End
+      Begin DesktopCheckBox chkDFAlways
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Caption         =   "Always"
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   154
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   13
+         TabPanelIndex   =   1
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   248
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         VisualState     =   0
+         Width           =   100
+      End
    End
    Begin DesktopButton btnOK
       AllowAutoDeactivate=   True
@@ -3039,9 +3069,9 @@ End
 		    
 		    If popFDWeekDay.SelectedRowIndex > 0 Then
 		      If popFDShiftMode.SelectedRowIndex = 0 Then
-		        fd.PreviousWeekDay =  popFDWeekDay.SelectedRowIndex
+		        if chkDFAlways.value then fd.AlwaysPreviousWeekDay = popFDWeekDay.SelectedRowIndex else fd.PreviousWeekDay =  popFDWeekDay.SelectedRowIndex
 		      Else
-		        fd.NextWeekDay =  popFDWeekDay.SelectedRowIndex
+		        if chkDFAlways.value then fd.AlwaysNextWeekDay =  popFDWeekDay.SelectedRowIndex else fd.NextWeekDay=  popFDWeekDay.SelectedRowIndex
 		      End
 		      
 		    ElseIf txtFDAdding.Text.ToInteger <> 0 Then
@@ -3169,10 +3199,16 @@ End
 		    If popFDWeekDay.SelectedRowIndex > 0 Then
 		      If popFDShiftMode.SelectedRowIndex = 0 Then
 		        strCode = strCode + EndOfLine
+		        If chkDFAlways.value Then _
+		        strCode = strCode + "NewEvent.AlwaysPreviousWeekDay = " + popFDWeekDay.SelectedRowIndex.ToString _
+		        Else _
 		        strCode = strCode + "NewEvent.PreviousWeekDay = " + popFDWeekDay.SelectedRowIndex.ToString
 		      Else
 		        strCode = strCode + EndOfLine
-		        strCode = strCode + "NewEvent.NextWeekDay =  " + popFDWeekDay.SelectedRowIndex.ToString
+		        If chkDFAlways.value Then _
+		        strCode = strCode + "NewEvent.AlwaysNextWeekDay =  " + popFDWeekDay.SelectedRowIndex.ToString _
+		        Else _
+		        strCode = strCode + "NewEvent.NextWeekDay =  " + popFDWeekDay.SelectedRowIndex.ToString 
 		      End
 		      
 		    ElseIf txtFDAdding.Text.ToInteger <> 0 Then
@@ -3247,7 +3283,7 @@ End
 		    
 		  End
 		  
-		   dCompare = new DateTime(3999,12,31)
+		  dCompare = new DateTime(3999,12,31)
 		  
 		  if Not (dtEnd.SelectedDate.day = dCompare.day _
 		    And dtEnd.SelectedDate.Month = dCompare.Month _

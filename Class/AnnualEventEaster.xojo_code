@@ -46,11 +46,26 @@ Implements AnnualEvent
 
 	#tag Method, Flags = &h0
 		Sub Constructor(d as AnnualEvent)
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Exit Sub
+		  End
+		  
+		  If Not (d IsA AnnualEventEaster) Then
+		    Raise New InvalidArgumentException
+		    Exit Sub
+		  End
+		  
+		  
 		  Var vo As AnnualEventEaster = d.DefinitionObject
 		  
 		  Me.mCaption = vo.Caption
 		  Me.DeltaEaster = vo.DeltaEaster
-		  'me.NextWeekDay = vo.NextWeekDay
+		  
+		  me.DayOff = vo.DayOff
+		  
+		  me.mCycleFirstYear = vo.CycleFirstYear
+		  me.mCycleYearDuration = vo.CycleYearDuration
 		  
 		  Me.StartOfValidity = vo.StartOfValidity
 		  Me.EndOfValidity = vo.EndOfValidity

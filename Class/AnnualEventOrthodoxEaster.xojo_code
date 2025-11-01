@@ -46,6 +46,17 @@ Implements AnnualEvent
 
 	#tag Method, Flags = &h0
 		Sub Constructor(d as AnnualEvent)
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Exit Sub
+		  End
+		  
+		  If Not (d IsA AnnualEventOrthodoxEaster) Then
+		    Raise New InvalidArgumentException
+		    Exit Sub
+		  End
+		  
+		  
 		  Var vo As AnnualEventEaster = d.DefinitionObject
 		  
 		  Me.mCaption = vo.Caption

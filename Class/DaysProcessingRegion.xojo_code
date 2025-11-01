@@ -882,7 +882,7 @@ Protected Class DaysProcessingRegion
 		    
 		    List.Add New AnnualEventFix("Christmas Eve",12,24, True, True) // December, 24
 		    List.Add New AnnualEventFix("Christmas",12,25, True, True) // December, 25
-		     
+		    
 		    
 		  Case USA.Arizona // Arizona
 		    // https://hr.az.gov/2024-holiday-calendar
@@ -1084,9 +1084,17 @@ Protected Class DaysProcessingRegion
 		      df.MondayIfSaturday = rs.Column("saturdaytomonday")
 		      
 		      df.AddDays = rs.Column("adddays").IntegerValue
-		      df.NextWeekDay = rs.Column("nextweekday").IntegerValue
-		      df.PreviousWeekDay = rs.Column("previousweekday").IntegerValue
 		      
+		      Var nd As Integer =  rs.Column("nextweekday").IntegerValue
+		      Var pd as Integer = rs.Column("previousweekday").IntegerValue
+		      
+		      if rs.Column("alwaysdayshift").BooleanValue then
+		        df.AlwaysNextWeekDay = rs.Column("nextweekday").IntegerValue
+		        df.AlwaysPreviousWeekDay = rs.Column("previousweekday").IntegerValue
+		      else
+		        df.NextWeekDay = rs.Column("nextweekday").IntegerValue
+		        df.PreviousWeekDay = rs.Column("previousweekday").IntegerValue
+		      end
 		      DefinitionsArray.Add df
 		      
 		    Case "WD" // Weekday

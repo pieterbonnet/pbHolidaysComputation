@@ -80,6 +80,16 @@ Implements AnnualEvent
 
 	#tag Method, Flags = &h0
 		Sub Constructor(d as AnnualEvent)
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Exit Sub
+		  End
+		  
+		  If Not (d IsA AnnualEventWeekDay) Then
+		    Raise New InvalidArgumentException
+		    Exit Sub
+		  End
+		  
 		  Var vo As AnnualEventWeekDay = d.DefinitionObject
 		  
 		  Me.mCaption = vo.Caption
@@ -258,7 +268,7 @@ Implements AnnualEvent
 	#tag Method, Flags = &h0
 		Function FingerPrint() As string
 		  Return "W" _
-		   + Format(Me.Month, "0#") _
+		  + Format(Me.Month, "0#") _
 		  + ";" + me.WeekDay.ToString _
 		  + ";" + me.rank.ToString _
 		  + ";" + me.AddDays.ToString _

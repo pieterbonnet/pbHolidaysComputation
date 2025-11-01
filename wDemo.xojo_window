@@ -52,7 +52,7 @@ Begin DesktopWindow wDemo
       Top             =   10
       Transparent     =   False
       Underline       =   False
-      Value           =   1
+      Value           =   0
       Visible         =   True
       Width           =   863
       BeginDesktopSegmentedButton DesktopSegmentedButton SegmentedButton1
@@ -2823,7 +2823,7 @@ Begin DesktopWindow wDemo
             AllowAutoDeactivate=   True
             Bold            =   False
             Cancel          =   False
-            Caption         =   "Independance day"
+            Caption         =   "Independence day"
             Default         =   False
             Enabled         =   True
             FontName        =   "System"
@@ -3011,6 +3011,36 @@ Begin DesktopWindow wDemo
             Underline       =   False
             Visible         =   True
             Width           =   43
+         End
+         Begin DesktopCheckBox chkDFAlways
+            AllowAutoDeactivate=   True
+            Bold            =   False
+            Caption         =   "Always"
+            Enabled         =   True
+            FontName        =   "System"
+            FontSize        =   0.0
+            FontUnit        =   0
+            Height          =   20
+            Index           =   -2147483648
+            InitialParent   =   "PagePanel1"
+            Italic          =   False
+            Left            =   168
+            LockBottom      =   False
+            LockedInPosition=   False
+            LockLeft        =   True
+            LockRight       =   False
+            LockTop         =   True
+            Scope           =   0
+            TabIndex        =   19
+            TabPanelIndex   =   1
+            TabStop         =   True
+            Tooltip         =   ""
+            Top             =   264
+            Transparent     =   False
+            Underline       =   False
+            Visible         =   True
+            VisualState     =   0
+            Width           =   100
          End
       End
       Begin DesktopListBox lstRegionItems
@@ -3870,9 +3900,9 @@ End
 		  
 		  if popFDWeekDay.SelectedRowIndex > 0 then
 		    if popFDShiftMode.SelectedRowIndex = 0 then
-		      dFixedDay.PreviousWeekDay =  popFDWeekDay.SelectedRowIndex
+		      If chkDFAlways.value Then dFixedDay.AlwaysPreviousWeekDay =  popFDWeekDay.SelectedRowIndex else dFixedDay.PreviousWeekDay =  popFDWeekDay.SelectedRowIndex
 		    else
-		      dFixedDay.NextWeekDay =  popFDWeekDay.SelectedRowIndex
+		      If chkDFAlways.value Then dFixedDay.AlwaysNextWeekDay =  popFDWeekDay.SelectedRowIndex else dFixedDay.NextWeekDay =  popFDWeekDay.SelectedRowIndex
 		    end
 		    
 		  elseif txtFDAdding.Text.ToInteger <> 0 Then
@@ -5007,7 +5037,7 @@ End
 #tag Events txtFDAdding
 	#tag Event
 		Function KeyDown(key As String) As Boolean
-		   if key.Asc < 32 then Return false// Specials char 
+		  if key.Asc < 32 then Return false// Specials char 
 		  if key.asc = 127 then Return false // backspace
 		  
 		  If key = "-" Then
@@ -5737,9 +5767,12 @@ End
 		  
 		  popFDWeekDay.SelectedRowIndex = 2
 		  popFDShiftMode.SelectedRowIndex = 0
+		  chkDFAlways.Value = True
 		  
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
+		  
+		  
 		  
 		  Self.Freeze = False
 		  
@@ -5758,9 +5791,12 @@ End
 		  
 		  popFDWeekDay.SelectedRowIndex = 0 // Off
 		  popFDShiftMode.SelectedRowIndex = 0
+		  chkDFAlways.Value = False
 		  
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
+		  
+		  
 		  
 		  Self.Freeze = False
 		  
@@ -5779,6 +5815,7 @@ End
 		  
 		  popFDWeekDay.SelectedRowIndex = 0 // Off
 		  popFDShiftMode.SelectedRowIndex = 0
+		  chkDFAlways.Value = False
 		  
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
@@ -5800,6 +5837,7 @@ End
 		  
 		  popFDWeekDay.SelectedRowIndex = 0 // Off
 		  popFDShiftMode.SelectedRowIndex = 0
+		  chkDFAlways.Value = False
 		  
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
@@ -5818,8 +5856,10 @@ End
 		  
 		  popFDMonth.SelectedRowIndex = 6 // Jully
 		  popFDDay.SelectedRowIndex = 20 //
+		  
 		  popFDWeekDay.SelectedRowIndex = 2
 		  popFDShiftMode.SelectedRowIndex = 0
+		  chkDFAlways.Value = False
 		  
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
@@ -5836,6 +5876,13 @@ End
 		  txtCaption.Text = me.Caption
 		  txtEDDiff.Text = AnnualEventEaster.CleanMonday.ToString // or txtEDDiff.Text = "-48"
 		  FromEasterCode
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events chkDFAlways
+	#tag Event
+		Sub ValueChanged()
+		  FixedDayCode
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -5942,7 +5989,7 @@ End
 		    
 		  Case 0
 		    
-		     self.Regions(lstRegions.SelectedRowIndex).WorkingWeekDays.WorkingDay(row + 1) = lstRegionItems.CellCheckBoxValueAt(row, 1)
+		    self.Regions(lstRegions.SelectedRowIndex).WorkingWeekDays.WorkingDay(row + 1) = lstRegionItems.CellCheckBoxValueAt(row, 1)
 		    
 		  Case 1
 		    
@@ -6089,7 +6136,7 @@ End
 		Sub Opening()
 		  Me.SelectedDate = DateTime.Now
 		  
-		   
+		  
 		  
 		End Sub
 	#tag EndEvent
