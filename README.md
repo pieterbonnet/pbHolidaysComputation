@@ -216,30 +216,32 @@ You can also specify a specific encoding, particularly for databases that do not
 Below is the SQL (SQLite) code to create a table to store event definitions.
 The RegionDatesWorked class provides a method to load events from a RowSet.
 <a id="tdays"></a>
+
     CREATE TABLE "tdays" (
-	"id_date"	INTEGER NOT NULL,
-	"start"	DATE NOT NULL DEFAULT '1-1-1',
-	"end"	DATE NOT NULL DEFAULT '3999-12-31',
-	"caption"	TEXT,
-	"region"	TEXT,
-	"definitiontype"	TEXT NOT NULL,
-	"dayoff"	BOOLEAN NOT NULL DEFAULT 1,
-	"cyclefirstyear"	INTEGER NOT NULL DEFAULT 1,
-	"cycleyearduration"	INTEGER NOT NULL DEFAULT 1,
-	"month"	INTEGER NOT NULL DEFAULT 0,
-	"day"	INTEGER NOT NULL DEFAULT 0,
-	"weekday"	INTEGER NOT NULL DEFAULT 0,
-	"rank"	INTEGER NOT NULL DEFAULT 0,
-	"adddays"	INTEGER NOT NULL DEFAULT 0,
-	"nextweekday"	INTEGER NOT NULL DEFAULT 0,
-	"previousweekday"	INTEGER NOT NULL DEFAULT 0,
-	"saturdaytofriday"	BOOLEAN NOT NULL DEFAULT 0,
-	"sundaytomonday"	BOOLEAN NOT NULL DEFAULT 0,
-	"saturdaytomonday"	BOOLEAN NOT NULL DEFAULT 0,
-	"fingerprint"	TEXT NOT NULL,
-	"alwaysdayshift"	BOOLEAN NOT NULL DEFAULT 0,
-	PRIMARY KEY("id_date" AUTOINCREMENT)
-	);
+    "id_date"	INTEGER NOT NULL,
+    "start"	DATE NOT NULL DEFAULT '1-1-1',
+    "end"	DATE NOT NULL DEFAULT '3999-12-31',
+    "caption"	TEXT,
+    "region"	TEXT,
+    "definitiontype"	TEXT NOT NULL,
+    "dayoff"	BOOLEAN NOT NULL DEFAULT 1,
+    "cyclefirstyear"	INTEGER NOT NULL DEFAULT 1,
+    "cycleyearduration"	INTEGER NOT NULL DEFAULT 1,
+    "month"	INTEGER NOT NULL DEFAULT 0,
+    "day"	INTEGER NOT NULL DEFAULT 0,
+    "weekday"	INTEGER NOT NULL DEFAULT 0,
+    "rank"	INTEGER NOT NULL DEFAULT 0,
+    "adddays"	INTEGER NOT NULL DEFAULT 0,
+    "nextweekday"	INTEGER NOT NULL DEFAULT 0,
+    "previousweekday"	INTEGER NOT NULL DEFAULT 0,
+    "saturdaytofriday"	BOOLEAN NOT NULL DEFAULT 0,
+    "sundaytomonday"	BOOLEAN NOT NULL DEFAULT 0,
+    "saturdaytomonday"	BOOLEAN NOT NULL DEFAULT 0,
+    "fingerprint"	TEXT NOT NULL,
+    "alwaysdayshift"	BOOLEAN NOT NULL DEFAULT 0,
+    PRIMARY KEY("id_date" AUTOINCREMENT)
+    );
+
 <a id="cmdefobj"></a>
 ##### DefinitionObject() as variant
 Returns the object as a variant
