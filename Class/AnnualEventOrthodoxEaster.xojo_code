@@ -17,7 +17,7 @@ Implements AnnualEvent
 		  If year < Me.StartOfValidity.Year Or year > Me.EndOfValidity.Year Then Return Nil
 		  
 		  
-		  Var d As DateTime = Me.OrthodoxEaster(year)
+		  Var d As DateTime = AnnualEventOrthodoxEaster.OrthodoxEaster(year)
 		  d = d.AddInterval(0,0,me.DeltaEaster)
 		  
 		  'If NextWeekDay > 0 Then
@@ -212,7 +212,7 @@ Implements AnnualEvent
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function OrthodoxEaster(year as integer) As DateTime
+		Shared Function OrthodoxEaster(year as integer) As DateTime
 		  Dim a,b,c As Integer
 		  Dim d,e As Integer
 		  Dim month As Integer, day As Integer
@@ -267,7 +267,7 @@ Implements AnnualEvent
 		  
 		  If d < Me.StartOfValidity Or d > Me.EndOfValidity Then Return False
 		  
-		  Var dtarget As DateTime = OrthodoxEaster(d.Year).AddInterval(0, 0, Me.DeltaEaster)
+		  Var dtarget As DateTime = AnnualEventOrthodoxEaster.OrthodoxEaster(d.Year).AddInterval(0, 0, Me.DeltaEaster)
 		  If dtarget.day = d.Day And dtarget.month = d.Month Then Return True 
 		  
 		  

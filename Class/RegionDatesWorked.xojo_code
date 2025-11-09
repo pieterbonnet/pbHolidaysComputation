@@ -1331,20 +1331,7 @@ Protected Class RegionDatesWorked
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub LoadClosurePeriods(rs as RowSet, Encoding as TextEncoding = Nil)
-		  If rs = Nil Then Exit Sub
-		  if rs.AfterLastRow then exit sub
-		  
-		  Var cp() As ClosurePeriod = RegionDatesWorked.ClosurePeriodsFromRowSet(rs, Me.Identifier, Encoding)
-		  
-		  For p As Integer = 0 To cp.LastIndex
-		    Me.ClosurePeriods.add cp(p)
-		  next p
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub LoadEventsFromRowSet(rs as RowSet, Encoding as TextEncoding = Nil)
+		Sub LoadAnnualEventsFromRowSet(rs as RowSet, Encoding as TextEncoding = Nil)
 		  if rs = nil then exit sub
 		  if rs.AfterLastRow then exit sub
 		  
@@ -1353,6 +1340,19 @@ Protected Class RegionDatesWorked
 		  For i As Integer = 0 To ae.LastIndex
 		    me.AnnualEvents.Add ae(i)
 		  next 
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub LoadClosurePeriodsFromRowSet(rs as RowSet, Encoding as TextEncoding = Nil)
+		  If rs = Nil Then Exit Sub
+		  if rs.AfterLastRow then exit sub
+		  
+		  Var cp() As ClosurePeriod = RegionDatesWorked.ClosurePeriodsFromRowSet(rs, Me.Identifier, Encoding)
+		  
+		  For p As Integer = 0 To cp.LastIndex
+		    Me.ClosurePeriods.add cp(p)
+		  next p
 		End Sub
 	#tag EndMethod
 
