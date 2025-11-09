@@ -304,9 +304,6 @@ In addition to the [properties](#common-properties) and [methods](#common-method
 |[AlwaysNextWeekDay](#aefnwd)|Integer
 |[AlwaysPreviousWeekDay](#aefnwd)|Integer
 |[AddDays](#aefadddays)|Integer
-
-NextWeekDay, PreviousWeekDay, AlwaysNextWeekDay, AlwaysPreviousWeekDay
-
 <a id="aefmonth"></a>
 ##### Month, Day
 Type : Integer
