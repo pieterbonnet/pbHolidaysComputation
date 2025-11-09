@@ -1,6 +1,3 @@
-
-pbDateComputation(14).md (11).md
-
 # pbHolidaysComputation
 Calculate holidays, closures, and working days with Xojo.
 
