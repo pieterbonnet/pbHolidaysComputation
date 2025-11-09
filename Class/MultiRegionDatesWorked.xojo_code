@@ -580,37 +580,7 @@ Protected Class MultiRegionDatesWorked
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Shared Sub LoadClosurePeriods(regions() as RegionDatesWorked, rs as RowSet, Encoding as TextEncoding = Nil)
-		  If rs = Nil Then Exit Sub
-		  If Regions.Count = 0 Then Exit Sub
-		  
-		  Var r1 as string, caption as string
-		  
-		  do until rs.AfterLastRow
-		    
-		    If Encoding = Nil Or Encoding = Encodings.UTF8 Then
-		      r1 = rs.Column("region").StringValue.DefineEncoding(Encodings.UTF8).Lowercase.Trim
-		      caption = rs.Column("caption").StringValue.DefineEncoding(Encodings.UTF8)
-		    else
-		      r1 = rs.Column("region").StringValue.DefineEncoding(Encoding).ConvertEncoding(Encodings.UTF8).DefineEncoding(Encodings.UTF8).Lowercase.Trim
-		      caption = rs.Column("caption").StringValue.DefineEncoding(Encoding).ConvertEncoding(Encodings.UTF8).DefineEncoding(Encodings.UTF8)
-		    end
-		    
-		    for r as Integer = 0 to Regions.LastIndex
-		      
-		      If r1 <> Regions(r).Identifier.StringValue.Lowercase.Trim Then continue
-		      Regions(r).ClosurePeriods.Add new ClosurePeriod(rs.Column("firstday").DateTimeValue, rs.Column("lastday").DateTimeValue, caption)
-		      
-		    Next r
-		    
-		    rs.MoveToNextRow
-		    
-		  Loop
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Shared Sub LoadEventsFromRowSet(Regions() as RegionDatesWorked, rs as RowSet, Encoding as TextEncoding = Nil)
+		Shared Sub LoadAnnualEventsFromRowSet(Regions() as RegionDatesWorked, rs as RowSet, Encoding as TextEncoding = Nil)
 		  // if Encoding = nil, using UTF8
 		  if Regions.Count = 0 then exit Sub
 		  
@@ -697,7 +667,37 @@ Protected Class MultiRegionDatesWorked
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Shared Sub LoadRegions(regions() as RegionDatesWorked, rs as RowSet, encoding as TextEncoding = Nil)
+		Shared Sub LoadClosurePeriodsFromRowSet(regions() as RegionDatesWorked, rs as RowSet, Encoding as TextEncoding = Nil)
+		  If rs = Nil Then Exit Sub
+		  If Regions.Count = 0 Then Exit Sub
+		  
+		  Var r1 as string, caption as string
+		  
+		  do until rs.AfterLastRow
+		    
+		    If Encoding = Nil Or Encoding = Encodings.UTF8 Then
+		      r1 = rs.Column("region").StringValue.DefineEncoding(Encodings.UTF8).Lowercase.Trim
+		      caption = rs.Column("caption").StringValue.DefineEncoding(Encodings.UTF8)
+		    else
+		      r1 = rs.Column("region").StringValue.DefineEncoding(Encoding).ConvertEncoding(Encodings.UTF8).DefineEncoding(Encodings.UTF8).Lowercase.Trim
+		      caption = rs.Column("caption").StringValue.DefineEncoding(Encoding).ConvertEncoding(Encodings.UTF8).DefineEncoding(Encodings.UTF8)
+		    end
+		    
+		    for r as Integer = 0 to Regions.LastIndex
+		      
+		      If r1 <> Regions(r).Identifier.StringValue.Lowercase.Trim Then continue
+		      Regions(r).ClosurePeriods.Add new ClosurePeriod(rs.Column("firstday").DateTimeValue, rs.Column("lastday").DateTimeValue, caption)
+		      
+		    Next r
+		    
+		    rs.MoveToNextRow
+		    
+		  Loop
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Shared Function LoadRegions(rs as RowSet, encoding as TextEncoding = Nil) As RegionDatesWorked()
 		  If rs = Nil Then Exit Sub
 		  
 		  Var identifier As String
@@ -715,7 +715,7 @@ Protected Class MultiRegionDatesWorked
 		    rs.MoveToNextRow
 		    
 		  Loop
-		End Sub
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0

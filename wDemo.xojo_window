@@ -4067,7 +4067,7 @@ End
 		  End Try
 		  
 		  Me.Regions.RemoveAll
-		  MultiRegionDatesWorked.LoadRegions(me.Regions, rs)
+		  Me.Regions = MultiRegionDatesWorked.LoadRegions(rs)
 		  
 		  if me.Regions.Count = 0 then exit sub
 		  
