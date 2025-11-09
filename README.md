@@ -431,7 +431,7 @@ If the AnnualEvent is not a AnnualEventFix then a InvalidArgumentException is ra
 
 ## AnnualEventEaster and AnnualEventOrthodoxEaster Classes
 
-In addition to the [properties](https://stackedit.io/app#common-properties) and [methods](https://stackedit.io/app#common-methods) common to the interface, here is one property specific to this class.
+In addition to the [properties](#common-properties) and [methods](#common-methods) common to the interface, here is one property specific to this class.
 The only difference between the AnnualEventOrthodoxEaster class and the AnnualEventEaster class is the algorithm.
 
 Note that the date calculated by AnnualEventOrthodoxEaster is the date of the event in the Gregorian calendar.
@@ -496,7 +496,7 @@ Returns the date of Easter Sunday for the requested year.
 [🔝 Back to Table of contents](#table-of-contents)
 
 ## AnnualEventWeekDay Class
-In addition to the [properties](https://stackedit.io/app#common-properties) and [methods](https://stackedit.io/app#common-methods) common to the interface, here are properties specific to this class.
+In addition to the [properties](#common-properties) and [methods](#common-methods) common to the interface, here are properties specific to this class.
 <a id="aewproperties"></a>
 ### Properties 
 | Name|Type                       
@@ -554,7 +554,7 @@ The value less that 0 indicates that there will be no offset
 The algorithm will apply only ONE of the following conditions in the order below:
  1. PreviousWeekDay  
  2. NextWeekDay
- 3.  AddDays
+ 3. AddDays
 
 [🔝 Back to Table of contents](#table-of-contents)
 <a id="aewmethods"></a>
