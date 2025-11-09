@@ -32,30 +32,6 @@ Protected Class MultiRegionDatesWorked
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function AnnualEventMatch(d as DateTime, OnlyIfDayOff as Boolean = False) As Boolean
-		  If d = Nil Then 
-		    Raise New NilObjectException
-		    Return False
-		  end
-		  
-		  if not OnRegionEnabled then Return False
-		  
-		  // The date must be a public holiday for ALL regions.
-		  
-		  For i As Integer = 0 To Me.Regions.LastIndex
-		    
-		    if not me.Regions(i).Enabled then Continue
-		    
-		    // Therefore, it is enough for just one of them to not match.
-		    if not me.Regions(i).AnnualEventMatch(d, OnlyIfDayOff) then Return false
-		    
-		  Next
-		  
-		  Return True
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Function BusinessDays(starting as DateTime, ending as DateTime) As DateTime()
 		  If starting = Nil Then 
 		    Raise New NilObjectException
@@ -111,7 +87,7 @@ Protected Class MultiRegionDatesWorked
 		      
 		      if not me.Regions(i).Enabled then Continue // ignore
 		      
-		      If Me.Regions(i).AnnualEventMatch(d, True) Then  // if is a holiday
+		      If Me.Regions(i).IsAnnualEvent(d, True) Then  // if is a holiday
 		        Continue Do // It is enough that in just one region that day is not a working day...
 		      end
 		      
@@ -269,7 +245,7 @@ Protected Class MultiRegionDatesWorked
 		      if me.Regions(i).Enabled then continue for
 		      
 		      // it's a working (week)day but is this a public holiday - day off ?
-		      If Me.Regions(i).AnnualEventMatch(dtCurrent, True) Then Continue Do // It is enough that in just one region that day is not a working day...
+		      If Me.Regions(i).IsAnnualEvent(dtCurrent, True) Then Continue Do // It is enough that in just one region that day is not a working day...
 		      
 		      
 		    next i
@@ -371,7 +347,7 @@ Protected Class MultiRegionDatesWorked
 		      
 		      If Me.Regions(i).Enabled Then Continue
 		      
-		      If not Me.Regions(i).AnnualEventMatch(dtCurrent, True) Then 
+		      If not Me.Regions(i).IsAnnualEvent(dtCurrent, True) Then 
 		        counter = counter + 1
 		        Continue Do // It's a closed period....
 		      end
@@ -392,19 +368,56 @@ Protected Class MultiRegionDatesWorked
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function IsEvent(d as DateTime, OnlyDayOff as Boolean = False) As Boolean
-		  for r as Integer = 0 to me.Regions.LastIndex
-		    
-		    For i As Integer = 0 To me.Regions(r).AnnualEvents.LastIndex
-		      
-		      if not me.Regions(r).AnnualEvents(i).DayOff and OnlyDayOff then Continue
-		      if me.Regions(r).AnnualEvents(i).TestDate(d) then Return True
-		      
-		    Next
-		    
-		  next r
+		Function IsAnnualEvent(d as DateTime, OnlyIfDayOff as Boolean = False) As Boolean
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Return False
+		  end
 		  
-		  Return False
+		  if not OnRegionEnabled then Return False
+		  
+		  // The date must be a public holiday for ALL regions.
+		  
+		  For i As Integer = 0 To Me.Regions.LastIndex
+		    
+		    if not me.Regions(i).Enabled then Continue
+		    
+		    // Therefore, it is enough for just one of them to not match.
+		    if not me.Regions(i).IsAnnualEvent(d, OnlyIfDayOff) then Return false
+		    
+		  Next
+		  
+		  Return True
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsInClosurePeriod(d as DateTime) As Boolean
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Return False
+		  End
+		  
+		  Var d1 As New DateTime(d.Year, d.Month, d.day,0,0,0) // 00:00
+		  
+		  
+		  If Not OnRegionEnabled Then Return False
+		  
+		  // The date must be a in a closing period for ALL regions.
+		  
+		  For i As Integer = 0 To Me.Regions.LastIndex
+		    
+		    If Not Me.Regions(i).Enabled Then Continue
+		    
+		    // Therefore, it is enough for just one of them to not match.
+		    If Not Me.Regions(i).IsInClosurePeriod(d) Then Return False
+		    
+		  Next
+		  
+		  Return True
+		  
+		  
+		  
 		End Function
 	#tag EndMethod
 
@@ -451,7 +464,7 @@ Protected Class MultiRegionDatesWorked
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function ListFromDefinitions(Starting as DateTime, Ending as DateTime, IncludeSaturday as Boolean = True, IncludeSunday as Boolean = True, IncludeMonday as Boolean = True, IncludeTuesday as Boolean = True, IncludeWednesday as Boolean = True, IncludeThursday as Boolean = True, IncludeFriday as Boolean = True) As DateAndCaption()
+		Function ListOfAnnualEvents(Starting as DateTime, Ending as DateTime, OnlyDayOff as Boolean, IncludeSaturday as Boolean = True, IncludeSunday as Boolean = True, IncludeMonday as Boolean = True, IncludeTuesday as Boolean = True, IncludeWednesday as Boolean = True, IncludeThursday as Boolean = True, IncludeFriday as Boolean = True) As DateAndCaption()
 		  If Starting = Nil Then 
 		    Raise New NilObjectException
 		    Return Nil
@@ -484,6 +497,8 @@ Protected Class MultiRegionDatesWorked
 		      
 		      For i As Integer = 0 To me.Regions(r).AnnualEvents.LastIndex
 		        
+		        if OnlyDayOff and not me.Regions(r).AnnualEvents(i).DayOff then Continue
+		        
 		        Valeur =  me.Regions(r).AnnualEvents(i).Calculate(year)
 		        
 		        If valeur = Nil Then Continue
@@ -497,6 +512,7 @@ Protected Class MultiRegionDatesWorked
 		        If valeur.DateValue.DayOfWeek = 6 And Not IncludeThursday Then Continue
 		        If valeur.DateValue.DayOfWeek = 6 And Not IncludeFriday Then Continue
 		        
+		        Valeur.RegionIdentifier = me.Regions(r).Identifier
 		        AddInArray(list, New DateAndCaption(valeur))
 		        
 		      Next i
@@ -511,7 +527,7 @@ Protected Class MultiRegionDatesWorked
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function ListFromDefinitions(Year as integer, IncludeSaturday as Boolean = True, IncludeSunday as Boolean = True, IncludeMonday as Boolean = True, IncludeTuesday as Boolean = True, IncludeWednesday as Boolean = True, IncludeThursday as Boolean = True, IncludeFriday as Boolean = True) As DateAndCaption()
+		Function ListOfAnnualEvents(Year as integer, OnlyDayOff as Boolean, IncludeSaturday as Boolean = True, IncludeSunday as Boolean = True, IncludeMonday as Boolean = True, IncludeTuesday as Boolean = True, IncludeWednesday as Boolean = True, IncludeThursday as Boolean = True, IncludeFriday as Boolean = True) As DateAndCaption()
 		  Var list() As DateAndCaption
 		  if not me.OnRegionEnabled then Return list // return empty array
 		  
@@ -522,6 +538,8 @@ Protected Class MultiRegionDatesWorked
 		    if me.Regions(r).AnnualEvents.Count = 0 then  continue
 		    
 		    For i As Integer = 0 To me.Regions(r).AnnualEvents.LastIndex
+		      
+		      if OnlyDayOff and not me.Regions(r).AnnualEvents(i).DayOff then Continue
 		      
 		      Valeur = me.Regions(r).AnnualEvents(i).Calculate(year)
 		      
@@ -535,6 +553,7 @@ Protected Class MultiRegionDatesWorked
 		      If valeur.DateValue.DayOfWeek = 6 And Not IncludeThursday Then Continue
 		      If valeur.DateValue.DayOfWeek = 6 And Not IncludeFriday Then Continue
 		      
+		      Valeur.RegionIdentifier = me.Regions(r).Identifier
 		      AddInArray(list, New DateAndCaption(valeur))
 		      
 		    Next i
@@ -810,7 +829,7 @@ Protected Class MultiRegionDatesWorked
 		      
 		      if not me.Regions(r).Enabled then Continue for
 		      
-		      If Me.Regions(r).AnnualEventMatch(dt, True) Then continue do
+		      If Me.Regions(r).IsAnnualEvent(dt, True) Then continue do
 		      
 		    Next r
 		    
@@ -885,7 +904,7 @@ Protected Class MultiRegionDatesWorked
 		        Exit For
 		      End
 		      
-		      If Me.Regions(i).AnnualEventMatch(d, True) Then 
+		      If Me.Regions(i).IsAnnualEvent(d, True) Then 
 		        blOK = True
 		        Exit For
 		      End
@@ -946,6 +965,10 @@ Protected Class MultiRegionDatesWorked
 
 	#tag Property, Flags = &h0
 		Regions() As RegionDatesWorked
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		Tag As Variant
 	#tag EndProperty
 
 

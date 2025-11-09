@@ -3781,7 +3781,7 @@ End
 		    chkWorkingDay.Value = Self.Regions(lstRegions.SelectedRowIndex).IsWorkingDay(dtThisDate.SelectedDate)
 		    chkIsDayOff.value = Not chkWorkingDay.Value
 		    
-		    Var dc As DateAndCaption = Self.Regions(lstRegions.SelectedRowIndex).AnnualEventMatchDateAndCaption(dtThisDate.SelectedDate)
+		    Var dc As DateAndCaption = Self.Regions(lstRegions.SelectedRowIndex).IsAnnualEventDateAndCaption(dtThisDate.SelectedDate)
 		    If dc <> Nil Then 
 		      chkIsEvent.Value = True
 		      lblEvent.Text = dc.Caption

@@ -112,88 +112,6 @@ Protected Class RegionDatesWorked
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function AnnualEventMatch(d as DateTime, OnlyIfDayOff as Boolean = False) As Boolean
-		  If d = Nil Then 
-		    Raise New NilObjectException
-		    Return False
-		  End
-		  
-		  
-		  Var r As DateAndCaption
-		  r = AnnualEventMatchDateAndCaption(d, OnlyIfDayOff)
-		  Return r <> Nil
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function AnnualEventMatchCaption(d as DateTime, OnlyIfDayOff as Boolean = False) As String
-		  If d = Nil Then 
-		    Raise New NilObjectException
-		    Return ""
-		  End
-		  
-		  Var r As DateAndCaption
-		  r = AnnualEventMatchDateAndCaption(d, OnlyIfDayOff)
-		  if r = Nil then Return "" else return r.Caption
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function AnnualEventMatchDateAndCaption(d as DateTime, OnlyIfDayOff as Boolean = False) As DateAndCaption
-		  If d = Nil Then 
-		    Raise New NilObjectException
-		    Return Nil
-		  End
-		  
-		  If Me.AnnualEvents.LastIndex = -1 Then Return nil
-		  
-		  For i As Integer = 0 To Me.AnnualEvents.LastIndex
-		    
-		    if OnlyIfDayOff and not me.AnnualEvents(i).DayOff then Continue
-		    If d < Me.AnnualEvents(i).StartOfValidity Or d > Me.AnnualEvents(i).EndOfValidity Then Continue
-		    If Me.AnnualEvents(i).TestDate(d) Then Return new DateAndCaption(d, me.AnnualEvents(i).Caption, me.Identifier)
-		    
-		  Next i
-		  
-		  Return Nil
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function AnnualEventMatchObject(d as DateTime, OnlyIfDayOff as Boolean = False) As AnnualEvent
-		  If d = Nil Then 
-		    Raise New NilObjectException
-		    Return Nil
-		  End
-		  
-		  If Me.AnnualEvents.LastIndex = -1 Then Return Nil
-		  
-		  For i As Integer = 0 To Me.AnnualEvents.LastIndex
-		    
-		    If OnlyIfDayOff And Not Me.AnnualEvents(i).DayOff Then Continue
-		    If d < Me.AnnualEvents(i).StartOfValidity Or d > Me.AnnualEvents(i).EndOfValidity Then Continue
-		    If Me.AnnualEvents(i).TestDate(d) Then return Me.AnnualEvents(i)
-		    
-		  Next i
-		  
-		  Return Nil
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function AnnualEventMatchRegion(d as DateTime, OnlyIfDayOff as Boolean = False) As Variant
-		  If d = Nil Then 
-		    Raise New NilObjectException
-		    Return Nil
-		  End
-		  
-		  Var r As DateAndCaption
-		  r = AnnualEventMatchDateAndCaption(d, OnlyIfDayOff)
-		  if r = Nil then Return Nil else return r.RegionIdentifier
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Shared Function AnnualEventsBelgium(Region as Belgium = Belgium.NationauxEnFrancais, PublicService as Boolean = True) As AnnualEvent()
 		  Var df() As AnnualEvent
 		  
@@ -889,7 +807,7 @@ Protected Class RegionDatesWorked
 		    
 		    // Is this a non-worked event ?
 		    // This is the most time-consuming part to calculate, so it is calculated last only if necessary.
-		    If AnnualEventMatch(d, true) Then Continue  Do
+		    If IsAnnualEvent(d, true) Then Continue  Do
 		    
 		    list.Add New DateTime(d) // okay, we work
 		    
@@ -906,48 +824,6 @@ Protected Class RegionDatesWorked
 		  
 		  Return BusinessDays(d,f)
 		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function ClosurePeriodMatch(d as DateTime) As Boolean
-		  Var d1 As New DateTime(d.Year, d.Month, d.day,0,0,0) // 00:00
-		  
-		  For p As Integer = 0 To Me.ClosurePeriods.LastIndex
-		    
-		    if me.ClosurePeriods(p).FirstDay <= d1 and me.ClosurePeriods(p).LastDay >= d1 then Return true
-		    
-		  Next
-		  
-		  Return False
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function ClosurePeriodMatchCaption(d as DateTime) As string
-		  Var d1 As New DateTime(d.Year, d.Month, d.day,0,0,0) // 00:00
-		  
-		  For p As Integer = 0 To Me.ClosurePeriods.LastIndex
-		    
-		    if me.ClosurePeriods(p).FirstDay <= d1 and me.ClosurePeriods(p).LastDay >= d1 then Return me.ClosurePeriods(p).Caption
-		    
-		  Next
-		  
-		  Return ""
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function ClosurePeriodMatchObject(d as DateTime) As ClosurePeriod
-		  Var d1 As New DateTime(d.Year, d.Month, d.day,0,0,0) // 00:00
-		  
-		  For p As Integer = 0 To Me.ClosurePeriods.LastIndex
-		    
-		    if me.ClosurePeriods(p).FirstDay <= d1 and me.ClosurePeriods(p).LastDay >= d1 then Return me.ClosurePeriods(p)
-		    
-		  Next
-		  
-		  Return nil
 		End Function
 	#tag EndMethod
 
@@ -1120,7 +996,7 @@ Protected Class RegionDatesWorked
 		    
 		    // Is this a non-worked event ?
 		    // This is the most time-consuming part to calculate, so it's calculated last, only if necessary.
-		    If Me.AnnualEventMatch(dtCurrent, True) Then Continue
+		    If Me.IsAnnualEvent(dtCurrent, True) Then Continue
 		    
 		    counter = counter + 1
 		    
@@ -1193,7 +1069,7 @@ Protected Class RegionDatesWorked
 		    
 		    // Is this a non-worked event ?
 		    // This is the most time-consuming part to calculate, so it is calculated last only if necessary.
-		    If AnnualEventMatch(dtCurrent, true) Then 
+		    If IsAnnualEvent(dtCurrent, true) Then 
 		      counter = counter + 1
 		      Continue
 		    End
@@ -1208,6 +1084,130 @@ Protected Class RegionDatesWorked
 		  
 		  
 		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsAnnualEvent(d as DateTime, OnlyIfDayOff as Boolean = False) As Boolean
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Return False
+		  End
+		  
+		  
+		  Var r As DateAndCaption
+		  r = IsAnnualEventDateAndCaption(d, OnlyIfDayOff)
+		  Return r <> Nil
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsAnnualEventCaption(d as DateTime, OnlyIfDayOff as Boolean = False) As String
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Return ""
+		  End
+		  
+		  Var r As DateAndCaption
+		  r = IsAnnualEventDateAndCaption(d, OnlyIfDayOff)
+		  if r = Nil then Return "" else return r.Caption
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsAnnualEventDateAndCaption(d as DateTime, OnlyIfDayOff as Boolean = False) As DateAndCaption
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Return Nil
+		  End
+		  
+		  If Me.AnnualEvents.LastIndex = -1 Then Return nil
+		  
+		  For i As Integer = 0 To Me.AnnualEvents.LastIndex
+		    
+		    if OnlyIfDayOff and not me.AnnualEvents(i).DayOff then Continue
+		    If d < Me.AnnualEvents(i).StartOfValidity Or d > Me.AnnualEvents(i).EndOfValidity Then Continue
+		    If Me.AnnualEvents(i).TestDate(d) Then Return new DateAndCaption(d, me.AnnualEvents(i).Caption, me.Identifier)
+		    
+		  Next i
+		  
+		  Return Nil
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsAnnualEventObject(d as DateTime, OnlyIfDayOff as Boolean = False) As AnnualEvent
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Return Nil
+		  End
+		  
+		  If Me.AnnualEvents.LastIndex = -1 Then Return Nil
+		  
+		  For i As Integer = 0 To Me.AnnualEvents.LastIndex
+		    
+		    If OnlyIfDayOff And Not Me.AnnualEvents(i).DayOff Then Continue
+		    If d < Me.AnnualEvents(i).StartOfValidity Or d > Me.AnnualEvents(i).EndOfValidity Then Continue
+		    If Me.AnnualEvents(i).TestDate(d) Then return Me.AnnualEvents(i)
+		    
+		  Next i
+		  
+		  Return Nil
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsAnnualEventRegion(d as DateTime, OnlyIfDayOff as Boolean = False) As Variant
+		  If d = Nil Then 
+		    Raise New NilObjectException
+		    Return Nil
+		  End
+		  
+		  Var r As DateAndCaption
+		  r = IsAnnualEventDateAndCaption(d, OnlyIfDayOff)
+		  if r = Nil then Return Nil else return r.RegionIdentifier
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsInClosurePeriod(d as DateTime) As Boolean
+		  Var d1 As New DateTime(d.Year, d.Month, d.day,0,0,0) // 00:00
+		  
+		  For p As Integer = 0 To Me.ClosurePeriods.LastIndex
+		    
+		    if me.ClosurePeriods(p).FirstDay <= d1 and me.ClosurePeriods(p).LastDay >= d1 then Return true
+		    
+		  Next
+		  
+		  Return False
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsInClosurePeriodCaption(d as DateTime) As string
+		  Var d1 As New DateTime(d.Year, d.Month, d.day,0,0,0) // 00:00
+		  
+		  For p As Integer = 0 To Me.ClosurePeriods.LastIndex
+		    
+		    if me.ClosurePeriods(p).FirstDay <= d1 and me.ClosurePeriods(p).LastDay >= d1 then Return me.ClosurePeriods(p).Caption
+		    
+		  Next
+		  
+		  Return ""
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsInClosurePeriodObject(d as DateTime) As ClosurePeriod
+		  Var d1 As New DateTime(d.Year, d.Month, d.day,0,0,0) // 00:00
+		  
+		  For p As Integer = 0 To Me.ClosurePeriods.LastIndex
+		    
+		    if me.ClosurePeriods(p).FirstDay <= d1 and me.ClosurePeriods(p).LastDay >= d1 then Return me.ClosurePeriods(p)
+		    
+		  Next
+		  
+		  Return nil
 		End Function
 	#tag EndMethod
 
@@ -1255,7 +1255,7 @@ Protected Class RegionDatesWorked
 		  
 		  If nStart > nEnd Then Return list // Empty
 		  If nStart = nEnd Then
-		    Var temp As DateAndCaption = Me.AnnualEventMatchDateAndCaption(nStart)
+		    Var temp As DateAndCaption = Me.IsAnnualEventDateAndCaption(nStart)
 		    If temp <> Nil Then list.Add temp
 		    Return list
 		  End
@@ -1425,7 +1425,7 @@ Protected Class RegionDatesWorked
 		    
 		    // Is this a non-worked event ?
 		    // This is the most time-consuming part to calculate, so it is calculated last only if necessary.
-		    If Me.AnnualEventMatch(dt, True) Then Continue // Skip
+		    If Me.IsAnnualEvent(dt, True) Then Continue // Skip
 		    
 		    counter = counter + 1
 		    
@@ -1483,7 +1483,7 @@ Protected Class RegionDatesWorked
 		    
 		    // Is this a non-worked event ?
 		    // This is the most time-consuming part to calculate, so it is calculated last only if necessary.
-		    If Me.AnnualEventMatch(dt, True) Then counter = counter + 1
+		    If Me.IsAnnualEvent(dt, True) Then counter = counter + 1
 		    
 		  Loop Until counter = abs(number)
 		  
@@ -1587,7 +1587,7 @@ Protected Class RegionDatesWorked
 		    // Is this a non-worked event ?
 		    // This is the most time-consuming part to calculate, so it is calculated last only if necessary.
 		    
-		    If AnnualEventMatch(d, True) Then 
+		    If IsAnnualEvent(d, True) Then 
 		      list.Add New DateTime(d)
 		    end
 		    
@@ -1642,7 +1642,7 @@ Protected Class RegionDatesWorked
 		    // Is this a non-worked event ?
 		    // This is the most time-consuming part to calculate, so it is calculated last only if necessary.
 		    
-		    s = AnnualEventMatchCaption(d, True)
+		    s = IsAnnualEventCaption(d, True)
 		    if s <> "" then list.Add new DateAndCaption(DateTime(d), s)
 		    
 		    
