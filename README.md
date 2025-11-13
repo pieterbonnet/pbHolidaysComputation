@@ -406,7 +406,7 @@ For example, imagine a holiday that falls on the day after February 28th.
 The calculation will give March 1st except for leap years where it will give February 29th.
 
 #### :warning: Important note on the combination and order of the shifts
-The calculation function will first consider the MondayIfSunday and FridayIfSaturday properties, which are cumulative. If these properties are used, it will stop there and ignore any other offsets.
+The calculation function will first consider the MondayIfSunday and FridayIfSaturday properties, which are cumulative. If these properties are used, it will STOP there and IGNORE any other offsets.
 Otherwise, it will apply only ONE of the following conditions in the order below:
 
  1. AlwaysPreviousWeekDay 
