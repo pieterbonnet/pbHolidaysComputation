@@ -1,5 +1,5 @@
 #tag DesktopWindow
-Begin DesktopWindow wNewOrEditDefinition
+Begin DesktopWindow wNewOrEditAnnualEvent
    Backdrop        =   0
    BackgroundColor =   &cFFFFFF
    Composite       =   False
@@ -2141,6 +2141,9 @@ End
 		    btnOK.Caption = "&OK"
 		    LoadEvent(d)
 		  end
+		  
+		  dtStart.SelectedDate = New DateTime(1607,1,1) // For Windows API compatibility
+		  dtEnd.SelectedDate = new DateTime(3999,12,31)
 		  
 		  Me.ShowModal
 		  

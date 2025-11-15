@@ -612,6 +612,7 @@ Protected Class MultiRegionDatesWorked
 		    
 		    Try
 		      ae = AnnualEventFix.FromString(rs.Column("value"))
+		      if ae = nil then Break
 		    Catch e As InvalidArgumentException
 		      Break
 		      Continue

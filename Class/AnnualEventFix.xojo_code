@@ -321,7 +321,7 @@ Implements AnnualEvent
 		    end
 		    
 		    Var adf As New AnnualEventFix
-		    If s(1).Trim <> "" Then adf.Caption = DecodeBase64(s(1))
+		    If s(1).Trim <> "" Then adf.Caption = DecodeBase64(s(1)).DefineEncoding(Encodings.UTF8)
 		    
 		    adf.StartOfValidity = DateTime.FromString(s(2))
 		    adf.EndOfValidity = DateTime.FromString(s(3))
@@ -389,7 +389,7 @@ Implements AnnualEvent
 		      Return Nil
 		    end
 		    
-		    If s(1).Trim <> "" Then ae.Caption = DecodeBase64(s(1))
+		    If s(1).Trim <> "" Then ae.Caption = DecodeBase64(s(1)).DefineEncoding(Encodings.UTF8)
 		    
 		    ae.StartOfValidity = DateTime.FromString(s(2))
 		    ae.EndOfValidity = DateTime.FromString(s(3))
@@ -409,7 +409,7 @@ Implements AnnualEvent
 		      Return nil
 		    End
 		    
-		    If s(1).Trim <> "" Then ae.Caption = DecodeBase64(s(1))
+		    If s(1).Trim <> "" Then ae.Caption = DecodeBase64(s(1)).DefineEncoding(Encodings.UTF8)
 		    
 		    ae.StartOfValidity = DateTime.FromString(s(2))
 		    ae.EndOfValidity = DateTime.FromString(s(3))
@@ -429,7 +429,7 @@ Implements AnnualEvent
 		    
 		    Var aw as new AnnualEventWeekDay
 		    
-		    If s(1).Trim <> "" Then aw.Caption = DecodeBase64(s(1))
+		    If s(1).Trim <> "" Then aw.Caption = DecodeBase64(s(1)).DefineEncoding(Encodings.UTF8)
 		    
 		    aw.StartOfValidity = DateTime.FromString(s(2))
 		    aw.EndOfValidity = DateTime.FromString(s(3))
@@ -440,8 +440,6 @@ Implements AnnualEvent
 		    aw.Month = s(7).ToInteger
 		    aw.WeekDay = s(8).ToInteger
 		    aw.Rank = s(9).ToInteger
-		    
-		    
 		    
 		    Select Case s(10).Left(1)
 		      
@@ -470,6 +468,8 @@ Implements AnnualEvent
 		      aw.AddDays = x
 		      
 		    end Select
+		    
+		    Return aw
 		    
 		  Else
 		    

@@ -52,7 +52,7 @@ Begin DesktopWindow wDemo
       Top             =   10
       Transparent     =   False
       Underline       =   False
-      Value           =   0
+      Value           =   1
       Visible         =   True
       Width           =   863
       BeginDesktopSegmentedButton DesktopSegmentedButton SegmentedButton1
@@ -4610,7 +4610,7 @@ End
 		    
 		  case 2
 		    
-		    Var w As New wNewOrEditDefinition
+		    Var w As New wNewOrEditAnnualEvent
 		    Var d As AnnualEvent = w.Charge
 		    
 		    If d = Nil Then Exit Sub
@@ -4721,6 +4721,7 @@ End
 		Sub Pressed()
 		  If txtNewRegion.Text.Trim = "" Then Exit Sub
 		  Self.Regions.Add New RegionDatesWorked(txtNewRegion.Text.Trim.Lowercase)
+		  PopulateLstRegions
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -4752,7 +4753,7 @@ End
 		    
 		  case 2
 		    
-		    Var w As New wNewOrEditDefinition
+		    Var w As New wNewOrEditAnnualEvent
 		    Var d As AnnualEvent = w.Charge(Self.Regions(lstRegions.SelectedRowIndex).AnnualEvents(lstRegionItems.SelectedRowIndex))
 		    If d = Nil Then Exit Sub
 		    
@@ -5857,7 +5858,7 @@ End
 		    
 		  case 2 // Annual events
 		    
-		    Var w As New wNewOrEditDefinition
+		    Var w As New wNewOrEditAnnualEvent
 		    Var d As AnnualEvent = w.Charge(Self.Regions(lstRegions.SelectedRowIndex).AnnualEvents(Me.SelectedRowIndex))
 		    If d = Nil Then Exit Sub
 		    
