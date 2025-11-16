@@ -41,7 +41,7 @@ Protected Class ClosurePeriod
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Shared Function FromString(StringDefinition as String) As ClosurePeriod
+		Shared Function FromString(value as String) As ClosurePeriod
 		  Var s() As String = StringDefinition.Split("|")
 		  If s.LastIndex <> 2 Then 
 		    Raise new InvalidArgumentException
@@ -64,10 +64,24 @@ Protected Class ClosurePeriod
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function LastDayOfWork() As DateTime
+		  Var d As New DateTime(Me.FirstDay.Year, Me.FirstDay.Month, Me.FirstDay.Day, 23, 59, 59)
+		  Return d.SubtractInterval(0,0,1)
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function ReturnToWork() As DateTime
+		  Var d As New DateTime(Me.FirstDay.Year, Me.FirstDay.Month, Me.FirstDay.Day, 0, 0, 0)
+		  Return d.AddInterval(0,0,1)
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function ToString() As String
 		  Var s as string
 		  
-		  s = s + EncodeBase64(Me.Caption,0) 
+		  s = s + EncodeBase64(Me.Caption,0) + "|"
 		  s = s + Me.FirstDay.ToString("yyyy-MM-dd") + "|"
 		  s = s + Me.LastDay.ToString("yyyy-MM-dd") 
 		  

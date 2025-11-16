@@ -4806,7 +4806,7 @@ End
 		  Self.Regions.Add New RegionDatesWorked("usa-arizona", "Arizona")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Arizona)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-california", "California"
+		  Self.Regions.Add New RegionDatesWorked("usa-california", "California")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.California)
 		  
 		  Self.Regions.Add New RegionDatesWorked("usa-colorado", "Colorado")

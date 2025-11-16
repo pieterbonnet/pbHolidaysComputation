@@ -3,7 +3,6 @@ Protected Class App
 Inherits DesktopApplication
 	#tag Event
 		Sub Opening()
-		  
 		  Var f As FolderItem
 		  
 		  #If DebugBuild Then

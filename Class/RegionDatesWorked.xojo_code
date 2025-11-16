@@ -689,7 +689,6 @@ Protected Class RegionDatesWorked
 		    List.Add New AnnualEventWeekDay("Columbus Day",10, 2, 2) // October, the second monday
 		    List.Add New AnnualEventWeekDay("Thanksgiving",11, 5, 4) // November, the 4th thursday
 		    
-		    
 		  case usa.Florida 
 		    
 		  Case USA.Georgia 
@@ -1796,6 +1795,14 @@ Protected Class RegionDatesWorked
 			Group="Behavior"
 			InitialValue="True"
 			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Caption"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="string"
 			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
