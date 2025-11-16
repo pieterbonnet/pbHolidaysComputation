@@ -2036,6 +2036,422 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          VisualState     =   0
          Width           =   100
       End
+      Begin DesktopButton ButtonEaster23
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Great and Holy Friday"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   212
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   3
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   199
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster24
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Holy and Great Saturday"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   212
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   4
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   231
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster22
+         AllowAutoDeactivate=   True
+         Bold            =   True
+         Cancel          =   False
+         Caption         =   "Easter"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   212
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   5
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   263
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster25
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "All Saints Sunday"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   381
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   6
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   263
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster26
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Radonitsa (Monday)"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   381
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   7
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   133
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster27
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Radonitsa (Tuesday)"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   381
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   8
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   165
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster28
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Lazarus Saturday"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   43
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   9
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   263
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster29
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Saturday of Souls"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   43
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   10
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   199
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster30
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Triumph of Orthodoxy"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   43
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   11
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   231
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster31
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Triodon"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   43
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   12
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   165
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster32
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Pentecost"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   381
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   13
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   231
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster33
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Ascension of the Lord"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   381
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   14
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   199
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
+      Begin DesktopButton ButtonEaster34
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Palm Sunday"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   212
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   15
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   165
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   157
+      End
    End
    Begin DesktopButton btnOK
       AllowAutoDeactivate=   True
@@ -2956,6 +3372,123 @@ End
 		  v = v + 1
 		  
 		  txtEDDiff1.Text = v.ToString
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster23
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "-2"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster24
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "-1"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster22
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "0"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster25
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "56"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster26
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "8"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster27
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "9"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster28
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "-8"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster29
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "-57"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster30
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "-42"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster31
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "-70"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster32
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "49"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster33
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "40"
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ButtonEaster34
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = me.Caption
+		  txtEDDiff1.Text = "-7"
 		  
 		End Sub
 	#tag EndEvent

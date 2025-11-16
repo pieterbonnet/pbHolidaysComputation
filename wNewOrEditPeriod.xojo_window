@@ -11,7 +11,7 @@ Begin DesktopWindow wNewOrEditPeriod
    HasMaximizeButton=   False
    HasMinimizeButton=   False
    HasTitleBar     =   True
-   Height          =   166
+   Height          =   153
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -24,7 +24,7 @@ Begin DesktopWindow wNewOrEditPeriod
    Title           =   "Adding Closure period"
    Type            =   1
    Visible         =   True
-   Width           =   580
+   Width           =   512
    Begin DesktopLabel Label5
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -96,7 +96,7 @@ Begin DesktopWindow wNewOrEditPeriod
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   560
+      Width           =   492
    End
    Begin DesktopLabel Label16
       AllowAutoDeactivate=   True
@@ -243,7 +243,7 @@ Begin DesktopWindow wNewOrEditPeriod
       Height          =   22
       Index           =   -2147483648
       Italic          =   False
-      Left            =   398
+      Left            =   330
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -255,7 +255,7 @@ Begin DesktopWindow wNewOrEditPeriod
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   134
+      Top             =   121
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -274,7 +274,7 @@ Begin DesktopWindow wNewOrEditPeriod
       Height          =   22
       Index           =   -2147483648
       Italic          =   False
-      Left            =   490
+      Left            =   422
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -286,7 +286,7 @@ Begin DesktopWindow wNewOrEditPeriod
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   134
+      Top             =   121
       Transparent     =   False
       Underline       =   False
       Visible         =   True

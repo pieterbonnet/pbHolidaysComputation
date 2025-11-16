@@ -359,6 +359,75 @@ Implements AnnualEvent
 	#tag EndProperty
 
 
+	#tag Constant, Name = AllSaintsSunday, Type = Double, Dynamic = False, Default = \"56", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"56"
+	#tag EndConstant
+
+	#tag Constant, Name = AscensionofJesus, Type = Double, Dynamic = False, Default = \"40", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"40"
+	#tag EndConstant
+
+	#tag Constant, Name = AscensionofTheLord, Type = Double, Dynamic = False, Default = \"40", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"40"
+	#tag EndConstant
+
+	#tag Constant, Name = ChristsEntryIntoJerusalem, Type = Double, Dynamic = False, Default = \"-7", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-7"
+	#tag EndConstant
+
+	#tag Constant, Name = FeastOfOrthodoxy, Type = Double, Dynamic = False, Default = \"-42", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-42"
+	#tag EndConstant
+
+	#tag Constant, Name = GreatAndHolyFriday, Type = Double, Dynamic = False, Default = \"-2", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-2"
+	#tag EndConstant
+
+	#tag Constant, Name = GreatSabbath, Type = Double, Dynamic = False, Default = \"-1", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-1"
+	#tag EndConstant
+
+	#tag Constant, Name = HolyAndGreatSaturday, Type = Double, Dynamic = False, Default = \"-1", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-1"
+	#tag EndConstant
+
+	#tag Constant, Name = LazarusSaturday, Type = Double, Dynamic = False, Default = \"-8", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-8"
+	#tag EndConstant
+
+	#tag Constant, Name = PalmSunday, Type = Double, Dynamic = False, Default = \"-7", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-7"
+	#tag EndConstant
+
+	#tag Constant, Name = Pentecost, Type = Double, Dynamic = False, Default = \"49", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"49"
+	#tag EndConstant
+
+	#tag Constant, Name = RadonitsaMonday, Type = Double, Dynamic = False, Default = \"8", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"8"
+	#tag EndConstant
+
+	#tag Constant, Name = RadonitsaTuesday, Type = Double, Dynamic = False, Default = \"9", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"9"
+	#tag EndConstant
+
+	#tag Constant, Name = SaturdayOfSouls, Type = Double, Dynamic = False, Default = \"-57", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-57"
+	#tag EndConstant
+
+	#tag Constant, Name = SundayOfOrthodoxy, Type = Double, Dynamic = False, Default = \"-42", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-42"
+	#tag EndConstant
+
+	#tag Constant, Name = Triodon, Type = Double, Dynamic = False, Default = \"-70", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-70"
+	#tag EndConstant
+
+	#tag Constant, Name = TriumphOfOrthodoxy, Type = Double, Dynamic = False, Default = \"-42", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"-42"
+	#tag EndConstant
+
+
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="Name"

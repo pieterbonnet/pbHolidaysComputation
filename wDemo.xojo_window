@@ -4791,35 +4791,35 @@ End
 		Sub Pressed()
 		  Self.Regions.RemoveAll
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-federal")
+		  Self.Regions.Add New RegionDatesWorked("usa-federal", "Federal")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Federal)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-alabama")
+		  Self.Regions.Add New RegionDatesWorked("usa-alabama", "Alabama")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Alabama)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-alaska")
+		  Self.Regions.Add New RegionDatesWorked("usa-alaska", "Alaska")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Alaska)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-arkansas")
+		  Self.Regions.Add New RegionDatesWorked("usa-arkansas", "Arkansas")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Arkansas)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-arizona")
+		  Self.Regions.Add New RegionDatesWorked("usa-arizona", "Arizona")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Arizona)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-california")
+		  Self.Regions.Add New RegionDatesWorked("usa-california", "California"
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.California)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-colorado")
+		  Self.Regions.Add New RegionDatesWorked("usa-colorado", "Colorado")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Colorado)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-connecticut")
+		  Self.Regions.Add New RegionDatesWorked("usa-connecticut", "Connecticut")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Connecticut)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-delaware")
+		  Self.Regions.Add New RegionDatesWorked("usa-delaware", "Delaware")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Delaware)
 		  
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-dc")
+		  Self.Regions.Add New RegionDatesWorked("usa-dc", "District of Columbia")
 		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.DistrictOfColumbia)
 		  
 		  
