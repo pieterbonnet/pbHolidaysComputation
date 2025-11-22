@@ -1,7 +1,10 @@
 # pbHolidaysComputation
-Calculate holidays, closures, and working days with Xojo.
+Calculate holidays, closures, and working days with Xojo. Edit, save and restore parameters from a database.
 
-Most classes can be used alone, or you can also use them together, especially with the RegionDatesWorked and MultiRegionDatesWorked classes, for much greater efficiency.
+The repository is provided with an example project, allowing you to show how to calculate event dates and how to calculate working days, the next working day after a date, etc.
+
+Most classes can be used alone, or you can also use them togaether, especially with the RegionDatesWorked and MultiRegionDatesWorked classes, for much greater efficiency.
+Classes also allow you to save data.
 
 Regarding public holidays, it is possible to calculate:
 
@@ -43,48 +46,46 @@ Example, let's play with Delaware holidays :
        If Temp <> Nil Then holidays().Add Temp // Sometimes it's not every year (for example, the US presidential election)
     Next i
 
-The repository is provided with an example project, allowing you to show how to calculate event dates and how to calculate working days, the next working day after a date, etc.
-
 This is old Real Studio code updated to meet Xojo's API 2.0 requirements. There is still work to be done, particularly regarding documentation... Feel free to share your feedback.
 # Table of contents
 
-[Features and generalities](#features)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object class diagram](#object-class-diagram)<br>
-[Annual Event Classes](#the-4-classes-that-implement-the-annualevent-interface)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Common methods and properties](#cmap)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Common properties](#common-properties)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Common methods](#common-methods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AnnualEventFix Class](#annualeventfix-class)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation of properties and methods](#aefpresentation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Properties](#aefproperties)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Methods](#aefmethods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Shared methods](#aefsharedmethods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AnnualEventEaster & AnnualEventOrthodoxEaster Classes](#annualeventeaster-and-annualeventorthodoxeaster-classes)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation of properties and methods](#aeepresentation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Properties](#aeeproperties)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Methods](#aeemethods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Constants](#aeeconstants)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Shared methods](#aeesharedmethods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[AnnualEventWeekDay Class](#annualeventweekday-class)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation of properties and methods](#aewpresentation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Properties](#aewproperties)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Methods](#aewmethods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Shared methods](#aewsharedmethods)<br>
-[ClosurePeriod Class](#closureperiod-class)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation of properties and methods](#cppresentation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Properties](#cpproperties)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Methods](#cpmethods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Shared methods](#cpsharedmethods)<br>
-[RegionDatesWorked Class](#regiondatesworked-class)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation of properties and methods](#rdwpresentation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Properties](#rdwproperties)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Methods](#rdwmethods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Shared methods](#dprsharedmethods)<br>
-[MultiRegionDatesWorked Class](#multiregiondatesworked-class)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation of properties and methods](#mrdwpresentation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Properties](#mrdwproperties)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Methods](#mrdwmethods)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Shared methods](#mrdwsharedmethods)<br>
+[🚀 Features and generalities](#features)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔦Object class diagram](#object-class-diagram)<br>
+[📆 Annual Event Classes](#the-4-classes-that-implement-the-annualevent-interface)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🛠️Common methods and properties](#cmap)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔤 Common properties](#🔤-common-properties)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[⚡ Common methods](#⚡-common-methods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🧊  AnnualEventFix Class](#jump-aef-class)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔎 Presentation of properties and methods](#aefpresentation)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔤 Properties](#aefproperties)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[⚡ Methods](#aefmethods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[✨ Shared methods](#aefsharedmethods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🧊  AnnualEventEaster & 🧊  AnnualEventOrthodoxEaster Classes](#jump-aee-class)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔎 Presentation of properties and methods](#aeepresentation)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔤 Properties](#aeeproperties)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[⚡ Methods](#aeemethods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[𝞹 Constants](#aeeconstants)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[✨ Shared methods](#aeesharedmethods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[🧊  AnnualEventWeekDay Class](#jump-aew-class)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔎 Presentation of properties and methods](#aewpresentation)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔤 Properties](#aewproperties)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[⚡ Methods](#aewmethods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[✨ Shared methods](#aewsharedmethods)<br>
+[🧊  ClosurePeriod Class](#jump-cp-class)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔎 Presentation of properties and methods](#cppresentation)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔤 Properties](#cpproperties)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[⚡ Methods](#cpmethods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[✨ Shared methods](#cpsharedmethods)<br>
+[🧊  RegionDatesWorked Class](#jump-rdw-class)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔎 Presentation of properties and methods](#rdwpresentation)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔤 Properties](#rdwproperties)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[⚡ Methods](#rdwmethods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[✨ Shared methods](#dprsharedmethods)<br>
+[🧊  MultiRegionDatesWorked Class](#jump-mrdw-class)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔎 Presentation of properties and methods](#mrdwpresentation)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🔤 Properties](#mrdwproperties)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[⚡ Methods](#mrdwmethods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[✨ Shared methods](#mrdwsharedmethods)<br>
 # Features
 <a id=generalities></a>
 The features consist of 8 classes.
@@ -166,13 +167,13 @@ F --> I(Working days of week in Alaska)
 |[AnnualEventWeekDay Class](#annualeventweekday-class)|for events whose date is calculated based on a fixed month and the week number of a weekday (Labor Day, Thanksgiving, etc.) 
 
 <a id="cmap"></a>
-### Common methods and properties (implemented by the interface)
+### 🛠️ Common methods and properties (implemented by the interface)
 Note: An interface defines only methods and not properties. "Properties" are a pair of overloaded methods that simulate real properties.
 
     Public Sub Caption(assigns s as string) 
     Public Function Caption() As string
 
-### Common properties
+### 🔤 Common properties
 | Name|Type                       
 |----------------|------------------------------- |
 |[Caption](#cpcaption) |String
@@ -225,8 +226,14 @@ Type : Variant
 
 Variable to put whatever you need in it
 
+    Var PresidentialElection As New AnnualEventWeekDay("U.S. Presidential Election",11,2,1) // The first monday of november
+    PresidentialElection.NextWeekDay = 3 // Shift to the next tuesday (so the next tuesday after the first monday)
+    PresidentialElection.CycleFirstYear = 1792  // The event is not every year
+    PresidentialElection.CycleYearDuration = 4
+    PresidentialElection.Tag = 3.14159 // Value you will need later
+
 [:top: Back to Table of contents](#table-of-contents)
-### Common methods
+### ⚡ Common methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[DateValue](#cmdatevalue)|Year as integer|DateTime
@@ -350,13 +357,14 @@ For VictoriaDay, returns "F|VmljdG9yaWEgRGF5|0001-01-01|3999-12-31|1900|1|1|5|25
 **Note:** You can create an AnnualEvent object from a value generated by ToString using the shared FromString method of each class based on AnnualEvent.
 
 [🔝 Back to Table of contents](#table-of-contents)
-## AnnualEventFix Class
+<a id="jump-aef-class"></a>
+## 🧊  AnnualEventFix Class
 In addition to the [common properties](#common-properties) and [common methods](#common-methods) of the interface, here are the properties specific to this class.
 
 <a id="aefpresentation"></a>
-### Presentation of properties and methods
+### 🔎 Presentation of properties and methods
 <a id="aefpresentationp"></a>
-#### Properties 
+#### 🔤 Properties 
 | Name|Type                       
 |----------------|------------------------------- |
 |[Month](#aefmonth) |Integer
@@ -369,14 +377,14 @@ In addition to the [common properties](#common-properties) and [common methods](
 |[AlwaysPreviousWeekDay](#aefnwd)|Integer
 |[AddDays](#aefadddays)|Integer
 <a id="aefpresentationm"></a>
-#### Methods
+#### ⚡ Methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[Constructor](#aefconstructor1)|lCaption as string = "", lMonth as Integer = 1, lDay as Integer = 1, lFridayIfSaturday as Boolean = False, lMondayIfSunday as Boolean = False
 |[Constructor](#aefconstructor2)|copy as AnnualEventFix|
 |[Constructor](#aefconstructor3)|a as AnnualEvent|
 <a id="aefpresentations"></a>
-#### Shared methods
+#### ✨ Shared methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[FromString](#aeffs)|value as string|AnnualEvent
@@ -385,7 +393,7 @@ In addition to the [common properties](#common-properties) and [common methods](
 <br>
 
 <a id="aefproperties"></a>
-### Properties 
+### 🔤 Properties 
 
 <a id="aefmonth"></a>
 ##### Month, Day
@@ -486,7 +494,7 @@ Otherwise, it will apply only ONE of the following conditions in the order below
 [🔝 Back to presentation of properties and methods](#aefpresentationp)<br>
 [🔝 Back to Table of contents](#table-of-contents)
 <a id="aefmethods"></a>
-### Methods
+### ⚡ Methods
 <a id="aefconstructor1"></a>
 ##### Constructor(lCaption as string = "", lMonth as Integer = 1, lDay as Integer = 1, lFridayIfSaturday as Boolean = False, lMondayIfSunday as Boolean = False)
 Creates a new object AnnualEventFix  whose properties are defined in the method arguments.
@@ -518,21 +526,22 @@ Next i
 [🔝 Back to presentation of properties and methods](#aefpresentationm)<br>
 [🔝 Back to Table of contents](#table-of-contents)
 <a id=aefsharedmethods></a>
-### Shared methods
+### ✨ Shared methods
 <a id=aeffs></a>
 ##### FromString(value) as String
 Returns an AnnualEvent interface object encoded in the string value.
-**Note:** It does not return an AnnualEventFix object, but rather an AnnualEvent object.
+**Note:** It does **not return** an AnnualEventFix object, but rather an AnnualEvent object.
 
     Var VictoriaDay As New AnnualEventFix("Victoria Day",5,25) // May, 25th
+    VictoriaDay.AlwaysPreviousWeekDay = 2
+    Var s as string = VictoriaDay.ToString // Storing object properties in string format
     
-    Var s as string = VictoriaDay.ToString
-    
-    Var ae As AnnualEvent = AnnualEventFix.FromString(s) // Return a AnnualEvent (NOT a AnnualEventFix)
+    Var ae As AnnualEvent = AnnualEventFix.FromString(s) // Return a AnnualEvent (NOT a AnnualEventFix) // Reading the string to construct an AnnualEvent object
     Var aeFix as new AnnualEventFix(ae) // Creating a AnnualEventFix from then AnnualEvent
 [🔝 Back to presentation of properties and methods](#aefpresentations)<br>
 🔝 [Back to Table of contents](#table-of-contents)
-## AnnualEventEaster and AnnualEventOrthodoxEaster Classes
+<a id="jump-aee-class"></a>
+## 🧊  AnnualEventEaster and 🧊  AnnualEventOrthodoxEaster Classes
 
 In addition to the [common properties](#common-properties) and [common methods](#common-methods) of the interface, here are the properties specific to this class.
 
@@ -540,21 +549,21 @@ The only difference between the AnnualEventOrthodoxEaster class and the AnnualEv
 
 Note that the date calculated by AnnualEventOrthodoxEaster is the date of the event in the Gregorian calendar.
 <a id="aeepresentation"></a>
-### Presentation of properties and methods
+### 🔎 Presentation of properties and methods
 <a id="aeepresentationp"></a>
-#### Properties 
+#### 🔤 Properties 
 | Name|Type                       
 |----------------|------------------------------- |
 |[DeltaEaster](#aeedelta) |Integer
 <a id="aeepresentationm"></a>
-#### Methods
+#### ⚡ Methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[Constructor](#aeeconstructor1)|lCaption as string = "", lDeltaEaster as Integer = 0
 |[Constructor](#aeeconstructor2)|copy as AnnualEventEaster|
 |[Constructor](#aeeconstructor3)|a as AnnualEvent|
 <a id="aeepresentations"></a>
-#### Shared methods
+#### ✨ Shared methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[FromString](#aeefs)|value as string|AnnualEvent
@@ -564,17 +573,20 @@ Note that the date calculated by AnnualEventOrthodoxEaster is the date of the ev
 <br>
 
 <a id="aeeproperties"></a>
-### Properties 
+### 🔤 Properties 
 <a id="aeedelta"></a>
-##### DeltaEster
+##### DeltaEaster
 Type : Integer
 
 The number of days to add or subtract from the date of Easter to calculate the date. If 0, it is Easter Sunday.
 
+    Var PalmSunday as New AnnualEventEaster
+    PalmSunday.DeltaEaster = -7
+
 [🔝 Back to presentation of properties and methods](#aeepresentationp)<br>
 [🔝 Back to Table of contents](#table-of-contents)
 <a id="aeeconstants"></a>
-#### Constants
+#### 𝞹 Constants
 A number of constants are included with this class.
 
 For example, AnnualEventEaster.AshWednesday equals -46.
@@ -586,7 +598,7 @@ Since some holidays have multiple names, you may have several constants with the
 [🔝 Back to Table of contents](#table-of-contents)
 
 <a id="aeemethods"></a>
-### Methods
+### ⚡ Methods
 <a id="aeeconstructor1"></a>
 ##### Constructor(lCaption as string = "", lDeltaEaster as Integer = 0)
   Creates a new object AnnualEventEaster (or AnnualEventOrthodoxEaster) whose properties are defined in the method arguments.
@@ -624,7 +636,7 @@ Next i
 [🔝 Back to Table of contents](#table-of-contents)
 
 <a id=aeesharedmethods></a>
-### Shared methods
+### ✨ Shared methods
 <a id=aeefs></a>
 ##### FromString(value) as String
 Returns an AnnualEvent interface object encoded in the string value.
@@ -632,7 +644,7 @@ Returns an AnnualEvent interface object encoded in the string value.
 
     Var MardiGras As New AnnualEventEaster("Mardi gras",-47) 
     
-    Var s as string = MardiGras.ToString
+    Var s as string = MardiGras.ToString 
     
     Var ae As AnnualEvent = AnnualEventFix.FromString(s) // Return a AnnualEvent (NOT a AnnualEventEaster)
     Var aeEaster as new AnnualEventEaster(ae) // Creating a AnnualEventEaster from then AnnualEvent
@@ -647,12 +659,13 @@ Returns the date of Easter Sunday for the requested year.
 [🔝 Back to presentation of properties and methods](#aeepresentations)<br>
 [🔝 Back to Table of contents](#table-of-contents)
 
-## AnnualEventWeekDay Class
+<a id=jump-aew-class></a>
+## 🧊  AnnualEventWeekDay Class
 In addition to the [common properties](#common-properties) and [common methods](#common-methods) of the interface, here are the properties specific to this class.
 <a id="aewpresentation"></a>
-### Presentation of properties and methods
+### 🔎 Presentation of properties and methods
 <a id="aewpresentationp"></a>
-#### Properties
+#### 🔤 Properties
 | Name|Type                       
 |----------------|------------------------------- |
 |[Month](#aewmonth) |Integer
@@ -662,14 +675,14 @@ In addition to the [common properties](#common-properties) and [common methods](
 |[PreviousWeekDay](#aewnwd)|Integer
 |[AddDays](#aewad)|Integer
 <a id="aewpresentationm"></a>
-#### Methods
+#### ⚡ Methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[Constructor](#aewconstructor1)|lCaption as string = "", lMonth as Integer = 1, lWeekDay as Integer = 1, lRank as Integer = 1
 |[Constructor](#aewconstructor2)|copy as AnnualEventWeekDay|
 |[Constructor](#aewconstructor3)|a as AnnualEvent|
 <a id="aewpresentations"></a>
-#### Shared methods
+#### ✨ Shared methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[FromString](#aewfs)|value as string|AnnualEvent
@@ -679,7 +692,7 @@ In addition to the [common properties](#common-properties) and [common methods](
 <br>
 
 <a id="aewproperties"></a>
-### Properties 
+### 🔤 Properties 
 <a id="aewmonth"></a>
 ##### Month, WeekDay, Rank
 Type : Integer
@@ -736,7 +749,7 @@ The algorithm will apply only ONE of the following conditions in the order below
 [🔝 Back to presentation of properties and methods](#aewpresentationp)<br>
 [🔝 Back to Table of contents](#table-of-contents)
 <a id="aewmethods"></a>
-### Methods
+### ⚡ Methods
 <a id="aewconstructor1"></a>
 ##### Constructor(lCaption as string = "", lMonth as Integer = 1, lWeekDay as Integer = 1, lRank as Integer = 1)
  Creates a new object AnnualEventWeekDay whose properties are defined in the method arguments.
@@ -781,28 +794,29 @@ In the example below, Events() is a array of AnnualEvent
 [🔝 Back to Table of contents](#table-of-contents)
 <a id="aewsharedmethods"></a>
 <a id="aewfs"></a>
-### Shared methods
+### ✨ Shared methods
 ##### FromString(value) as String
 Returns an AnnualEvent interface object encoded in the string value.
 **Note:** It does not return an AnnualEventWeekDay object, but rather an AnnualEvent object.
 
     Var ThanksGiving As New AnnualEventWeekDay("Thanksgiving", 11, 5, 4) // The fourth Thursday of November
     
-    Var s as string = ThanksGiving.ToString
+    Var s as string = ThanksGiving.ToString // Storing object properties in string format
     
     Var ae As AnnualEvent = AnnualEventWeekDay.FromString(s) // Return a AnnualEvent (NOT a AnnualEventWeekDay)
     Var aeWeek as new AnnualEventWeekDay(ae) // Creating a AnnualEventWeekDay from then AnnualEvent
 
 [🔝 Back to presentation of properties and methods](#aewpresentationp)<br>
 [🔝 Back to Table of contents](#table-of-contents)
-## ClosurePeriod Class
+<a id="jump-cp-class"></a>
+## 🧊  ClosurePeriod Class
 This class is used to define closure or vacation periods.
 
 Its main purpose is to add it to the ClosurePeriods array of a RegionDatesWorked class.
 <a id="cppresentation"></a>
-### Presentation of properties and methods
+### 🔎 Presentation of properties and methods
 <a id="cppresentationp"></a>
-#### Properties 
+#### 🔤 Properties 
 | Name|Type                       
 |----------------|------------------------------- |
 |[Caption](#cpcaption) |Integer
@@ -810,7 +824,7 @@ Its main purpose is to add it to the ClosurePeriods array of a RegionDatesWorked
 |[LastDay](#cpfirstday)  |Integer
 |[Tag](#cptag)  |Variant
 <a id="cppresentationm"></a>
-#### Methods
+#### ⚡ Methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[Constructor](#cpconstructor1)|lFirstDay as DateTime = Nil, lLastDay as DateTime = Nil, lCaption as string = ""
@@ -821,7 +835,7 @@ Its main purpose is to add it to the ClosurePeriods array of a RegionDatesWorked
 |[ReturnToWork](#cprtw)||DateTime
 |[ToString](#cpts)||DateTime
 <a id="cppresentations"></a>
-#### Shared methods
+#### ✨ Shared methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[FromString](#cpfs)|value as string|ClosurePeriod
@@ -829,18 +843,30 @@ Its main purpose is to add it to the ClosurePeriods array of a RegionDatesWorked
 <br>[🔝 Back to Table of contents](#table-of-contents)
 
 <a id="cpproperties"></a>
-### Properties
+### 🔤 Properties
 <a id="cpcaption"></a>
 ##### Caption
 Type : string
 
 Defines the caption of the period.
+
+```
+Var SummerHolidays as new ClosurePeriod
+SurmmerHolidays.FirstDay = New DateTime(2025,6,8)
+SurmmerHolidays.LastDay = New DateTime(2025,8,31)
+SurmmerHolidays.Caption = "Summer Holidays 2025"
+```
 <a id="cpfirstday"></a>
 [🔝 Back to presentation of properties and methods](#cppresentationp)
 ##### FirstDay, LastDay
 Type : DateTime
 
 These define the first and last days of the period.
+```
+Var SummerHolidays as new ClosurePeriod
+SurmmerHolidays.FirstDay = New DateTime(2025,6,8)
+SurmmerHolidays.LastDay = New DateTime(2025,8,31)
+```
 
 Note that when you assign these values, the first day is automatically set to 00:00:00 and the last day to 23:59:59.
 
@@ -848,18 +874,24 @@ Note that when you assign these values, the first day is automatically set to 00
 ##### Tag
 Type : Variant
 
-Variable to put whatever you need in it
+Variable to put whatever you need in it.
+
+Var SummerHolidays as new ClosurePeriod
+SurmmerHolidays.FirstDay = New DateTime(2025,6,8)
+SurmmerHolidays.LastDay = New DateTime(2025,8,31
+SummerHolidays.Tag = 3.14159 // Value you will need later
+
 
 [🔝 Back to presentation of properties and methods](#cppresentationp)<br>
 [🔝 Back to Table of contents](#table-of-contents)
 
 <a id="cpmethods"></a>
-### Methods
+### ⚡ Methods
 <a id="cpconstructor1"></a>
 ##### Constructor(lFirstDay as DateTime = Nil, lLastDay as DateTime = Nil, lCaption as string = "")
 Creates a new object ClosurePeriods whose properties are defined in the method arguments.
 
-    Var SummerHolidays as new  ClosurePeriod(New DateTime(2025, 6,8), New DateTime(2025, 8,31), "Summer Break")
+    Var SummerHolidays as new ClosurePeriod(New DateTime(2025, 6,8), New DateTime(2025, 8,31), "Summer Break")
 [🔝 Back to presentation of properties and methods](#cppresentationm)
 <a id="cpconstructor2"></a>
 ##### Constructor(copy as ClosurePeriod )
@@ -873,6 +905,11 @@ Var dDupli as New ClosurePeriod(SummerHolidays)
 <a id="cpduration"></a>
 ##### Duration() as integer
 Returns the duration in days of the period
+
+```
+Var SummerHolidays as new ClosurePeriod(New DateTime(2025,6,8), New DateTime(2025,8,31), "Summer Break")
+MessageBox SummerHolidays.Duration.ToString // 85
+```
 
 [🔝 Back to presentation of properties and methods](#cppresentationm)
 <a id="cpinclued"></a>
@@ -917,7 +954,7 @@ For SpringBreak, returns U3ByaW5nIEJyZWFr|2026-04-11|2026-04-19
 [🔝 Back to Table of contents](#table-of-contents)
 
 <a id="cpsharedmethods"></a>
-### Shared methods
+### ✨ Shared methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[FromString](#cpfs)|Value as string|ClosurePeriod 
@@ -929,8 +966,8 @@ Returns an ClosurePeriod object encoded in the string value.
 
 [🔝 Back to presentation of properties and methods](#cppresentations)<br>
 [🔝 Back to Table of contents](#table-of-contents)
-
-## RegionDatesWorked Class
+<a id="jump-rdw-class"></a>
+## 🧊 RegionDatesWorked Class
 
 This class allows you to manage closure periods, non-working events, and working or non-working days of the week.
 By combining these three elements, it helps you calculate the list of working days, the list of non-working days, the next working day, etc.
@@ -941,9 +978,9 @@ The class has four properties for this:
  -  A WorkingWeekDays object, which allows you to specify which days of the week are worked
  - A RegionIdentifier property (type variant), to distinguish the object (for example "usa-florida"), if you are    working with multiple regions.
 <a id="rdwpresentation"></a>
-### Presentation of properties and methods
+### 🔎 Presentation of properties and methods
 <a id="rdwpresentationp"></a>
-#### Properties 
+#### 🔤 Properties 
 | Name|Type                       
 |----------------|------------------------------- |
 |[Identifier](#rdwidentifier) |Variant
@@ -953,7 +990,7 @@ The class has four properties for this:
 |[WorkingWeekDay](#rdwwwd)  |dprWorkingWeekDays
 |[Tag](#rdwtag)|Variant
 <a id="rdwpresentationm"></a>
-#### Methods
+#### ⚡ Methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[Constructor](#rdwconstructor1)|lIdentifier as variant = Nil
@@ -989,7 +1026,7 @@ The class has four properties for this:
 [WorkingWeekDays.ReadString](#rdwgwdrs)|value as string|
 [WorkingWeekDays.ToString](#rdwgwdts)||string
 <a id="rdwpresentations"></a>
-#### Shared methods
+#### ✨ Shared methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[AnnualEventsBelgium](#dprsharedmethodsbelgium)|Region as Belgium = Belgium.NationauxEnFrancais, PublicService as Boolean = True|AnnualEvents()
@@ -1001,7 +1038,7 @@ The class has four properties for this:
 <br>[🔝 Back to Table of contents](#table-of-contents)
 
 <a id=rdwproperties></a>
-### Properties
+### 🔤 Properties
 <a id="rdwidentifier"></a>
 ##### Identifier
 Type : Variant
@@ -1102,7 +1139,7 @@ Variable to put whatever you need in it.
 [🔝 Back to Table of contents](#table-of-contents)
 
 <a id=rdwmethods></a>
-### Methods
+### ⚡ Methods
 <a id=rdwconstructor1></a>
 ##### Constructor (lIdentifier as variant, lCaption as string= "")
 Create a new object RegionDatesWorked and assign the Identifier and Caption property
@@ -1318,7 +1355,7 @@ The SQL definition of a database table is given [here](#expected-structure-of-th
 [🔝 Back to presentation of properties and methods](#rdwpresentationm)<br>
 [🔝 Back to Table of contents](#table-of-contents)
 <a id=dprsharedmethods></a>
-### Shared methods
+### ✨ Shared methods
 <a id=dprsharedmethodsbelgium></a>
 ##### AnnualEventsBelgium(Region as RegionDatesWorked.Belgium = Belgium.NationauxEnFrancais, PublicService as Boolean = True)
 Returns an array of AnnualEvent objects containing the holidays of Belgium. The Belgium enumeration allows you to choose the region. For common holidays (national holidays), the enumeration contains 3 sets, each named in one of the three national languages.
@@ -1392,7 +1429,8 @@ The SQL definition of a database table is given [here](#expected-structure-of-th
 
 [🔝 Back to presentation of properties and methods](#rdwpresentations)<br>
 [🔝 Back to Table of contents](#table-of-contents)
-## MultiRegionDatesWorked Class
+<a id="jump-mrdw-class"></a>
+## 🧊 MultiRegionDatesWorked Class
 This class allows you to manipulate several RegionDatesWorked classes.
 
 The methods are mostly the same.
@@ -1405,15 +1443,15 @@ Each RegionDatesWorked object has an Enabled property, which controls whether it
     MyRegionDatesWorked.Regions(3).Enabled = False
 
 <a id="mrdwpresentation"></a>
-### Presentation of properties and methods
+### 🔎 Presentation of properties and methods
 <a id="mrdwpresentationp"></a>
-#### Properties 
+#### 🔤Properties 
 | Name|Type                       
 |----------------|------------------------------- |
 |[Regions()](#mrdwregions) |Array of RegionDatesWorked
 |[Tag](#mrdwtag)|Variant
 <a id="mrdwpresentationm"></a>
-#### Methods
+#### ⚡Methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[Constructor](#mrdwconstructor)||
@@ -1433,7 +1471,7 @@ Each RegionDatesWorked object has an Enabled property, which controls whether it
 |[NonWorkingDays](#mrdwnwd)|starting as DateTime, ending as DateTime|DateTime()
 |[NonWorkingDays](#mrdwnwd)|Year as integer|DateTime()
 <a id="mrdwpresentations"></a>
-#### Shared methods
+#### ✨ Shared methods
 | Name|Parameters|Returned type
 |----------------|----------|--------------------- |
 |[LoadAnnualEventsFromRowSet](#mrdwsharedlae)|regions() as RegionDatesWorked, rs as RowSet, Encoding as TextEncoding = Nil|
@@ -1444,7 +1482,7 @@ Each RegionDatesWorked object has an Enabled property, which controls whether it
 <br>[🔝 Back to Table of contents](#table-of-contents)
 
 <a id=mrdwproperties></a>
-### Properties
+### 🔤Properties
 <a id=mrdwregions></a>
 ##### Regions()
 Type :  Array of RegionDatesWorked
@@ -1467,7 +1505,7 @@ Variable to put whatever you need in it.
 [🔝 Back to Table of contents](#table-of-contents)
 
 <a id=mrdwmethods></a>
-### Methods
+### ⚡Methods
 <a id=mrdwconstructor></a>
 ##### Constructor
 ##### Constructor(copy as MultiRegionDatesWorked)
@@ -1580,7 +1618,7 @@ All dates are initialized to 00:00:00.
 [🔝 Back to presentation of properties and methods](#mrdwpresentationm)<br>
 [🔝 Back to Table of contents](https://stackedit.io/app#table-of-contents)
 <a id=mrdwsharedmethods></a>
-### Shared Methods
+### ✨Shared Methods
 <a id=mrdwsharedlae></a>
 ##### LoadAnnualEventsFromRowSet(regions() as RegionDatesWorked, rs as RowSet, Encoding as TextEncoding = Nil)
 ##### LoadClosurePeriodsFromRowSet(regions() as RegionDatesWorked, rs as RowSet, Encoding as TextEncoding = Nil)
@@ -1634,3 +1672,4 @@ Note that for other databases, you should define the size of the text columns, a
     	PRIMARY KEY("id_period" AUTOINCREMENT)
     )
 
+[🔝 Back to Table of contents](#table-of-contents)
