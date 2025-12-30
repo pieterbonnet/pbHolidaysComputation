@@ -352,6 +352,7 @@ The "Caption" property is Base64 encoded. The "Tag" property is not included in 
 
     Var VictoriaDay As New AnnualEventFix("Victoria Day",5,25) // May, 25th
     VictoriaDay.AlwaysPreviousWeekDay = 2 // Previous Monday, even if the calculation falls on a Monday
+    MessageBox VictoriaDay.ToString
 
 For VictoriaDay, returns "F|VmljdG9yaWEgRGF5|0001-01-01|3999-12-31|1900|1|1|5|25|D-2"
 
