@@ -61,6 +61,18 @@ Protected Interface AnnualEvent
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function DbId() As Variant
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub DbId(assigns value as Variant)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function DbRow(RegionIdentifier as Variant = Nil, encoding as TextEncoding = nil) As DatabaseRow
 		  
 		End Function
@@ -91,6 +103,12 @@ Protected Interface AnnualEvent
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function IsEventDate(d as DateTime) As Boolean
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function StartOfValidity() As DateTime
 		  
 		End Function
@@ -112,12 +130,6 @@ Protected Interface AnnualEvent
 		Sub Tag(assigns value as Variant)
 		  
 		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function TestDate(d as DateTime) As Boolean
-		  
-		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0

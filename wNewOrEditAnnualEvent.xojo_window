@@ -24,7 +24,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
    Title           =   "New annual event definition"
    Type            =   1
    Visible         =   True
-   Width           =   580
+   Width           =   658
    BeginDesktopSegmentedButton DesktopSegmentedButton SegmentedButton1
       Enabled         =   True
       Height          =   24
@@ -37,7 +37,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
-      Segments        =   "Fixed day\n\nTrue\rFrom Easter\n\nFalse\rFrom Orthodox Easter\n\nFalse\rRank WeekDay\n\nFalse"
+      Segments        =   "Fixed day\n\nTrue\rEaster\n\nFalse\rOrthodox Easter\n\nFalse\rWeekDay Occurence\n\nFalse\rHebraic calendar\n\nFalse"
       SelectionStyle  =   0
       TabIndex        =   0
       TabPanelIndex   =   0
@@ -46,7 +46,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       Top             =   10
       Transparent     =   False
       Visible         =   True
-      Width           =   560
+      Width           =   638
    End
    Begin DesktopLabel Label14
       AllowAutoDeactivate=   True
@@ -203,7 +203,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       Height          =   23
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   401
+      Left            =   398
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -392,7 +392,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   20
+      Height          =   17
       Index           =   -2147483648
       Italic          =   False
       Left            =   10
@@ -438,7 +438,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   False
+      LockRight       =   True
       LockTop         =   True
       MaximumCharactersAllowed=   0
       Password        =   False
@@ -451,12 +451,12 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   67
+      Top             =   66
       Transparent     =   False
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   560
+      Width           =   638
    End
    Begin DesktopPagePanel PagePanel1
       AllowAutoDeactivate=   True
@@ -467,9 +467,9 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   False
+      LockRight       =   True
       LockTop         =   True
-      PanelCount      =   4
+      PanelCount      =   5
       Panels          =   ""
       Scope           =   0
       SelectedPanelIndex=   0
@@ -477,11 +477,11 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   ""
-      Top             =   101
+      Top             =   100
       Transparent     =   False
-      Value           =   0
+      Value           =   4
       Visible         =   True
-      Width           =   560
+      Width           =   638
       Begin DesktopLabel Label1
          AllowAutoDeactivate=   True
          Bold            =   False
@@ -509,7 +509,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -541,7 +541,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
             TextAlignment   =   0
             TextColor       =   &c000000
             Tooltip         =   ""
-            Top             =   101
+            Top             =   100
             Transparent     =   False
             Underline       =   False
             Visible         =   True
@@ -572,7 +572,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   122
+         Top             =   121
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -602,7 +602,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   122
+         Top             =   121
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -635,7 +635,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   216
+         Top             =   215
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -665,7 +665,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   215
+         Top             =   214
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -698,7 +698,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   215
+         Top             =   214
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -739,7 +739,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   215
+         Top             =   214
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
@@ -766,7 +766,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabIndex        =   12
          TabPanelIndex   =   1
          Tooltip         =   ""
-         Top             =   215
+         Top             =   214
          Transparent     =   False
          Visible         =   True
          Width           =   14
@@ -802,7 +802,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -843,7 +843,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
@@ -876,7 +876,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   262
+         Top             =   261
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -908,7 +908,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   198
+         Top             =   197
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -940,7 +940,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   198
+         Top             =   197
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -972,7 +972,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   230
+         Top             =   229
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1004,7 +1004,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   133
+         Top             =   132
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1036,7 +1036,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   166
+         Top             =   165
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1068,7 +1068,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   262
+         Top             =   261
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1100,7 +1100,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   166
+         Top             =   132
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1120,7 +1120,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          Index           =   -2147483648
          InitialParent   =   "PagePanel1"
          Italic          =   False
-         Left            =   147
+         Left            =   10
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1132,7 +1132,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   133
+         Top             =   261
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1152,7 +1152,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          Index           =   -2147483648
          InitialParent   =   "PagePanel1"
          Italic          =   False
-         Left            =   10
+         Left            =   12
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1164,7 +1164,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   198
+         Top             =   166
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1184,7 +1184,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          Index           =   -2147483648
          InitialParent   =   "PagePanel1"
          Italic          =   False
-         Left            =   10
+         Left            =   12
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1196,7 +1196,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   230
+         Top             =   197
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1228,7 +1228,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   166
+         Top             =   165
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1260,7 +1260,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   230
+         Top             =   229
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1292,7 +1292,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   133
+         Top             =   132
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1324,7 +1324,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   166
+         Top             =   165
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1356,7 +1356,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   262
+         Top             =   231
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1373,7 +1373,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          Index           =   -2147483648
          InitialParent   =   "PagePanel1"
          Italic          =   False
-         Left            =   198
+         Left            =   187
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1389,7 +1389,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1407,7 +1407,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          InitialParent   =   "PagePanel1"
          InitialValue    =   ""
          Italic          =   False
-         Left            =   198
+         Left            =   187
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1419,7 +1419,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   4
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   122
+         Top             =   121
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1437,7 +1437,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          InitialParent   =   "PagePanel1"
          InitialValue    =   ""
          Italic          =   False
-         Left            =   375
+         Left            =   364
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1449,7 +1449,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   4
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   122
+         Top             =   120
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1478,78 +1478,15 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabIndex        =   5
          TabPanelIndex   =   4
          TabStop         =   True
-         Text            =   "Shift to the                            day of the week"
+         Text            =   "Day offset"
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   170
+         Top             =   169
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   59
-      End
-      Begin DesktopPopupMenu popWDToWeekDay
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "PagePanel1"
-         InitialValue    =   ""
-         Italic          =   False
-         Left            =   161
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   0
-         SelectedRowIndex=   -1
-         TabIndex        =   7
-         TabPanelIndex   =   4
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   170
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   165
-      End
-      Begin DesktopLabel Label13
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   -2147483648
-         InitialParent   =   "PagePanel1"
-         Italic          =   False
-         Left            =   338
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   8
-         TabPanelIndex   =   4
-         TabStop         =   True
-         Text            =   "or adding days"
-         TextAlignment   =   0
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   170
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   85
+         Width           =   58
       End
       Begin DesktopTextField txtWDAdding
          AllowAutoDeactivate=   True
@@ -1569,7 +1506,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          Index           =   -2147483648
          InitialParent   =   "PagePanel1"
          Italic          =   False
-         Left            =   427
+         Left            =   70
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1586,7 +1523,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   170
+         Top             =   169
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
@@ -1602,7 +1539,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          Height          =   23
          Index           =   -2147483648
          InitialParent   =   "PagePanel1"
-         Left            =   483
+         Left            =   123
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1613,7 +1550,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabIndex        =   10
          TabPanelIndex   =   4
          Tooltip         =   ""
-         Top             =   170
+         Top             =   168
          Transparent     =   False
          Visible         =   True
          Width           =   14
@@ -1621,68 +1558,6 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          _mInitialParent =   ""
          _mName          =   ""
          _mPanelIndex    =   0
-      End
-      Begin DesktopPopupMenu popWDShiftMode
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "PagePanel1"
-         InitialValue    =   ""
-         Italic          =   False
-         Left            =   75
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   0
-         SelectedRowIndex=   -1
-         TabIndex        =   6
-         TabPanelIndex   =   4
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   170
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   74
-      End
-      Begin DesktopButton ButtonEaster15
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Cancel          =   False
-         Caption         =   "Clean Monday"
-         Default         =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "PagePanel1"
-         Italic          =   False
-         Left            =   10
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MacButtonStyle  =   0
-         Scope           =   0
-         TabIndex        =   3
-         TabPanelIndex   =   2
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   133
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   125
       End
       Begin DesktopPopupMenu popFDShiftMode
          AllowAutoDeactivate=   True
@@ -1708,7 +1583,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   215
+         Top             =   214
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1725,7 +1600,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          Index           =   -2147483648
          InitialParent   =   "PagePanel1"
          Italic          =   False
-         Left            =   375
+         Left            =   364
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1737,15 +1612,15 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabIndex        =   1
          TabPanelIndex   =   4
          TabStop         =   True
-         Text            =   "Rank"
+         Text            =   "Occurence"
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   43
+         Width           =   67
       End
       Begin DesktopLabel Label2
          AllowAutoDeactivate=   True
@@ -1774,7 +1649,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1803,7 +1678,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   167
+         Top             =   166
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -1834,7 +1709,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   167
+         Top             =   166
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -1869,7 +1744,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1910,7 +1785,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
@@ -1941,7 +1816,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   4
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   121
+         Top             =   120
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -1967,7 +1842,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabIndex        =   20
          TabPanelIndex   =   2
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Visible         =   True
          Width           =   14
@@ -1996,7 +1871,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabIndex        =   2
          TabPanelIndex   =   3
          Tooltip         =   ""
-         Top             =   101
+         Top             =   100
          Transparent     =   False
          Visible         =   True
          Width           =   14
@@ -2028,13 +1903,13 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   248
+         Top             =   247
          Transparent     =   False
          Underline       =   False
          Value           =   False
          Visible         =   True
          VisualState     =   0
-         Width           =   100
+         Width           =   329
       End
       Begin DesktopButton ButtonEaster23
          AllowAutoDeactivate=   True
@@ -2062,7 +1937,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   199
+         Top             =   198
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2094,7 +1969,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   231
+         Top             =   230
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2126,7 +2001,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   263
+         Top             =   262
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2158,7 +2033,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   263
+         Top             =   262
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2190,7 +2065,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   133
+         Top             =   132
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2222,7 +2097,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   165
+         Top             =   164
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2254,7 +2129,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   263
+         Top             =   262
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2286,7 +2161,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   199
+         Top             =   198
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2318,7 +2193,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   231
+         Top             =   230
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2350,7 +2225,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   165
+         Top             =   164
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2382,7 +2257,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   231
+         Top             =   230
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2414,7 +2289,7 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   199
+         Top             =   198
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -2446,11 +2321,458 @@ Begin DesktopWindow wNewOrEditAnnualEvent
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   165
+         Top             =   164
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   157
+      End
+      Begin DesktopLabel Label18
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   0
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Text            =   "Holiday"
+         TextAlignment   =   0
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   100
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   47
+      End
+      Begin DesktopPopupMenu popHebraicHolidayType
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         SelectedRowIndex=   -1
+         TabIndex        =   1
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   120
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   258
+      End
+      Begin DesktopLabel Label19
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   2
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Text            =   "Month"
+         TextAlignment   =   0
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   154
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   43
+      End
+      Begin DesktopLabel Label20
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   False
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   3
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Text            =   "Month"
+         TextAlignment   =   0
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   154
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   43
+      End
+      Begin DesktopPopupMenu popHMonth
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   False
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         SelectedRowIndex=   -1
+         TabIndex        =   4
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   175
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   165
+      End
+      Begin DesktopLabel Label21
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   False
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   190
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   5
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Text            =   "Day"
+         TextAlignment   =   0
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   154
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   43
+      End
+      Begin DesktopPopupMenu popHDay
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   False
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   190
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         SelectedRowIndex=   -1
+         TabIndex        =   6
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   175
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   165
+      End
+      Begin DesktopLabel Label22
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   280
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   7
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Text            =   "Set caption to"
+         TextAlignment   =   0
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   100
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   75
+      End
+      Begin DesktopButton btnHEnglish
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "English"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   280
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   8
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   121
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   60
+      End
+      Begin DesktopButton btnHEnglish1
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Spanish"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   342
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   9
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   121
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   60
+      End
+      Begin DesktopButton btnHEnglish2
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "French"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   404
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   10
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   121
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   60
+      End
+      Begin DesktopButton btnHEnglish3
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Dutch"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   466
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   11
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   121
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   60
+      End
+      Begin DesktopButton btnHEnglish4
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "German"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   527
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   12
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   121
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   60
+      End
+      Begin DesktopButton btnHEnglish5
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Hebrew"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "PagePanel1"
+         Italic          =   False
+         Left            =   588
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   13
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   121
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   60
       End
    End
    Begin DesktopButton btnOK
@@ -2466,12 +2788,12 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       Height          =   22
       Index           =   -2147483648
       Italic          =   False
-      Left            =   398
-      LockBottom      =   False
+      Left            =   476
+      LockBottom      =   True
       LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   0
       TabIndex        =   15
@@ -2497,12 +2819,12 @@ Begin DesktopWindow wNewOrEditAnnualEvent
       Height          =   22
       Index           =   -2147483648
       Italic          =   False
-      Left            =   490
-      LockBottom      =   False
+      Left            =   568
+      LockBottom      =   True
       LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   0
       TabIndex        =   16
@@ -2551,19 +2873,60 @@ End
 
 #tag WindowCode
 	#tag Method, Flags = &h0
-		Function Charge(d as AnnualEvent = Nil) As AnnualEvent
+		Function Charge(d as AnnualEvent = Nil, ShowCopyCodeButton as Boolean = True) As AnnualEvent
 		  If d <> Nil Then
 		    Me.Title = "Edit annual event definition"
 		    btnOK.Caption = "&OK"
 		    LoadEvent(d)
 		  end
 		  
-		  dtStart.SelectedDate = New DateTime(1607,1,1) // For Windows API compatibility
+		  btnCopy.Visible = ShowCopyCodeButton
+		  
+		  dtStart.SelectedDate = New DateTime(1,1,1) 
 		  dtEnd.SelectedDate = new DateTime(3999,12,31)
 		  
 		  Me.ShowModal
 		  
 		  Return AnnualEventReturned
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function HebraicEnum(index as Integer) As String
+		  Var s() as String
+		  
+		  s.add "RoshHashanah"
+		  s.add "YomKippur"
+		  s.add "SukkotFirstDay"
+		  s.add "HoshanaRabbah"
+		  s.add "SheminiAtzeret"
+		  s.add "SimchatTorah_Diaspora"
+		  s.add "SimchatTorah_Israel"
+		  s.add "HanukkahFirstDay"
+		  s.add "TuBishvat"
+		  s.add "Purim"
+		  s.add "PassoverFirstDay"
+		  s.add "PassoverSeventhDay"
+		  s.add "PassoverEighthDay_Diaspora"
+		  s.add "YomHaShoah"
+		  s.add "YomHaZikaron"
+		  s.add "YomHaZikaron_ApplyCivilShift"
+		  s.add "YomHaatzmaut"
+		  s.add "YomHaatzmaut_ApplyCivilShift"
+		  s.add "LagBaOmer"
+		  s.add "Shavuot"
+		  s.add "TzomGedaliah"
+		  s.add "TzomGedaliah_ApplyShabbatShift"
+		  s.add "AsaraBeTevet"
+		  s.add "AsaraBeTevet_ApplyShabbatShift"
+		  s.add "TaanitEsther"
+		  s.add "TaanitEsther_ApplyShabbatShift"
+		  s.add "ShivaAsarBeTammuz"
+		  s.add "ShivaAsarBeTammuz_ApplyShabbatShift"
+		  s.add "Unknown"
+		  s.add "Custom"
+		  
+		  Return s(index)
 		End Function
 	#tag EndMethod
 
@@ -2578,31 +2941,33 @@ End
 		  
 		  Select Case d
 		    
-		  Case IsA AnnualEventFix 
+		  Case IsA AnnualEventFixed 
 		    
-		    Var df As AnnualEventFix = d.DefinitionObject
+		    Var df As AnnualEventFixed = d.DefinitionObject
 		    
 		    popFDMonth.SelectedRowIndex = df.Month - 1
 		    popFDDay.SelectedRowIndex = df.day - 1
 		    cbFDMondayIfSunday.Value = df.MondayIfSunday
 		    cbFDFridayIfSaturday.Value = df.FridayIfSaturday
 		    
-		    If df.PreviousWeekDay > 0 Then
-		      popFDShiftMode.SelectedRowIndex = 0 // Previous
-		      popFDWeekDay.SelectedRowIndex = df.PreviousWeekDay
-		    ElseIf df.NextWeekDay > 0 Then
-		      popFDShiftMode.SelectedRowIndex = 1 // Next
-		      popFDWeekDay.SelectedRowIndex = df.NextWeekDay
-		    ElseIf df.AddDays <> 0 Then
-		      txtFDAdding.Text = df.AddDays.ToString
-		    End If
+		    popFDWeekDay.SelectedRowIndex = df.DesiredWeekday
+		    
+		    if df.DesiredWeekday <> 0 then
+		      If df.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.Before Then
+		        popFDShiftMode.SelectedRowIndex = 0
+		      ElseIf df.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.After then
+		        popFDShiftMode.SelectedRowIndex = 1
+		      end
+		    end
 		    
 		    
+		    chkDFAlways.Value = df.AlwaysMoveDesiredWeekday
+		    txtFDAdding.Text = df.DayOffset.ToString(locale.raw)
 		    
 		  Case IsA AnnualEventEaster
 		    
 		    Var de As AnnualEventEaster = d.DefinitionObject
-		    txtEDDiff.Text = de.DeltaEaster.ToString
+		    txtEDDiff.Text = de.DayOffset.ToString
 		    
 		    SegmentedButton1.SelectedSegmentIndex = 1
 		    PagePanel1.SelectedPanelIndex = 1
@@ -2610,7 +2975,7 @@ End
 		  Case IsA AnnualEventOrthodoxEaster
 		    
 		    Var doe As AnnualEventOrthodoxEaster = d.DefinitionObject
-		    txtEDDiff1.Text = doe.DeltaEaster.ToString
+		    txtEDDiff1.Text = doe.DayOffset.ToString
 		    
 		    SegmentedButton1.SelectedSegmentIndex = 2
 		    PagePanel1.SelectedPanelIndex = 2
@@ -2621,16 +2986,10 @@ End
 		    
 		    popWDMonth.SelectedRowIndex =  wd.Month - 1
 		    popWDWeekDay.SelectedRowIndex = wd.WeekDay - 1
-		    popWDRank.SelectedRowIndex = wd.Rank - 1
+		    popWDRank.SelectedRowIndex = wd.Occurrence - 1
 		    
-		    If wd.PreviousWeekDay > 0 Then
-		      popWDShiftMode.SelectedRowIndex = 0 // Previous
-		      popWDToWeekDay.SelectedRowIndex = wd.PreviousWeekDay
-		    ElseIf wd.NextWeekDay > 0 Then
-		      popWDShiftMode.SelectedRowIndex = 1 // Next
-		      popWDToWeekDay.SelectedRowIndex = wd.NextWeekDay
-		    ElseIf wd.AddDays <> 0 Then
-		      txtWDAdding.Text = wd.AddDays.ToString
+		    If wd.DayOffset <> 0 Then
+		      txtWDAdding.Text = wd.DayOffset.ToString
 		    End If
 		    
 		    SegmentedButton1.SelectedSegmentIndex = 3
@@ -3123,29 +3482,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events popWDToWeekDay
-	#tag Event
-		Sub Opening()
-		  Me.AddRow "0 - <Disabled>"
-		  
-		  Var d As New DateTime(2025, 8, 30)
-		  For i As Integer = 1 To 7
-		    d = d.AddInterval(0,0,1)
-		    Me.AddRow d.DayOfWeek.ToString + " - " + d.ToString("EEEE", Locale.Current)
-		  Next 
-		  
-		  
-		  
-		  me.SelectedRowIndex = 0
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub SelectionChanged(item As DesktopMenuItem)
-		  #Pragma Unused item
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events txtWDAdding
 	#tag Event
 		Function KeyDown(key As String) As Boolean
@@ -3215,24 +3551,6 @@ End
 		  v = v + 1
 		  
 		  txtWDAdding.Text = v.ToString
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events popWDShiftMode
-	#tag Event
-		Sub Opening()
-		  Me.AddRow "previous"
-		  Me.AddRow "next"
-		  me.SelectedRowIndex = 0
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events ButtonEaster15
-	#tag Event
-		Sub Pressed()
-		  txtCaption.Text = me.Caption
-		  txtEDDiff.Text = AnnualEventEaster.CleanMonday.ToString // or txtEDDiff.Text = "-48"
 		  
 		End Sub
 	#tag EndEvent
@@ -3493,6 +3811,135 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events popHebraicHolidayType
+	#tag Event
+		Sub Opening()
+		  
+		  Me.Addrow "Rosh Hashanah"
+		  Me.Addrow "Yom Kippur"
+		  Me.Addrow "Sukkot (1st day)"
+		  Me.Addrow "Hoshana Rabbah"
+		  Me.Addrow "Shemini Atzeret"
+		  Me.Addrow "Simchat Torah (Diaspora)"
+		  Me.Addrow "Simchat Torah (Israel)"
+		  Me.Addrow "Hanukkah (1st day)"
+		  Me.Addrow "Tu BiShvat"
+		  Me.Addrow "Purim"
+		  Me.Addrow "Passover (1st day)"
+		  Me.Addrow "Passover (7th day)"
+		  Me.Addrow "Passover (8th day - Diaspora)"
+		  Me.Addrow "Yom HaShoah"
+		  Me.Addrow "Yom HaZikaron"
+		  Me.Addrow "Yom HaZikaron (Civil shift)"
+		  Me.Addrow "Yom Ha'atzmaut"
+		  Me.Addrow "Yom Ha'atzmaut (Civil shift)"
+		  Me.Addrow "Lag BaOmer"
+		  Me.Addrow "Shavuot"
+		  Me.Addrow "Fast of Gedaliah"
+		  Me.Addrow "Fast of Gedaliah (Shabbat shift)"
+		  Me.Addrow "Tenth of Tevet"
+		  Me.Addrow "Tenth of Tevet (Shabbat shift)"
+		  Me.Addrow "Fast of Esther"
+		  Me.Addrow "Fast of Esther (Shabbat shift)"
+		  Me.Addrow "Seventeenth of Tammuz"
+		  Me.Addrow "Seventeenth of Tammuz (Shabbat shift)"
+		  me.AddRow "-"
+		  Me.Addrow "Custom"
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub SelectionChanged(item As DesktopMenuItem)
+		  #Pragma Unused item
+		  
+		  If Me.SelectedRowIndex = Me.LastRowIndex - 1 Then
+		    Me.SelectedRowIndex = Me.SelectedRowIndex - 2
+		  end
+		  
+		  If Me.SelectedRowIndex = Me.LastRowIndex And Not Label20.Enabled Then
+		    popHDay.SelectedRowIndex = 0
+		    popHMonth.SelectedRowIndex = 0
+		  end
+		  
+		  Label20.Enabled = Me.SelectedRowIndex <> Me.LastRowIndex
+		  Label21.Enabled = Me.SelectedRowIndex <> Me.LastRowIndex
+		  popHDay.Enabled = Me.SelectedRowIndex <> Me.LastRowIndex
+		  popHMonth.Enabled = Me.SelectedRowIndex <> Me.LastRowIndex
+		  btnHEnglish.Enabled  = Me.SelectedRowIndex <> Me.LastRowIndex
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events popHMonth
+	#tag Event
+		Sub Opening()
+		  Me.AddRow "1 - Nisan"
+		  Me.AddRow "2 - Iyar"
+		  Me.AddRow "3 - Sivan"
+		  Me.AddRow "3 - Tammuz"
+		  Me.AddRow "5 - Av"
+		  Me.AddRow "6 - Elul"
+		  Me.AddRow "7 - Tishri"
+		  Me.AddRow "8 - Heshvan"
+		  Me.AddRow "9 - Kislev"
+		  Me.AddRow "10 - Tevet"
+		  Me.AddRow "11 - Shevat"
+		  Me.AddRow "12 - Adar (Adar I In a leap year)"
+		  Me.AddRow "13 - Adar II (leap years only)"
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events popHDay
+	#tag Event
+		Sub Opening()
+		  For i As Integer = 1 To 30
+		    me.AddRow i.ToString
+		  Next 
+		  
+		  me.SelectedRowIndex = 0
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnHEnglish
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = AnnualEventHebraic.EnglishName(CType(popHebraicHolidayType.SelectedRowIndex + 1, AnnualEventHebraic.HolidayType))
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnHEnglish1
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = AnnualEventHebraic.SpanishName(CType(popHebraicHolidayType.SelectedRowIndex + 1, AnnualEventHebraic.HolidayType))
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnHEnglish2
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = AnnualEventHebraic.FrenchName(CType(popHebraicHolidayType.SelectedRowIndex + 1, AnnualEventHebraic.HolidayType))
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnHEnglish3
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = AnnualEventHebraic.DutchName(CType(popHebraicHolidayType.SelectedRowIndex + 1, AnnualEventHebraic.HolidayType))
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnHEnglish4
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = AnnualEventHebraic.GermanName(CType(popHebraicHolidayType.SelectedRowIndex + 1, AnnualEventHebraic.HolidayType))
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnHEnglish5
+	#tag Event
+		Sub Pressed()
+		  txtCaption.Text = AnnualEventHebraic.ModernHebrewName(CType(popHebraicHolidayType.SelectedRowIndex + 1, AnnualEventHebraic.HolidayType))
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events btnOK
 	#tag Event
 		Sub Pressed()
@@ -3532,7 +3979,7 @@ End
 		      day = 29
 		    end
 		    
-		    Var fd As New AnnualEventFix(txtCaption.Text.trim, month, day )
+		    Var fd As New AnnualEventFixed(txtCaption.Text.trim, month, day )
 		    
 		    If cbFDFridayIfSaturday.Value Then fd.FridayIfSaturday = True
 		    if cbFDMondayIfSunday.Value then fd.MondayIfSunday = True
@@ -3540,13 +3987,19 @@ End
 		    
 		    If popFDWeekDay.SelectedRowIndex > 0 Then
 		      If popFDShiftMode.SelectedRowIndex = 0 Then
-		        if chkDFAlways.value then fd.AlwaysPreviousWeekDay = popFDWeekDay.SelectedRowIndex else fd.PreviousWeekDay =  popFDWeekDay.SelectedRowIndex
+		        
+		        fd.DesiredWeekday = popFDWeekDay.SelectedRowIndex
+		        fd.AlwaysMoveDesiredWeekday = chkDFAlways.value 
+		        fd.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.Before
+		        
 		      Else
-		        if chkDFAlways.value then fd.AlwaysNextWeekDay =  popFDWeekDay.SelectedRowIndex else fd.NextWeekDay=  popFDWeekDay.SelectedRowIndex
+		        fd.DesiredWeekday = popFDWeekDay.SelectedRowIndex
+		        fd.AlwaysMoveDesiredWeekday = chkDFAlways.value 
+		        fd.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.After
 		      End
 		      
 		    ElseIf txtFDAdding.Text.ToInteger <> 0 Then
-		      fd.AddDays =  txtFDAdding.Text.ToInteger
+		      fd.DayOffset =  txtFDAdding.Text.ToInteger
 		    End
 		    
 		    
@@ -3588,23 +4041,13 @@ End
 		    
 		    Var month As Integer = popWDMonth.SelectedRowIndex + 1
 		    Var weekday As Integer = popWDWeekDay.SelectedRowIndex + 1
-		    var rank as Integer = popWDRank.SelectedRowIndex + 1
+		    var occurence as Integer = popWDRank.SelectedRowIndex + 1
 		    
-		    Var wdd as new AnnualEventWeekDay(txtCaption.Text, month, weekday, rank)
+		    Var wdd as new AnnualEventWeekDay(txtCaption.Text, month, weekday, occurence)
 		    
 		    
-		    If popWDToWeekDay.SelectedRowIndex > 0 Then
-		      
-		      If popWDShiftMode.SelectedRowIndex = 1 Then
-		        wdd.NextWeekDay =  popWDToWeekDay.SelectedRowIndex
-		      Else
-		        wdd.PreviousWeekDay = popWDToWeekDay.SelectedRowIndex
-		      End
-		      
-		    ElseIf txtWDAdding.Text.ToInteger <> 0 Then
-		      
-		      wdd.AddDays =  txtWDAdding.Text.ToInteger
-		      
+		    If txtWDAdding.Text.ToInteger <> 0 Then
+		      wdd.DayOffset =  txtWDAdding.Text.ToInteger
 		    End
 		    
 		    wdd.DayOff = chkDayOff.Value
@@ -3651,39 +4094,44 @@ End
 		      day = 29
 		    end
 		    
-		    strCode = "Var NewEvent As New AnnualEventFix(""" + txtCaption.Text.ReplaceAll("""","""""") + """," + month.ToString + "," + day.ToString + ")"
+		    strCode = "Var NewEvent As New AnnualEventFixed(""" + txtCaption.Text.ReplaceAll("""","""""") + """," + month.ToString + "," + day.ToString + ")"
 		    
-		    If cbFDFridayIfSaturday.Value Then 
+		    
+		    If txtFDAdding.Text.ToInteger <> 0 Then
 		      strCode = strCode + EndOfLine
-		      strCode = strCode + "NewEvent.FridayIfSaturday = True"
-		    end
-		    
-		    If cbFDMondayIfSunday.Value Then 
-		      strCode = strCode + EndOfLine
-		      strCode = strCode + "NewEvent.MondayIfSunday = True"
-		    End If
-		    
-		    
-		    If popFDWeekDay.SelectedRowIndex > 0 Then
-		      If popFDShiftMode.SelectedRowIndex = 0 Then
-		        strCode = strCode + EndOfLine
-		        If chkDFAlways.value Then _
-		        strCode = strCode + "NewEvent.AlwaysPreviousWeekDay = " + popFDWeekDay.SelectedRowIndex.ToString _
-		        Else _
-		        strCode = strCode + "NewEvent.PreviousWeekDay = " + popFDWeekDay.SelectedRowIndex.ToString
-		      Else
-		        strCode = strCode + EndOfLine
-		        If chkDFAlways.value Then _
-		        strCode = strCode + "NewEvent.AlwaysNextWeekDay =  " + popFDWeekDay.SelectedRowIndex.ToString _
-		        Else _
-		        strCode = strCode + "NewEvent.NextWeekDay =  " + popFDWeekDay.SelectedRowIndex.ToString 
-		      End
-		      
-		    ElseIf txtFDAdding.Text.ToInteger <> 0 Then
-		      strCode = strCode + EndOfLine
-		      strCode = strCode + "NewEvent.AddDays = " +  txtFDAdding.Text
+		      strCode = strCode + "NewEvent.DayOffset = " +  txtFDAdding.Text
 		    End
 		    
+		    
+		    if popFDWeekDay.SelectedRowIndex > 0 then
+		      
+		      If popFDShiftMode.SelectedRowIndex = 0 Then
+		        
+		        strCode = strCode + EndOfLine
+		        strCode = strCode + "NewEvent.DesiredWeekday  = " + popFDWeekDay.SelectedRowIndex.ToString + EndOfLine
+		        if chkDFAlways.value then strCode = strCode + "NewEvent.AlwaysMoveDesiredWeekday = True" + EndOfLine
+		        strCode = strCode + "NewEvent.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.Before"
+		        
+		      Else
+		        strCode = strCode + EndOfLine
+		        strCode = strCode + "NewEvent.DesiredWeekday  = " + popFDWeekDay.SelectedRowIndex.ToString + EndOfLine
+		        If chkDFAlways.value Then strCode = strCode + "NewEvent.AlwaysMoveDesiredWeekday = True" + EndOfLine
+		        strCode = strCode + "NewEvent.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.After"
+		      End
+		      
+		    else
+		      
+		      If cbFDFridayIfSaturday.Value Then 
+		        strCode = strCode + EndOfLine
+		        strCode = strCode + "NewEvent.FridayIfSaturday = True"
+		      End
+		      
+		      If cbFDMondayIfSunday.Value Then 
+		        strCode = strCode + EndOfLine
+		        strCode = strCode + "NewEvent.MondayIfSunday = True"
+		      End If
+		      
+		    end
 		    
 		  case 1 // Easter
 		    
@@ -3696,31 +4144,38 @@ End
 		    Var delta As Integer = txtEDDiff1.Text.ToInteger
 		    strCode = strCode + "Var NewEvent as new AnnualEventOrthodoxEaster(""" + txtCaption.Text.ReplaceAll("""","""""") + """," + delta.ToString + ")"
 		    
-		  Case 3
+		  Case 3 // Occurence
 		    
 		    Var month As Integer = popWDMonth.SelectedRowIndex + 1
 		    Var weekday As Integer = popWDWeekDay.SelectedRowIndex + 1
-		    var rank as Integer = popWDRank.SelectedRowIndex + 1
+		    var occurence as Integer = popWDRank.SelectedRowIndex + 1
 		    
-		    strCode = strCode + "Var NewEvent as new (""" + txtCaption.Text.ReplaceAll("""","""""") + """," + month.ToString + "," + weekday.ToString + ","  + rank.ToString + ")"
+		    strCode = strCode + "Var NewEvent as new AnnualEventWeekDay(""" + txtCaption.Text.ReplaceAll("""","""""") + """, " + month.ToString + ", " + weekday.ToString + ", "  + occurence.ToString + ")"
 		    
 		    
-		    If popWDToWeekDay.SelectedRowIndex > 0 Then
-		      
-		      If popWDShiftMode.SelectedRowIndex = 0 Then
-		        strCode = strCode + EndOfLine
-		        strCode = strCode + "NewEvent.PreviousWeekDay = " + popWDWeekDay.SelectedRowIndex.ToString
-		      Else
-		        strCode = strCode + EndOfLine
-		        strCode = strCode + "NewEvent.NextWeekDay =  " + popWDWeekDay.SelectedRowIndex.ToString
-		      End
-		      
-		    ElseIf txtWDAdding.Text.ToInteger <> 0 Then
+		    If txtWDAdding.Text.ToInteger <> 0 Then
 		      
 		      strCode = strCode + EndOfLine
-		      strCode = strCode + "NewEvent.AddDays = " +  txtWDAdding.Text
+		      strCode = strCode + "NewEvent.DayOffset = " +  txtWDAdding.Text
 		      
 		    End
+		    
+		  case 4 // hebraic
+		    
+		    If popHebraicHolidayType.SelectedRowIndex <> popHebraicHolidayType.LastRowIndex Then
+		      
+		      Var currentEnum As AnnualEventHebraic.HolidayType = CType(popHebraicHolidayType.SelectedRowIndex + 1, AnnualEventHebraic.HolidayType)
+		      strCode = strCode + "Var NewEvent as new AnnualEventHebraic(""" + txtCaption.Text.ReplaceAll("""","""""") + _
+		       """, AnnualEventHebraic.HolidayType." + HebraicEnum(popHebraicHolidayType.SelectedRowIndex) + ")"
+		      
+		    else
+		      
+		      strCode = strCode + "Var NewEvent as new AnnualEventHebraic(" + _ 
+		      """" + txtCaption.Text.ReplaceAll("""","""""") + """, " + _
+		      popHMonth.RowTextAt(popHMonth.SelectedRowIndex) + ", " + _
+		      popHDay.RowTextAt(popHDay.SelectedRowIndex) + ")"
+		      
+		    end
 		    
 		  End Select
 		  
@@ -3747,7 +4202,7 @@ End
 		    strCode = strCode + "NewEvent.StartOfValidity = New DateTime(" _ 
 		    + dtStart.SelectedDate.Year.ToString _
 		    + "," + dtStart.SelectedDate.Month.ToString _
-		    + "," + dtStart.SelectedDate.day.ToString + ")"
+		    + "," + dtStart.SelectedDate.day.ToString + ", 0, 0, 0, 0, TimeZone.Current)"
 		    
 		  End
 		  
@@ -3760,8 +4215,8 @@ End
 		    strCode = strCode + EndOfLine
 		    strCode = strCode + "NewEvent.EndValidity = New DateTime(" _ 
 		    + dtEnd.SelectedDate.Year.ToString _
-		    + "," + dtEnd.SelectedDate.Month.ToString _
-		    + "," + dtEnd.SelectedDate.day.ToString + ", 23, 59, 59)"
+		    + ", " + dtEnd.SelectedDate.Month.ToString _
+		    + ", " + dtEnd.SelectedDate.day.ToString + ", 23, 59, 59, 0, TimeZone.Current)"
 		    
 		  end
 		  

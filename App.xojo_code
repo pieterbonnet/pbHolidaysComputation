@@ -33,7 +33,7 @@ Inherits DesktopApplication
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		Regions() As RegionDatesWorked
+		Regions() As WorkCalendar
 	#tag EndProperty
 
 

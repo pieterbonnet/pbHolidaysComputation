@@ -2,67 +2,12 @@
 Protected Class AnnualEventWeekDay
 Implements AnnualEvent
 	#tag Method, Flags = &h0
-		Function Calculate(year as Integer) As DateAndCaption
-		  If year < 1607 Then 
-		    Break
-		    Return Nil
-		  End
+		Function Calculate(Year as integer) As DateAndCaption
+		  Var d As DateTime = Me.DateValue(Year)
 		  
-		  If Me.CycleYearDuration > 1 Then
-		    if me.CycleFirstYear > year then Return Nil
-		    If (year - Me.CycleFirstYear) Mod Me.CycleYearDuration > 0 Then Return Nil
-		  End
+		  If d = Nil Then Return Nil
 		  
-		  
-		  If year < Me.StartOfValidity.Year Or year > Me.EndOfValidity.Year Then Return Nil
-		  
-		  If WeekDay < 1 or WeekDay > 7 or  Rank < 1 or Rank > 6 or month < 1 or month > 12 Then Return nil
-		  
-		  Var d As New DateTime(year, Month, 1, 0, 0, 0) // First day of the month
-		  
-		  // Trivial, the first day is the good day
-		  
-		  If d.DayOfWeek = Me.WeekDay And Me.Rank = 1 Then 
-		    
-		    // Nothing else
-		    
-		  elseIf Rank = 6 Then // Last
-		    d = d.AddInterval(0,1)         // First day of the next month
-		    d = d.SubtractInterval(0,0,1)  // Last day of the "current" month
-		    Do Until d.DayOfWeek = WeekDay
-		      d = d.SubtractInterval(0,0,1)
-		    Loop
-		    
-		  else 
-		    
-		    Var rang As Integer = 0
-		    
-		    Do 
-		      If rang = 0 Then d = d.AddInterval (0,0,1) Else d = d.AddInterval(0,0,7)
-		      If d.DayOfWeek = Me.WeekDay Then rang = rang + 1
-		    Loop Until  (d.DayOfWeek = Me.WeekDay And rang = Me.Rank) Or (d.Month <> Me.Month)
-		    
-		    If d.Month <> Me.Month Then Return Nil // Sometimes, there is no 5th Monday of the month.
-		    
-		  End
-		  
-		  If PreviousWeekDay > 0 Then
-		    Do Until d.DayOfWeek = PreviousWeekDay 
-		      d = d.SubtractInterval(0,0,1)
-		    Loop
-		  elseIf NextWeekDay > 0 Then
-		    Do Until d.DayOfWeek = NextWeekDay 
-		      d = d.AddInterval(0,0,1)
-		    Loop
-		  ElseIf AddDays <> 0 Then
-		    d = d.AddInterval(0,0,AddDays)
-		  End
-		  
-		  
-		  If d < Me.StartOfValidity Or d > Me.EndOfValidity Then Return Nil
-		  Return New DateAndCaption(d, Me.mCaption)
-		  
-		  Return Nil
+		  Return new DateAndCaption(d, me.mCaption)
 		End Function
 	#tag EndMethod
 
@@ -90,51 +35,53 @@ Implements AnnualEvent
 		    Exit Sub
 		  End
 		  
-		  Var vo As AnnualEventWeekDay = d.DefinitionObject
+		  Var copy As AnnualEventWeekDay = d.DefinitionObject
 		  
-		  Me.mCaption = vo.Caption
-		  Me.Month = vo.Month
-		  Me.WeekDay = vo.WeekDay
-		  Me.Rank = vo.Rank
-		  Me.NextWeekDay = vo.NextWeekDay
-		  Me.PreviousWeekDay = vo.PreviousWeekDay
-		  Me.DayOff = vo.DayOff
-		  Me.AddDays = vo.AddDays
 		  
-		  Me.CycleFirstYear = vo.CycleFirstYear
-		  Me.CycleYearDuration = vo.CycleYearDuration
+		  Me.Month = copy.Month
+		  Me.WeekDay = copy.WeekDay
+		  Me.Occurrence = copy.Occurrence
+		  Me.DayOffset = copy.DayOffset
 		  
-		  Me.StartOfValidity = vo.StartOfValidity
-		  Me.EndOfValidity = vo.EndOfValidity
+		  Me.mCaption = Copy.Caption
+		  Me.DayOff = copy.DayOff
+		  Me.CycleFirstYear = Copy.CycleFirstYear
+		  Me.CycleYearDuration = Copy.CycleYearDuration
+		  Me.Tag = copy.Tag
+		  Me.DbId = copy.DbId
+		  Me.StartOfValidity = copy.StartOfValidity
+		  Me.EndOfValidity = copy.EndOfValidity
+		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub Constructor(copy as AnnualEventWeekDay)
-		  Me.mCaption = Copy.Caption
+		  
 		  Me.Month = copy.Month
 		  Me.WeekDay = copy.WeekDay
-		  Me.Rank = copy.Rank
-		  Me.NextWeekDay = copy.NextWeekDay
-		  me.PreviousWeekDay = copy.PreviousWeekDay
-		  me.DayOff = copy.DayOff
-		  me.AddDays = copy.AddDays
+		  Me.Occurrence = copy.Occurrence
+		  me.DayOffset = copy.DayOffset
 		  
+		  Me.mCaption = Copy.Caption
+		  Me.DayOff = copy.DayOff
 		  Me.CycleFirstYear = Copy.CycleFirstYear
-		  me.CycleYearDuration = Copy.CycleYearDuration
-		  
+		  Me.CycleYearDuration = Copy.CycleYearDuration
+		  Me.Tag = copy.Tag
+		  Me.DbId = copy.DbId
 		  Me.StartOfValidity = copy.StartOfValidity
 		  Me.EndOfValidity = copy.EndOfValidity
+		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub Constructor(lCaption as string = "", lMonth as Integer = 1, lWeekDay as Integer = 1, lRank as Integer = 1)
+		Sub Constructor(lCaption as string = "", lMonth as Integer = 1, lWeekDay as Integer = 1, lOccurrence as Integer = 1)
 		  Me.mCaption = lCaption
 		  
 		  Me.Month = lMonth
 		  me.WeekDay = lWeekDay
-		  me.Rank = lRank
+		  me.Occurrence = lOccurrence
 		  
 		  
 		  Me.StartOfValidity = New DateTime(1,1,1,0,0,0)
@@ -169,15 +116,55 @@ Implements AnnualEvent
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function DateValue(year as Integer) As DateTime
-		  Var jf As DateAndCaption = Me.Calculate(year)
+		Function DateValue(year As Integer) As DateTime
+		  If year < Me.StartOfValidity.Year Or year > Me.EndOfValidity.Year Then Return Nil
 		  
-		  If jf = Nil Then 
-		    Var d As DateTime
-		    Return d
+		  // Validate properties (Occurrence: 1 to 5 = nth, kLast = last)
+		  If Month < 1 Or Month > 12 Then Return Nil
+		  If Weekday < 1 Or Weekday > 7 Then Return Nil
+		  If Occurrence < 1 Or Occurrence > kLast Then Return Nil
+		  
+		  If Me.CycleYearDuration > 1 Then
+		    If Me.CycleFirstYear > year Then Return Nil
+		    If (year - Me.CycleFirstYear) Mod Me.CycleYearDuration > 0 Then Return Nil
+		  End
+		  
+		  // Returns the holiday date for the given year at 00:00,
+		  // or Nil if the configuration is invalid or the date does not exist
+		  // (e.g. a 5th Friday in a month that only has four).
+		  
+		  
+		  Var firstOfMonth As New DateTime(year, Month, 1, 0, 0, 0)
+		  Var lastOfMonth As DateTime = firstOfMonth.AddInterval(0, 1, -1)
+		  Var dayNumber As Integer
+		  
+		  If Occurrence < kLast Then
+		    // nth weekday of the month: distance from the 1st to the first matching
+		    // weekday, then 7 days per additional week.
+		    // The modulo is normalized so the result is always between 0 and 6.
+		    Var shift As Integer = ((Weekday - firstOfMonth.DayOfWeek) Mod 7 + 7) Mod 7
+		    dayNumber = 1 + shift + (Occurrence - 1) * 7
+		  Else
+		    // Occurrence = kLast: last weekday of the month.
+		    // Start from the last day and walk backwards.
+		    Var shift As Integer = ((lastOfMonth.DayOfWeek - Weekday) Mod 7 + 7) Mod 7
+		    dayNumber = lastOfMonth.Day - shift
+		  End If
+		  
+		  // Safety check: the day must exist in the month
+		  If dayNumber < 1 Or dayNumber > lastOfMonth.Day Then 
+		    Break
+		    Return Nil
 		  end
 		  
-		  Return jf.DateValue
+		  Var result As New DateTime(year, Month, dayNumber, 0, 0, 0)
+		  
+		  // Apply the day offset (positive or negative)
+		  If DayOffset <> 0 Then result = result.AddInterval(0, 0, DayOffset)
+		  
+		  if result < me.mStartOfValidity or result > me.mEndOfValidity then Return Nil
+		  
+		  Return result
 		End Function
 	#tag EndMethod
 
@@ -190,6 +177,18 @@ Implements AnnualEvent
 	#tag Method, Flags = &h0
 		Sub DayOff(assigns value as Boolean)
 		  mDayOff = value
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function DbId() As Variant
+		  Return mDbId
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub DbId(assigns value as Variant)
+		  mDbId = value
 		End Sub
 	#tag EndMethod
 
@@ -231,7 +230,7 @@ Implements AnnualEvent
 	#tag Method, Flags = &h0
 		Sub EndOfValidity(assigns d as DateTime)
 		  Var d1 as new DateTime(d.Year, d.Month, d.day, 23, 59, 59)
-		  mEndOfValidity = d
+		  mEndOfValidity = d1
 		End Sub
 	#tag EndMethod
 
@@ -240,25 +239,17 @@ Implements AnnualEvent
 		  Var s As String
 		  
 		  s = "W|"
-		  s = s + Me.StartOfValidity.ToString("yyyy-MM-dd") + "|"
-		  s = s + Me.EndOfValidity.ToString("yyyy-MM-dd") + "|"
+		  
+		  s = s + Me.StartOfValidity.SQLDate + "|"
+		  s = s + Me.EndOfValidity.SQLDate + "|"
 		  s = s + Me.CycleFirstYear.ToString(Locale.Raw) + "|"
 		  s = s + Me.CycleYearDuration.ToString(Locale.Raw) + "|"
 		  If Me.DayOff Then s = s + "1|" Else s = s + "0|"
 		  s = s + Me.Month.ToString(locale.Raw) + "|"
 		  s = s + Me.WeekDay.ToString(locale.Raw) + "|"
-		  s = s + Me.Rank.ToString(locale.Raw) + "|"
+		  s = s + Me.Occurrence.ToString(locale.Raw) + "|"
+		  s = s + Me.DayOffset.ToString(Locale.Raw)
 		  
-		  
-		  If Me.NextWeekDay > 0 Then
-		    s = s + "D" + Me.NextWeekDay.ToString(Locale.Raw)
-		  ElseIf Me.PreviousWeekDay > 0 Then
-		    s = s + "D-" + Me.PreviousWeekDay.ToString(Locale.Raw) 
-		  ElseIf Me.AddDays <> 0 Then
-		    s = s + "E" + Me.AddDays.ToString(Locale.Raw)
-		  Else
-		    s = s + "N"
-		  End
 		  
 		  
 		  Return s
@@ -267,7 +258,37 @@ Implements AnnualEvent
 
 	#tag Method, Flags = &h0
 		Shared Function FromString(value as String) As AnnualEvent
-		  Return AnnualEventFix.FromString(value)
+		  Return AnnualEventFixed.FromString(value)
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function IsEventDate(d as DateTime) As Boolean
+		  // Returns True if d falls on the configured holiday (time of day is ignored).
+		  If d Is Nil Then Return False
+		  
+		  
+		  If Me.CycleYearDuration > 1 Then
+		    If Me.CycleFirstYear > d.year Then Return False
+		    If (d.year - Me.CycleFirstYear) Mod Me.CycleYearDuration > 0 Then Return False
+		  End
+		  
+		  
+		  // With a DayOffset, the holiday can land in the previous or next year
+		  // (e.g. an offset from late December into January),
+		  // so we check d.Year - 1, d.Year and d.Year + 1.
+		  
+		  For y As Integer = d.Year - 1 To d.Year + 1
+		    
+		    Var holiday As DateTime = DateValue(y)
+		    If holiday Is Nil Then Continue
+		    
+		    If holiday.Year = d.Year And holiday.Month = d.Month And holiday.Day = d.Day Then
+		      Return True
+		    End If
+		  Next
+		  
+		  Return False
 		End Function
 	#tag EndMethod
 
@@ -297,50 +318,21 @@ Implements AnnualEvent
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function TestDate(d as DateTime) As Boolean
-		  If Me.CycleYearDuration > 1 Then
-		    if me.CycleFirstYear > d.year then Return False
-		    If (d.year - Me.CycleFirstYear) Mod Me.CycleYearDuration > 0 Then Return false
-		  end
-		  
-		  If d < Me.StartOfValidity Or d > Me.EndOfValidity Then Return False
-		  
-		  Var DaL as DateAndCaption = Me.Calculate(d.Year)
-		  if DaL = Nil then Return False
-		  
-		  var dt as DateTime = DaL.DateValue
-		  
-		  If dt.day = d.Day And dt.month = d.Month And d.Year = dt.Year Then Return True
-		  
-		  Return false
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Function ToString() As String
 		  Var s as String
 		  
 		  s = "W|"
 		  s = s + EncodeBase64(Me.Caption,0) + "|"
-		  s = s + Me.StartOfValidity.ToString("yyyy-MM-dd") + "|"
-		  s = s + Me.EndOfValidity.ToString("yyyy-MM-dd") + "|"
+		  s = s + Me.StartOfValidity.SQLDate + "|"
+		  s = s + Me.EndOfValidity.SQLDate + "|"
 		  s = s + Me.CycleFirstYear.ToString(Locale.Raw) + "|"
 		  s = s + Me.CycleYearDuration.ToString(Locale.Raw) + "|"
 		  If Me.DayOff Then s = s + "1|" Else s = s + "0|"
 		  s = s + Me.Month.ToString(locale.Raw) + "|"
 		  s = s + Me.WeekDay.ToString(locale.Raw) + "|"
-		  s = s + Me.Rank.ToString(locale.Raw) + "|"
+		  s = s + Me.Occurrence.ToString(locale.Raw) + "|"
+		  s = s + Me.DayOffset.ToString(Locale.Raw)
 		  
-		  
-		  If Me.NextWeekDay > 0 Then
-		    s = s + "D" + Me.NextWeekDay.ToString(Locale.Raw)
-		  ElseIf Me.PreviousWeekDay > 0 Then
-		    s = s + "D-" + Me.PreviousWeekDay.ToString(Locale.Raw) 
-		  ElseIf Me.AddDays <> 0 then
-		    s = s + "E" + Me.AddDays.ToString(Locale.Raw)
-		  Else
-		    s = s + "N"
-		  End
 		  
 		  
 		  Return s
@@ -348,14 +340,8 @@ Implements AnnualEvent
 	#tag EndMethod
 
 
-	#tag Note, Name = Untitled
-		
-		
-	#tag EndNote
-
-
 	#tag Property, Flags = &h0
-		AddDays As Integer = 0
+		DayOffset As Integer = 0
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -375,6 +361,10 @@ Implements AnnualEvent
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
+		Private mDbId As Variant
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
 		Private mEndOfValidity As DateTime
 	#tag EndProperty
 
@@ -391,20 +381,17 @@ Implements AnnualEvent
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		NextWeekDay As Integer = 0
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		PreviousWeekDay As Integer = 0
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		Rank As Integer
+		Occurrence As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
 		WeekDay As Integer = 0
 	#tag EndProperty
+
+
+	#tag Constant, Name = kLast, Type = Double, Dynamic = False, Default = \"6", Scope = Public
+		#Tag Instance, Platform = Any, Language = Default, Definition  = \"6"
+	#tag EndConstant
 
 
 	#tag ViewBehavior
@@ -465,7 +452,7 @@ Implements AnnualEvent
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="Rank"
+			Name="Occurrence"
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
@@ -473,23 +460,7 @@ Implements AnnualEvent
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="NextWeekDay"
-			Visible=false
-			Group="Behavior"
-			InitialValue="0"
-			Type="Integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="AddDays"
-			Visible=false
-			Group="Behavior"
-			InitialValue="0"
-			Type="Integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="PreviousWeekDay"
+			Name="DayOffset"
 			Visible=false
 			Group="Behavior"
 			InitialValue="0"

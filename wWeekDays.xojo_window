@@ -271,12 +271,12 @@ End
 
 #tag WindowCode
 	#tag Method, Flags = &h0
-		Sub Charge(lsender as RegionDatesWorked)
+		Sub Charge(lsender as WorkCalendar)
 		  Me.Sender = lsender
 		  
 		  // Loading the values
 		  For i As Integer = 1 To 7
-		    chkWorkingDay(i).value =  Me.Sender.WorkingWeekDays.WorkingDay(i)
+		    chkWorkingDay(i).value =  Me.Sender.WorkingWeek.WorkingDay(i)
 		  Next
 		  
 		  self.ShowModal
@@ -285,7 +285,7 @@ End
 
 
 	#tag Property, Flags = &h21
-		Private Sender As RegionDatesWorked
+		Private Sender As WorkCalendar
 	#tag EndProperty
 
 
@@ -294,7 +294,7 @@ End
 #tag Events chkWorkingDay
 	#tag Event
 		Sub ValueChanged(index as Integer)
-		  if self.Sender.WorkingWeekDays.WorkingDay(index) <> me.Value then self.Sender.WorkingWeekDays.WorkingDay(index) = me.Value
+		  if self.Sender.WorkingWeek.WorkingDay(index) <> me.Value then self.Sender.WorkingWeek.WorkingDay(index) = me.Value
 		End Sub
 	#tag EndEvent
 #tag EndEvents

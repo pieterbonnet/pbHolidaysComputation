@@ -1,5 +1,5 @@
 #tag Class
-Protected Class dprWorkingWeekDays
+Protected Class wcWorkingWeekDays
 	#tag Method, Flags = &h0
 		Sub ReadString(value as string)
 		  If value.Length <> 7 Then 
@@ -8,7 +8,7 @@ Protected Class dprWorkingWeekDays
 		  end if
 		  
 		  For i As Integer = 0 To 6
-		    me.WorkingDay(i+1) = (value.Middle(i) = "1")
+		    me.WorkingDay(i+1) = (value.Middle(i,1) = "1")
 		  Next 
 		End Sub
 	#tag EndMethod
@@ -106,7 +106,7 @@ Protected Class dprWorkingWeekDays
 	#tag EndMethod
 
 
-	#tag Note, Name = This class is required for the RegionDatesWorked class
+	#tag Note, Name = This class is required for the WorkCalendar class
 		
 		
 	#tag EndNote

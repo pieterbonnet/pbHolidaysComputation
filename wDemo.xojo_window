@@ -68,7 +68,7 @@ Begin DesktopWindow wDemo
          LockTop         =   True
          MacButtonStyle  =   0
          Scope           =   0
-         Segments        =   "Fixed day\n\nTrue\rFrom Easter\n\nFalse\rRank WeekDay\n\nFalse"
+         Segments        =   "Fixed day\n\nTrue\rFrom Easter\n\nFalse\rWeekDay occurence\n\nFalse"
          SelectionStyle  =   0
          TabIndex        =   0
          TabPanelIndex   =   1
@@ -927,7 +927,7 @@ Begin DesktopWindow wDemo
       Begin DesktopPagePanel PagePanel1
          AllowAutoDeactivate=   True
          Enabled         =   True
-         Height          =   164
+         Height          =   173
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Left            =   16
@@ -946,7 +946,7 @@ Begin DesktopWindow wDemo
          Tooltip         =   ""
          Top             =   125
          Transparent     =   False
-         Value           =   1
+         Value           =   0
          Visible         =   True
          Width           =   849
          Begin DesktopPopupMenu popFDMonth
@@ -2069,7 +2069,7 @@ Begin DesktopWindow wDemo
             TabIndex        =   17
             TabPanelIndex   =   3
             TabStop         =   True
-            Text            =   "Rank"
+            Text            =   "Occurence"
             TextAlignment   =   0
             TextColor       =   &c000000
             Tooltip         =   ""
@@ -2077,7 +2077,7 @@ Begin DesktopWindow wDemo
             Transparent     =   False
             Underline       =   False
             Visible         =   True
-            Width           =   43
+            Width           =   60
          End
          Begin DesktopPopupMenu popWDRank
             AllowAutoDeactivate=   True
@@ -2132,7 +2132,7 @@ Begin DesktopWindow wDemo
             TabIndex        =   19
             TabPanelIndex   =   3
             TabStop         =   True
-            Text            =   "Shift to the                            day of the week"
+            Text            =   "Day offset"
             TextAlignment   =   0
             TextColor       =   &c000000
             Tooltip         =   ""
@@ -2141,69 +2141,6 @@ Begin DesktopWindow wDemo
             Underline       =   False
             Visible         =   True
             Width           =   59
-         End
-         Begin DesktopPopupMenu popWDToWeekDay
-            AllowAutoDeactivate=   True
-            Bold            =   False
-            Enabled         =   True
-            FontName        =   "System"
-            FontSize        =   0.0
-            FontUnit        =   0
-            Height          =   22
-            Index           =   -2147483648
-            InitialParent   =   "PagePanel1"
-            InitialValue    =   ""
-            Italic          =   False
-            Left            =   360
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            Scope           =   0
-            SelectedRowIndex=   -1
-            TabIndex        =   21
-            TabPanelIndex   =   3
-            TabStop         =   True
-            Tooltip         =   ""
-            Top             =   258
-            Transparent     =   False
-            Underline       =   False
-            Visible         =   True
-            Width           =   165
-         End
-         Begin DesktopLabel Label13
-            AllowAutoDeactivate=   True
-            Bold            =   False
-            Enabled         =   True
-            FontName        =   "System"
-            FontSize        =   0.0
-            FontUnit        =   0
-            Height          =   20
-            Index           =   -2147483648
-            InitialParent   =   "PagePanel1"
-            Italic          =   False
-            Left            =   537
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            Multiline       =   False
-            Scope           =   0
-            Selectable      =   False
-            TabIndex        =   22
-            TabPanelIndex   =   3
-            TabStop         =   True
-            Text            =   "or adding days"
-            TextAlignment   =   0
-            TextColor       =   &c000000
-            Tooltip         =   ""
-            Top             =   258
-            Transparent     =   False
-            Underline       =   False
-            Visible         =   True
-            Width           =   85
          End
          Begin DesktopTextField txtWDAdding
             AllowAutoDeactivate=   True
@@ -2223,7 +2160,7 @@ Begin DesktopWindow wDemo
             Index           =   -2147483648
             InitialParent   =   "PagePanel1"
             Italic          =   False
-            Left            =   626
+            Left            =   267
             LockBottom      =   False
             LockedInPosition=   False
             LockLeft        =   True
@@ -2256,7 +2193,7 @@ Begin DesktopWindow wDemo
             Height          =   23
             Index           =   -2147483648
             InitialParent   =   "PagePanel1"
-            Left            =   682
+            Left            =   323
             LockBottom      =   False
             LockedInPosition=   False
             LockLeft        =   True
@@ -2533,36 +2470,6 @@ Begin DesktopWindow wDemo
             Underline       =   False
             Visible         =   True
             Width           =   125
-         End
-         Begin DesktopPopupMenu popWDShiftMode
-            AllowAutoDeactivate=   True
-            Bold            =   False
-            Enabled         =   True
-            FontName        =   "System"
-            FontSize        =   0.0
-            FontUnit        =   0
-            Height          =   22
-            Index           =   -2147483648
-            InitialParent   =   "PagePanel1"
-            InitialValue    =   ""
-            Italic          =   False
-            Left            =   274
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            Scope           =   0
-            SelectedRowIndex=   -1
-            TabIndex        =   20
-            TabPanelIndex   =   3
-            TabStop         =   True
-            Tooltip         =   ""
-            Top             =   258
-            Transparent     =   False
-            Underline       =   False
-            Visible         =   True
-            Width           =   74
          End
          Begin DesktopPopupMenu popFDShiftMode
             AllowAutoDeactivate=   True
@@ -2916,38 +2823,6 @@ Begin DesktopWindow wDemo
             Visible         =   True
             Width           =   195
          End
-         Begin DesktopButton ButtonEaster15
-            AllowAutoDeactivate=   True
-            Bold            =   False
-            Cancel          =   False
-            Caption         =   "Clean Monday"
-            Default         =   False
-            Enabled         =   True
-            FontName        =   "System"
-            FontSize        =   0.0
-            FontUnit        =   0
-            Height          =   22
-            Index           =   -2147483648
-            InitialParent   =   "PagePanel1"
-            Italic          =   False
-            Left            =   278
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            MacButtonStyle  =   0
-            Scope           =   0
-            TabIndex        =   3
-            TabPanelIndex   =   2
-            TabStop         =   True
-            Tooltip         =   ""
-            Top             =   139
-            Transparent     =   False
-            Underline       =   False
-            Visible         =   True
-            Width           =   125
-         End
          Begin DesktopLabel Label1
             AllowAutoDeactivate=   True
             Bold            =   False
@@ -3011,6 +2886,39 @@ Begin DesktopWindow wDemo
             Visible         =   True
             VisualState     =   0
             Width           =   100
+         End
+         Begin DesktopLabel Label23
+            AllowAutoDeactivate=   True
+            Bold            =   False
+            Enabled         =   True
+            FontName        =   "System"
+            FontSize        =   0.0
+            FontUnit        =   0
+            Height          =   20
+            Index           =   -2147483648
+            InitialParent   =   "PagePanel1"
+            Italic          =   False
+            Left            =   429
+            LockBottom      =   False
+            LockedInPosition=   False
+            LockLeft        =   True
+            LockRight       =   False
+            LockTop         =   True
+            Multiline       =   False
+            Scope           =   0
+            Selectable      =   False
+            TabIndex        =   20
+            TabPanelIndex   =   1
+            TabStop         =   True
+            Text            =   "The behavior for February 29th is controlled by the NotLeapYearOffset property\r\n"
+            TextAlignment   =   0
+            TextColor       =   &c000000
+            Tooltip         =   ""
+            Top             =   275
+            Transparent     =   False
+            Underline       =   False
+            Visible         =   True
+            Width           =   421
          End
       End
       Begin DesktopListBox lstRegionItems
@@ -3734,9 +3642,16 @@ End
 		    lblDBstatuts.TextColor = &c80000000
 		    btnConnectDB.Visible = True
 		  Else
+		    // Use to reset the database
+		    'InitializeFactory
+		    
 		    btnLoadingRegionsFromDB.Enabled = True
 		    btnRestoreRegionToFactory.Enabled = True
-		  end
+		  End
+		  
+		  Me.Freeze = False
+		  
+		  me.FixedDayCode
 		End Sub
 	#tag EndEvent
 
@@ -3759,7 +3674,7 @@ End
 		      lblEvent.Text = "No event"
 		    End
 		    
-		    Var nbd As DateTime = Self.regions(lstRegions.SelectedRowIndex).NextBusinessDay(dtThisDate.SelectedDate, txtFollowingBD.Text.ToInteger)
+		    Var nbd As DateTime = Self.regions(lstRegions.SelectedRowIndex).BusinessDayOffset(dtThisDate.SelectedDate, txtFollowingBD.Text.ToInteger)
 		    lblNextBusinessDay.Text = "following business day is " + nbd.ToString(DateTime.FormatStyles.Long, DateTime.FormatStyles.None)
 		    
 		  elseif rgDaysFunctions.SelectedIndex = 1 And lstRegions.SelectedRowIndex = DesktopListBox.NoSelection Then
@@ -3769,14 +3684,14 @@ End
 		    // Creating a muli-region object
 		    // We could also create it for the window and work on its Regions array
 		    
-		    Var mr As New MultiRegionDatesWorked
-		    mr.Regions = Self.Regions
+		    Var wcc As New WorkCalendarGroup
+		    wcc.WorkCalendars = Self.Regions
 		    
-		    chkWorkingDay.Value = mr.IsWorkingDay(dtThisDate.SelectedDate)
+		    chkWorkingDay.Value = wcc.IsWorkingDayEverywhere(dtThisDate.SelectedDate)
 		    chkIsDayOff.Value = Not chkWorkingDay.Value
-		    chkIsEvent.Value = mr.IsAnnualEvent(dtThisDate.SelectedDate)
+		    chkIsEvent.Value = wcc.IsAnnualEventEverywhere(dtThisDate.SelectedDate)
 		    
-		    Var nbd As DateTime = mr.NextBusinessDay(dtThisDate.SelectedDate, txtFollowingBD.Text.ToInteger)
+		    Var nbd As DateTime = wcc.BusinessDayOffsetEverywhere(dtThisDate.SelectedDate, txtFollowingBD.Text.ToInteger)
 		    lblNextBusinessDay.Text = "following business day is " + nbd.ToString(DateTime.FormatStyles.Long, DateTime.FormatStyles.None)
 		    
 		    
@@ -3792,45 +3707,63 @@ End
 
 	#tag Method, Flags = &h0
 		Sub FixedDayCode()
+		  If Me.Freeze Then Exit Sub
+		  
 		  Var s As String
-		  s = "Var dFixedDay As New AnnualEventFix("
+		  s = "Var dFixedDay As New AnnualEventFixed("
 		  s = s + """" + txtCaption.text.ReplaceAll("""", """""") + ""","
 		  s = s + CStr(popFDMonth.SelectedRowIndex + 1) + "," +CStr(popFDDay.SelectedRowIndex + 1) 
 		  s = s + ")"
 		  
-		  If cbFDFridayIfSaturday.Value Then
-		    s = s + EndOfLine
-		    s = s + "dFixedDay.FridayIfSaturday = True" 
-		  end
 		  
-		  if cbFDMondayIfSunday.Value then
-		    s = s + EndOfLine
-		    s = s + "dFixedDay.MondayIfSunday = True" 
-		  end
+		  Var month As Integer = popFDMonth.SelectedRowIndex + 1
+		  Var day As Integer = popFDDay.SelectedRowIndex + 1
 		  
-		  if popFDWeekDay.SelectedRowIndex > 0 then
-		    if popFDShiftMode.SelectedRowIndex = 0 then
-		      s = s + EndOfLine
-		      If chkDFAlways.value Then 
-		        s = s + "dFixedDay.AlwaysPreviousWeekDay = " + popFDWeekDay.SelectedRowIndex.ToString
-		      else
-		        s = s + "dFixedDay.PreviousWeekDay = " + popFDWeekDay.SelectedRowIndex.ToString
-		      end
-		    else
-		      s = s + EndOfLine
-		      If chkDFAlways.value Then 
-		        s = s + "dFixedDay.AlwaysNextWeekDay = " + popFDWeekDay.SelectedRowIndex.ToString
-		      else
-		        s = s + "dFixedDay.NextWeekDay = " + popFDWeekDay.SelectedRowIndex.ToString
-		      end
-		    end
+		  If (month = 4 Or month = 6 Or month = 9 Or month = 11) And day = 31 Then
+		    day = 30
+		  ElseIf month = 2 And day > 29 Then
+		    day = 29
+		  End
+		  
+		  If txtFDAdding.Text.ToInteger <> 0 Then
+		    s = s + EndOfLine
+		    s = s + "dFixedDay.DayOffset = " + txtFDAdding.Text.ToInteger.ToString
+		  End
+		  
+		  
+		  
+		  If popFDWeekDay.SelectedRowIndex > 0 Then
 		    
-		  elseif txtFDAdding.Text.ToInteger <> 0 then
-		    s = s + EndOfLine
-		    s = s + "dFixedDay.AddDays = " + txtFDAdding.Text.ToInteger.ToString
-		  end
+		    If popFDShiftMode.SelectedRowIndex = 0 Then
+		      
+		      s = s + EndOfLine
+		      s = s + "dFixedDay.DesiredWeekday  = " + popFDWeekDay.SelectedRowIndex.ToString + EndOfLine
+		      If chkDFAlways.value Then s = s + "dFixedDay.AlwaysMoveDesiredWeekday = True" + EndOfLine
+		      s = s + "dFixedDay.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.Before"
+		      
+		    Else
+		      s = s + EndOfLine
+		      s = s + "dFixedDay.DesiredWeekday  = " + popFDWeekDay.SelectedRowIndex.ToString + EndOfLine
+		      If chkDFAlways.value Then s = s + "dFixedDay.AlwaysMoveDesiredWeekday = True" + EndOfLine
+		      s = s + "dFixedDay.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.After"
+		    End
+		    
+		  Else
+		    
+		    If cbFDFridayIfSaturday.Value Then 
+		      s = s + EndOfLine
+		      s = s + "dFixedDay.FridayIfSaturday = True"
+		    End
+		    
+		    If cbFDMondayIfSunday.Value Then 
+		      s = s + EndOfLine
+		      s = s + "dFixedDay.MondayIfSunday = True"
+		    End If
+		    
+		  End
 		  
-		  if me.Freeze then exit sub
+		  
+		  
 		  
 		  
 		  If txtCycleDuration.Text.ToInteger > 1 Then
@@ -3848,13 +3781,13 @@ End
 		  s = s + "Var Value" + d.Year.ToString +" as Datetime = dFixFixedDay.DateValue(" + d.Year.ToString + ")"
 		  
 		  s = s + EndOfLine + EndOfLine
-		  s = s + "// Adding the definition to a RegionDatesWorked"
-		  s = s + EndOfLine + "// Can use the RegionDatesWorked for calculate bussiness days or a list of holydays for a region"
-		  s = s + EndOfLine + "// If you want to process data for multiple regions, use the MultiRegionDatesWorked class."
+		  s = s + "// Adding the definition to a WorkCalendar"
+		  s = s + EndOfLine + "// Can use the WorkCalendar for calculate bussiness days or a list of holydays for a region"
+		  s = s + EndOfLine + "// If you want to process data for multiple regions, use the WorkCalendarGroup class."
 		  s = s + EndOfLine + "// If the event is not a holiday, set the DayOff property to False"
 		  
 		  s = s + EndOfLine
-		  s = s + EndOfLine + "Var DatesEngine as new RegionDatesWorked"
+		  s = s + EndOfLine + "Var MyWorkCalendar as new WorkCalendar"
 		  s = s + EndOfLine + "DatesEngine.AnnualEvents.add dFixedDay"
 		  
 		  
@@ -3862,7 +3795,7 @@ End
 		  
 		  ListDatesCode.RemoveAllRows
 		  
-		  Var dFixedDay As New AnnualEventFix(txtCaption.Text, popFDMonth.SelectedRowIndex + 1, popFDDay.SelectedRowIndex + 1)
+		  Var dFixedDay As New AnnualEventFixed(txtCaption.Text, popFDMonth.SelectedRowIndex + 1, popFDDay.SelectedRowIndex + 1)
 		  If cbFDFridayIfSaturday.Value Then
 		    dFixedDay.FridayIfSaturday = True
 		  end
@@ -3873,13 +3806,18 @@ End
 		  
 		  if popFDWeekDay.SelectedRowIndex > 0 then
 		    if popFDShiftMode.SelectedRowIndex = 0 then
-		      If chkDFAlways.value Then dFixedDay.AlwaysPreviousWeekDay =  popFDWeekDay.SelectedRowIndex else dFixedDay.PreviousWeekDay =  popFDWeekDay.SelectedRowIndex
+		      dFixedDay.DesiredWeekday = popFDWeekDay.SelectedRowIndex
+		      dFixedDay.AlwaysMoveDesiredWeekday = chkDFAlways.value 
+		      dFixedDay.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.Before
+		      
 		    else
-		      If chkDFAlways.value Then dFixedDay.AlwaysNextWeekDay =  popFDWeekDay.SelectedRowIndex else dFixedDay.NextWeekDay =  popFDWeekDay.SelectedRowIndex
+		      dFixedDay.DesiredWeekday = popFDWeekDay.SelectedRowIndex
+		      dFixedDay.AlwaysMoveDesiredWeekday = chkDFAlways.value 
+		      dFixedDay.DesiredWeekdayDirection = AnnualEventFixed.WeekdayDirectionType.After
 		    end
 		    
 		  elseif txtFDAdding.Text.ToInteger <> 0 Then
-		    dFixedDay.AddDays =  txtFDAdding.Text.ToInteger
+		    dFixedDay.DayOffset =  txtFDAdding.Text.ToInteger
 		  End
 		  
 		  If txtCycleDuration.Text.ToInteger > 1 Then
@@ -3899,7 +3837,7 @@ End
 		      If dt = Nil Then Continue
 		      ListDatesCode.AddRow dt.ToString("EEEE", Locale.Current) + " " + dt.ToString(DateTime.FormatStyles.Long, DateTime.FormatStyles.None)
 		      
-		      If dFixedDay.TestDate(dt) Then
+		      If dFixedDay.IsEventDate(dt) Then
 		        ListDatesCode.CellTextAt(ListDatesCode.LastAddedRowIndex, 1) = "OK !"
 		      else
 		        ListDatesCode.CellTextAt(ListDatesCode.LastAddedRowIndex, 1) = "ERROR !"
@@ -3915,7 +3853,7 @@ End
 		    for row as Integer = 0 to ListDates5Years.LastRowIndex
 		      
 		      
-		      If dFixedDay.TestDate(ListDates5Years.RowTagAt(row).DateTimeValue) then
+		      If dFixedDay.IsEventDate(ListDates5Years.RowTagAt(row).DateTimeValue) then
 		        ListDates5Years.CellTextAt(row, 1) = "Match"
 		      Else
 		        ListDates5Years.CellTextAt(row, 1) = "No Match"
@@ -3953,12 +3891,12 @@ End
 		  s = s + "Var Value" + d.Year.ToString +" as Datetime = dEasterDay.DateValue(" + d.Year.ToString + ")"
 		  
 		  s = s + EndOfLine + EndOfLine
-		  s = s + "// Adding the definition to a RegionDatesWorked"
-		  s = s + EndOfLine + "// Can use the RegionDatesWorked for calculate bussiness days or a list of holydays for a region"
-		  s = s + EndOfLine + "// If you want to process data for multiple regions, use the MultiRegionDatesWorked class."
+		  s = s + "// Adding the definition to a WorkCalendar"
+		  s = s + EndOfLine + "// Can use the WorkCalendar for calculate bussiness days or a list of holydays for a region"
+		  s = s + EndOfLine + "// If you want to process data for multiple regions, use the WorkCalendarGroup class."
 		  s = s + EndOfLine + "// If the event is not a holiday, set the DayOff property to False"
 		  s = s + EndOfLine
-		  s = s + EndOfLine + "Var DatesEngine as new RegionDatesWorked"
+		  s = s + EndOfLine + "Var DatesEngine as new WorkCalendar"
 		  s = s + EndOfLine + "DatesEngine.AnnualEvents.add dEasterDay"
 		  
 		  
@@ -3985,7 +3923,7 @@ End
 		      If dt = Nil Then Continue
 		      ListDatesCode.AddRow dt.ToString("EEEE", Locale.Current) + " " + dt.ToString(DateTime.FormatStyles.Long, DateTime.FormatStyles.None)
 		      
-		      If dEasterDay.TestDate(dt) Then
+		      If dEasterDay.IsEventDate(dt) Then
 		        ListDatesCode.CellTextAt(ListDatesCode.LastAddedRowIndex, 1) = "OK !"
 		      else
 		        ListDatesCode.CellTextAt(ListDatesCode.LastAddedRowIndex, 1) = "ERROR !"
@@ -4001,7 +3939,7 @@ End
 		    for row as Integer = 0 to ListDates5Years.LastRowIndex
 		      
 		      
-		      If dEasterDay.TestDate(ListDates5Years.RowTagAt(row).DateTimeValue) then
+		      If dEasterDay.IsEventDate(ListDates5Years.RowTagAt(row).DateTimeValue) then
 		        ListDates5Years.CellTextAt(row, 1) = "Match"
 		      Else
 		        ListDates5Years.CellTextAt(row, 1) = "No Match"
@@ -4015,15 +3953,210 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h21
+		Private Sub InitializeFactory()
+		  // Creating regions
+		  
+		  Try
+		    app.db.ExecuteSQL "DELETE FROM tcalendars_factory"
+		  Catch err As DatabaseException
+		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
+		    Break
+		    Exit Sub
+		  End
+		  
+		  
+		  Var strSQL As String
+		  
+		  strSQL = "INSERT INTO tcalendars_factory(name,identifier, workingweek) Values" + EndOfLine
+		  strSQL = strSQL + " ('Bruxelles capitale','belgium-bruxelles','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Deutschsprachige gemeinschaft','belgium-deutschsprachige_gemeinschaft','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Nationale dagen in de vlaamse taal','belgium-nationale_dagen_in_de_vlaamse_taal','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Nationalfeiertage aufdeutsch','belgium-nationalfeiertage_auf_deutsch','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Fériés Bleges','belgium-nationaux_en_francais','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Vlaanderen','belgium-vlaanderen','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Wallonie','belgium-wallonie','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Alsace-Moselle','france-alsace_moselle','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('France cas général','france-general','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Guadeloupe','france-guadeloupe','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Guyane','france-guyane','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Martinique','france-martinique','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Mayotte','france-mayotte','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Réunion','france-reunion','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Saint Barthelemy','france-saint_barthelemy','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Saint Martin','france-saint_martin','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Alabama','usa-alabama','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Alsaka','usa-alaska','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Arizona','usa-arizona','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Arkansas','usa-arkansas','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('California','usa-california','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Colorado','usa-colorado','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Connecticut','usa-connecticut','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Delaware','usa-delaware','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('District of Columbia','usa-districtofcolumbia','0111110')," + EndOfLine
+		  strSQL = strSQL + " ('Federal','usa-federal','0111110');" + EndOfLine
+		  
+		  
+		  Try
+		    app.db.ExecuteSQL strSQL
+		  Catch err As DatabaseException
+		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
+		    Break
+		    Exit Sub
+		  End
+		  
+		  
+		  
+		  // Creating annual_events
+		  
+		  Try
+		    app.db.ExecuteSQL "DELETE FROM tannualevents_factory"
+		  Catch err As DatabaseException
+		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
+		    Break
+		    Exit Sub
+		  End
+		  
+		  InitializeFactoryInsertion( _ 
+		  WorkCalendar.AnnualEventsBelgium(WorkCalendar.Belgium.BruxellesCapitale), _
+		  "belgium-bruxelles")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsBelgium(WorkCalendar.Belgium.DeutschsprachigeGemeinschaft), _
+		  "belgium-deutschsprachige_gemeinschaft")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsBelgium(WorkCalendar.Belgium.NationaleDagenInDeVlaamseTaal), _
+		  "belgium-nationale_dagen_in_de_vlaamse_taal")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsBelgium(WorkCalendar.Belgium.NationalfeiertageAufDeutsch), _
+		  "belgium-nationalfeiertage_auf_deutsch")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsBelgium(WorkCalendar.Belgium.NationauxEnFrancais), _
+		  "belgium-nationaux_en_francais")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsBelgium(WorkCalendar.Belgium.Vlaanderen), _
+		  "belgium-vlaanderen")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsBelgium(WorkCalendar.Belgium.Wallonie), _
+		  "belgium-wallonie")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.AlsaceMoselle), _
+		  "france-alsace_moselle")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.General), _
+		  "france-general")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.Guadeloupe), _
+		  "france-guadeloupe")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.Guyane), _
+		  "france-guyane")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.Martinique), _
+		  "france-martinique")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.Mayotte), _
+		  "france-mayotte")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.Reunion), _
+		  "france-reunion")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.SaintBarthelemy), _
+		  "france-saint_barthelemy")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsFrance(WorkCalendar.France.SaintMartin), _
+		  "france-saint_martin")
+		  
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.Alabama), _
+		  "usa-alabama")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.Alaska), _
+		  "usa-alaska")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.Arizona), _
+		  "usa-arizona")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.Arkansas), _
+		  "usa-arkansas")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.California), _
+		  "usa-california")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.California), _
+		  "usa-colorado")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.California), _
+		  "usa-connecticut")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.California), _
+		  "usa-delaware")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.DistrictOfColumbia), _
+		  "usa-districtofcolumbia")
+		  
+		  InitializeFactoryInsertion( _ 
+		  workCalendar.AnnualEventsUSA(WorkCalendar.USA.Federal), _
+		  "usa-federal")
+		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub InitializeFactoryInsertion(ae() as AnnualEvent, caption as string)
+		  Var row As DatabaseRow
+		  
+		  For i As Integer = 0 To ae.LastIndex
+		    
+		    row = ae(i).DbRow(caption)
+		    
+		    Try
+		      app.db.AddRow "tannualevents_factory", row
+		    Catch err As DatabaseException
+		      MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
+		      Break
+		      Exit Sub
+		    End
+		    
+		  Next
+		  
+		  
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h0
-		Sub LoadingRegions()
+		Sub LoadingCalendars()
 		  If app.db = Nil Then Exit Sub
 		  if not app.db.IsConnected then exit sub
 		  
 		  Var rs As RowSET
 		  
 		  Try
-		    rs = app.db.SelectSQL("Select * FROM tregions ORDER BY identifier")
+		    rs = app.db.SelectSQL("Select * FROM tcalendars ORDER BY identifier")
 		  Catch err As DataBaseException
 		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
 		    Break
@@ -4031,7 +4164,7 @@ End
 		  End Try
 		  
 		  Me.Regions.RemoveAll
-		  Me.Regions = MultiRegionDatesWorked.LoadRegions(rs)
+		  Me.Regions = WorkCalendarGroup.LoadCalendars(rs)
 		  
 		  if me.Regions.Count = 0 then exit sub
 		  
@@ -4044,20 +4177,20 @@ End
 		    Exit Sub
 		  End Try
 		  
-		  MultiRegionDatesWorked.LoadAnnualEventsFromRowSet(me.Regions, rs)
+		  WorkCalendarGroup.LoadAnnualEventsFromRowSet(me.Regions, rs, nil, "value", "region")
 		  
 		  
 		  // Loading Closure periofs for all regions
 		  
 		  Try
-		    rs = app.db.SelectSQL("Select * FROM tclosureperiods ORDER BY region")
+		    rs = app.db.SelectSQL("Select * FROM tperiods ORDER BY region")
 		  Catch err As DataBaseException
 		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
 		    Break
 		    Exit Sub
 		  End Try
 		  
-		  MultiRegionDatesWorked.LoadClosurePeriodsFromRowSet(me.Regions, rs)
+		  WorkCalendarGroup.LoadClosurePeriodsFromRowSet(me.Regions, rs, nil, "value", "region" )
 		  
 		  PopulateLstRegions
 		  
@@ -4079,7 +4212,7 @@ End
 		    for i as integer = 1 to 7
 		      d = d.AddInterval(0, 0, 1)
 		      lstRegionItems.AddRow d.ToString("EEEE")
-		      lstRegionItems.CellCheckBoxValueAt(lstRegionItems.LastAddedRowIndex, 1) = me.Regions(lstRegions.SelectedRowIndex).WorkingWeekDays.WorkingDay(i)
+		      lstRegionItems.CellCheckBoxValueAt(lstRegionItems.LastAddedRowIndex, 1) = me.Regions(lstRegions.SelectedRowIndex).WorkingWeek.WorkingDay(i)
 		    next
 		    
 		    
@@ -4088,7 +4221,7 @@ End
 		    lstRegionItems.RemoveAllRows
 		    If lstRegionItems.SelectedRowIndex = DesktopListBox.NoSelection Then Exit Sub
 		    
-		    Var r As RegionDatesWorked = Me.Regions(lstRegions.SelectedRowIndex)
+		    Var r As WorkCalendar = Me.Regions(lstRegions.SelectedRowIndex)
 		    
 		    For p As Integer = 0 To r.ClosurePeriods.LastIndex
 		      
@@ -4108,7 +4241,7 @@ End
 		    lstRegionItems.RemoveAllRows
 		    If lstRegions.SelectedRowIndex = DesktopListBox.NoSelection Then Exit Sub
 		    
-		    Var r As RegionDatesWorked = Me.Regions(lstRegions.SelectedRowIndex)
+		    Var r As WorkCalendar = Me.Regions(lstRegions.SelectedRowIndex)
 		    
 		    If r.AnnualEvents.Count = 0 Then 
 		      Break
@@ -4120,7 +4253,7 @@ End
 		      lstRegionItems.AddRow r.AnnualEvents(e).Caption
 		      Select Case r.AnnualEvents(e) 
 		        
-		      Case IsA AnnualEventFix 
+		      Case IsA AnnualEventFixed 
 		        lstRegionItems.CellTextAt(lstRegionItems.LastAddedRowIndex, 1) = "Fix"
 		      Case IsA AnnualEventEaster
 		        lstRegionItems.CellTextAt(lstRegionItems.LastAddedRowIndex, 1) = "Easter"
@@ -4150,9 +4283,9 @@ End
 		        lstRegions.CellCheckBoxValueAt(lstRegions.LastAddedRowIndex, 1) = True
 		        'popRegions.AddRow me.Regions(i).Identifier.StringValue.Lowercase
 		      Else
-		        lstRegions.AddRow "RegionDatesWorked without identifier"
+		        lstRegions.AddRow "WorkCalendar without identifier"
 		        lstRegions.CellCheckBoxValueAt(lstRegions.LastAddedRowIndex, 1) = True
-		        'popRegions.AddRow "RegionDatesWorked without identifier"
+		        'popRegions.AddRow "WorkCalendar without identifier"
 		      End
 		    Next
 		    
@@ -4172,18 +4305,9 @@ End
 		  
 		  
 		  
-		  If popWDToWeekDay.SelectedRowIndex > 0 Then
-		    s = s + EndOfLine
-		    if popWDShiftMode.SelectedRowIndex = 1 then
-		      s = s + "dWeekDay.NextWeekDay = " + popWDToWeekDay.SelectedRowIndex.ToString
-		    Else
-		      s = s + "dWeekDay.PreviousWeekDay = " + popWDToWeekDay.SelectedRowIndex.ToString
-		    end
-		  End
-		  
 		  If txtWDAdding.Text.ToInteger <> 0 Then
 		    s = s + EndOfLine
-		    s = s + "dWeekDay.AddDays = " + txtWDAdding.Text.ToInteger.ToString
+		    s = s + "dWeekDay.DayOffset = " + txtWDAdding.Text.ToInteger.ToString
 		  End
 		  
 		  If txtCycleDuration.Text.ToInteger > 1 Then
@@ -4201,12 +4325,12 @@ End
 		  s = s + "Var Value" + d.Year.ToString +" as Datetime = dWeekDay.DateValue(" + d.Year.ToString + ")"
 		  
 		  s = s + EndOfLine + EndOfLine
-		  s = s + "// Adding the definition to a RegionDatesWorked"
-		  s = s + EndOfLine + "// Can use the RegionDatesWorked for calculate bussiness days or a list of holydays for a region"
-		  s = s + EndOfLine + "// If you want to process data for multiple regions, use the MultiRegionDatesWorked class."
+		  s = s + "// Adding the definition to a WorkCalendar"
+		  s = s + EndOfLine + "// Can use the WorkCalendar for calculate bussiness days or a list of holydays for a region"
+		  s = s + EndOfLine + "// If you want to process data for multiple regions, use the WorkCalendarGroup class."
 		  s = s + EndOfLine + "// If the event is not a holiday, set the DayOff property to False"
 		  s = s + EndOfLine
-		  s = s + EndOfLine + "Var DatesEngine as new RegionDatesWorked"
+		  s = s + EndOfLine + "Var DatesEngine as new WorkCalendar"
 		  s = s + EndOfLine + "DatesEngine.AnnualEvents.add dWeekDay"
 		  
 		  
@@ -4216,18 +4340,8 @@ End
 		  
 		  Var dWeekDay As New AnnualEventWeekDay(txtCaption.Text, popWDMonth.SelectedRowIndex + 1, popWDWeekDay.SelectedRowIndex + 1, popWDRank.SelectedRowIndex + 1)
 		  
-		  If popWDToWeekDay.SelectedRowIndex > 0 Then
-		    
-		    if popWDShiftMode.SelectedRowIndex = 1 then
-		      dWeekDay.NextWeekDay =  popWDToWeekDay.SelectedRowIndex
-		    Else
-		      dWeekDay.PreviousWeekDay = popWDToWeekDay.SelectedRowIndex
-		    end
-		    
-		  elseif txtWDAdding.Text.ToInteger <> 0 Then
-		    
-		    dWeekDay.AddDays =  txtWDAdding.Text.ToInteger
-		    
+		  if txtWDAdding.Text.ToInteger <> 0 Then
+		    dWeekDay.DayOffset =  txtWDAdding.Text.ToInteger
 		  End
 		  
 		  If txtCycleDuration.Text.ToInteger > 1 Then
@@ -4246,7 +4360,7 @@ End
 		      If dt = Nil Then Continue
 		      ListDatesCode.AddRow dt.ToString("EEEE", Locale.Current) + " " + dt.ToString(DateTime.FormatStyles.Long, DateTime.FormatStyles.None)
 		      
-		      If dWeekDay.TestDate(dt) Then
+		      If dWeekDay.IsEventDate(dt) Then
 		        ListDatesCode.CellTextAt(ListDatesCode.LastAddedRowIndex, 1) = "OK !"
 		      Else
 		        ListDatesCode.CellTextAt(ListDatesCode.LastAddedRowIndex, 1) = "ERROR !"
@@ -4262,7 +4376,7 @@ End
 		    For row As Integer = 0 To ListDates5Years.LastRowIndex
 		      
 		      
-		      If dWeekDay.TestDate(ListDates5Years.RowTagAt(row).DateTimeValue) Then
+		      If dWeekDay.IsEventDate(ListDates5Years.RowTagAt(row).DateTimeValue) Then
 		        ListDates5Years.CellTextAt(row, 1) = "Match"
 		      Else
 		        ListDates5Years.CellTextAt(row, 1) = "No Match"
@@ -4278,11 +4392,11 @@ End
 
 
 	#tag Property, Flags = &h0
-		Freeze As Boolean = False
+		Freeze As Boolean = True
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		Regions() As RegionDatesWorked
+		Regions() As WorkCalendar
 	#tag EndProperty
 
 
@@ -4626,7 +4740,7 @@ End
 #tag Events btnLoadingRegionsFromDB
 	#tag Event
 		Sub Pressed()
-		  Self.LoadingRegions
+		  Self.LoadingCalendars
 		  
 		  Select Case Self.Regions.Count
 		    
@@ -4720,7 +4834,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  If txtNewRegion.Text.Trim = "" Then Exit Sub
-		  Self.Regions.Add New RegionDatesWorked(txtNewRegion.Text.Trim.Lowercase)
+		  Self.Regions.Add New WorkCalendar(txtNewRegion.Text.Trim.Lowercase)
 		  PopulateLstRegions
 		End Sub
 	#tag EndEvent
@@ -4764,7 +4878,7 @@ End
 		    
 		    Select Case d
 		      
-		    Case IsA AnnualEventFix 
+		    Case IsA AnnualEventFixed 
 		      
 		      lstRegionItems.CellTextAt(lstRegionItems.SelectedRowIndex, 1) = "Fix"
 		      
@@ -4791,36 +4905,36 @@ End
 		Sub Pressed()
 		  Self.Regions.RemoveAll
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-federal", "Federal")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Federal)
+		  Self.Regions.Add New WorkCalendar("usa-federal", "Federal")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.Federal)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-alabama", "Alabama")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Alabama)
+		  Self.Regions.Add New WorkCalendar("usa-alabama", "Alabama")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.Alabama)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-alaska", "Alaska")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Alaska)
+		  Self.Regions.Add New WorkCalendar("usa-alaska", "Alaska")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.Alaska)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-arkansas", "Arkansas")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Arkansas)
+		  Self.Regions.Add New WorkCalendar("usa-arkansas", "Arkansas")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.Arkansas)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-arizona", "Arizona")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Arizona)
+		  Self.Regions.Add New WorkCalendar("usa-arizona", "Arizona")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.Arizona)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-california", "California")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.California)
+		  Self.Regions.Add New WorkCalendar("usa-california", "California")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.California)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-colorado", "Colorado")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Colorado)
+		  Self.Regions.Add New WorkCalendar("usa-colorado", "Colorado")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.Colorado)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-connecticut", "Connecticut")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Connecticut)
+		  Self.Regions.Add New WorkCalendar("usa-connecticut", "Connecticut")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.Connecticut)
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-delaware", "Delaware")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.Delaware)
+		  Self.Regions.Add New WorkCalendar("usa-delaware", "Delaware")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.Delaware)
 		  
 		  
-		  Self.Regions.Add New RegionDatesWorked("usa-dc", "District of Columbia")
-		  Self.Regions(Regions.LastIndex).AddAnnualEvents RegionDatesWorked.AnnualEventsUSA(RegionDatesWorked.USA.DistrictOfColumbia)
+		  Self.Regions.Add New WorkCalendar("usa-dc", "District of Columbia")
+		  Self.Regions(Regions.LastIndex).AddAnnualEvents WorkCalendar.AnnualEventsUSA(WorkCalendar.USA.DistrictOfColumbia)
 		  
 		  
 		  // No more states implanted, because it's a bit time-consuming to find the official texts for each state. Not to mention the counties...
@@ -4832,7 +4946,6 @@ End
 #tag Events btnRestoreRegionToFactory
 	#tag Event
 		Sub Pressed()
-		  
 		  Var m As New MessageDialog
 		  m.Title = Self.Title
 		  m.Message = "Are you sure ?"
@@ -4848,73 +4961,10 @@ End
 		  
 		  // Remove all rows
 		  
-		  Try
-		    app.db.ExecuteSQL "DELETE FROM tdays;"
-		  Catch err As DatabaseException
-		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
-		    Break
-		    Exit Sub
-		  End
 		  
 		  Try
-		    app.db.ExecuteSQL "DELETE FROM tregions_weekdays"
-		  Catch err As DatabaseException
-		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
-		    Break
-		    Exit Sub
-		  End
-		  
-		  // Copying from the table tdays_factorysettings
-		  
-		  Var strSQL As String
-		  
-		  strSQL = strSQL + " Insert into tdays(" + EndOfLine
-		  strSQL = strSQL + " start," + EndOfLine
-		  strSQL = strSQL + " ""end""," + EndOfLine
-		  strSQL = strSQL + " caption," + EndOfLine
-		  strSQL = strSQL + " region," + EndOfLine
-		  strSQL = strSQL + " definitiontype," + EndOfLine
-		  strSQL = strSQL + " dayoff," + EndOfLine
-		  strSQL = strSQL + " cycleyearduration," + EndOfLine
-		  strSQL = strSQL + " cyclefirstyear," + EndOfLine
-		  strSQL = strSQL + " month," + EndOfLine
-		  strSQL = strSQL + " day," + EndOfLine
-		  strSQL = strSQL + " weekday," + EndOfLine
-		  strSQL = strSQL + " rank," + EndOfLine
-		  strSQL = strSQL + " adddays," + EndOfLine
-		  strSQL = strSQL + " nextweekday," + EndOfLine
-		  strSQL = strSQL + " previousweekday," + EndOfLine
-		  strSQL = strSQL + " saturdaytofriday," + EndOfLine
-		  strSQL = strSQL + " sundaytomonday," + EndOfLine
-		  strSQL = strSQL + " saturdaytomonday," + EndOfLine
-		  strSQL = strSQL + " fingerprint)" + EndOfLine
-		  
-		  strSQL = strSQL + " Select" + EndOfLine
-		  strSQL = strSQL + " start," + EndOfLine
-		  strSQL = strSQL + " ""end""," + EndOfLine
-		  strSQL = strSQL + " caption," + EndOfLine
-		  strSQL = strSQL + " region," + EndOfLine
-		  strSQL = strSQL + " definitiontype," + EndOfLine
-		  strSQL = strSQL + " dayoff," + EndOfLine
-		  strSQL = strSQL + " cycleyearduration," + EndOfLine
-		  strSQL = strSQL + " cyclefirstyear," + EndOfLine
-		  strSQL = strSQL + " month," + EndOfLine
-		  strSQL = strSQL + " day," + EndOfLine
-		  strSQL = strSQL + " weekday," + EndOfLine
-		  strSQL = strSQL + " rank," + EndOfLine
-		  strSQL = strSQL + " adddays," + EndOfLine
-		  strSQL = strSQL + " nextweekday," + EndOfLine
-		  strSQL = strSQL + " previousweekday," + EndOfLine
-		  strSQL = strSQL + " saturdaytofriday," + EndOfLine
-		  strSQL = strSQL + " sundaytomonday," + EndOfLine
-		  strSQL = strSQL + " saturdaytomonday," + EndOfLine
-		  strSQL = strSQL + " fingerprint" + EndOfLine
-		  strSQL = strSQL + " From" + EndOfLine
-		  strSQL = strSQL + " tdays_factorysettings" + EndOfLine
-		  strSQL = strSQL + " Order by id_date;" + EndOfLine
-		  
-		  Try
-		    app.db.ExecuteSQL strSQL
+		    app.db.ExecuteSQL "DELETE FROM tcalendars;"
+		    app.db.ExecuteSQL "Insert into tcalendars(name, identifier, workingweek) Select name, identifier, workingweek FROM tcalendars_factory;"
 		  Catch err As DatabaseException
 		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
 		    Break
@@ -4922,12 +4972,9 @@ End
 		  End
 		  
 		  
-		  strSQL = ""
-		  strSQL = strSQL + " INSERT INTO ""tregions_weekdays_factorysettings""" + EndOfLine
-		  strSQL = strSQL + " SELECT * FROM ""tregions_weekdays"";" + EndOfLine
-		  
 		  Try
-		    app.db.ExecuteSQL strSQL
+		    app.db.ExecuteSQL "DELETE FROM tannualevents;"
+		    app.db.ExecuteSQL "Insert into tannualevents(region, value) Select region, value FROM tannualevents_factory;"
 		  Catch err As DatabaseException
 		    MessageBox "(" + Err.ErrorNumber.ToString + ") " + err.Message
 		    Break
@@ -5375,29 +5422,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events popWDToWeekDay
-	#tag Event
-		Sub Opening()
-		  Me.AddRow "0 - <Disabled>"
-		  
-		  Var d As New DateTime(2025, 8, 30)
-		  For i As Integer = 1 To 7
-		    d = d.AddInterval(0,0,1)
-		    Me.AddRow d.DayOfWeek.ToString + " - " + d.ToString("EEEE", Locale.Current)
-		  Next 
-		  
-		  
-		  
-		  me.SelectedRowIndex = 0
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub SelectionChanged(item As DesktopMenuItem)
-		  #Pragma Unused item
-		  WeekDayCode
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events txtWDAdding
 	#tag Event
 		Function KeyDown(key As String) As Boolean
@@ -5487,9 +5511,9 @@ End
 		  popWDMonth.SelectedRowIndex = 10 // November
 		  popWDWeekDay.SelectedRowIndex = 1 // Monday
 		  popWDRank.SelectedRowIndex = 0 // The first
-		  // But the tuesday after the 1st monday
-		  popWDShiftMode.SelectedRowIndex = 1 // Next
-		  popWDToWeekDay.SelectedRowIndex = 3 // To the next tuesday
+		  
+		  // But the tuesday after the 1st monday, the dat after
+		  txtWDAdding.Text = "1"
 		  
 		  txtCycleDuration.Text = "4"
 		  txtFirstYearOfTheCycle.Text = "1848"
@@ -5512,7 +5536,6 @@ End
 		  popWDWeekDay.SelectedRowIndex = 1 // Monday
 		  popWDRank.SelectedRowIndex = 0 // The first
 		  
-		  popWDToWeekDay.SelectedRowIndex = 0
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
 		  
@@ -5534,7 +5557,6 @@ End
 		  popWDWeekDay.SelectedRowIndex = 4 // Thursday
 		  popWDRank.SelectedRowIndex = 3 // The first
 		  
-		  popWDToWeekDay.SelectedRowIndex = 0
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
 		  
@@ -5556,7 +5578,6 @@ End
 		  popWDWeekDay.SelectedRowIndex = 1 // Monday
 		  popWDRank.SelectedRowIndex = 0 // The first
 		  
-		  popWDToWeekDay.SelectedRowIndex = 0
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
 		  
@@ -5578,7 +5599,6 @@ End
 		  popWDWeekDay.SelectedRowIndex = 1 // Monday
 		  popWDRank.SelectedRowIndex = 2 // The third
 		  
-		  popWDToWeekDay.SelectedRowIndex = 0
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
 		  
@@ -5600,28 +5620,12 @@ End
 		  popWDWeekDay.SelectedRowIndex = 1 // Monday
 		  popWDRank.SelectedRowIndex = 2 // The third
 		  
-		  popWDToWeekDay.SelectedRowIndex = 0
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
 		  
 		  Self.Freeze = False
 		  
 		  self.WeekDayCode
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events popWDShiftMode
-	#tag Event
-		Sub Opening()
-		  Me.AddRow "previous"
-		  Me.AddRow "next"
-		  me.SelectedRowIndex = 0
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub SelectionChanged(item As DesktopMenuItem)
-		  #Pragma Unused item
-		  WeekDayCode
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -5650,7 +5654,7 @@ End
 		  popWDWeekDay.SelectedRowIndex = 1 // Monday
 		  popWDRank.SelectedRowIndex = 0 // The first
 		  
-		  popWDToWeekDay.SelectedRowIndex = 0
+		  
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
 		  
@@ -5670,7 +5674,7 @@ End
 		  popWDWeekDay.SelectedRowIndex = 1 // Monday
 		  popWDRank.SelectedRowIndex = 1 // The first
 		  
-		  popWDToWeekDay.SelectedRowIndex = 0
+		  
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
 		  
@@ -5692,7 +5696,6 @@ End
 		  popWDWeekDay.SelectedRowIndex = 0 // Sunday
 		  popWDRank.SelectedRowIndex = 3 // The third
 		  
-		  popWDToWeekDay.SelectedRowIndex = 0
 		  txtCycleDuration.Text = "1"
 		  txtFirstYearOfTheCycle.Text = "1900"
 		  
@@ -5816,15 +5819,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events ButtonEaster15
-	#tag Event
-		Sub Pressed()
-		  txtCaption.Text = me.Caption
-		  txtEDDiff.Text = AnnualEventEaster.CleanMonday.ToString // or txtEDDiff.Text = "-48"
-		  FromEasterCode
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events chkDFAlways
 	#tag Event
 		Sub ValueChanged()
@@ -5869,7 +5863,7 @@ End
 		    
 		    Select Case d
 		      
-		    Case IsA AnnualEventFix 
+		    Case IsA AnnualEventFixed 
 		      
 		      Me.CellTextAt(Me.SelectedRowIndex, 1) = "Fix"
 		      
@@ -5935,7 +5929,7 @@ End
 		    
 		  Case 0
 		    
-		    self.Regions(lstRegions.SelectedRowIndex).WorkingWeekDays.WorkingDay(row + 1) = lstRegionItems.CellCheckBoxValueAt(row, 1)
+		    self.Regions(lstRegions.SelectedRowIndex).WorkingWeek.WorkingDay(row + 1) = lstRegionItems.CellCheckBoxValueAt(row, 1)
 		    
 		  Case 1
 		    
@@ -6008,11 +6002,11 @@ End
 		    // Creating a muli-region object
 		    // We could also create it for the window and work on its Regions array
 		    
-		    Var mr As new MultiRegionDatesWorked
-		    mr.Regions = self.Regions
+		    Var wcc As new WorkCalendarGroup
+		    wcc.WorkCalendars = self.Regions
 		    
 		    // Only days that are worked for ALL regions at the same time.
-		    d = mr.BusinessDays(dtFirst.SelectedDate, dtLast.SelectedDate)
+		    d = wcc.BusinessDaysEveryWhere(dtFirst.SelectedDate, dtLast.SelectedDate)
 		    
 		  end
 		  
@@ -6055,11 +6049,11 @@ End
 		    // Creating a muli-region object
 		    // We could also create it for the window and work on its Regions array
 		    
-		    Var mr As new MultiRegionDatesWorked
-		    mr.Regions = self.Regions
+		    Var wcg As new WorkCalendarGroup
+		    wcg.WorkCalendars = self.Regions
 		    
 		    // Only days that are worked for ALL regions at the same time.
-		    d = mr.NonWorkingDays(dtFirst.SelectedDate, dtLast.SelectedDate)
+		    d = wcg.NonWorkingDaysEverywhere(dtFirst.SelectedDate, dtLast.SelectedDate)
 		    
 		  end
 		  
