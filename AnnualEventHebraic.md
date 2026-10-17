@@ -29,7 +29,8 @@ In a leap year, Purim and the Fast of Esther are celebrated in Adar II (month 13
 
 A few holidays, such as Hanukkah, can fall twice in the same civil year, or not at all (very rarely). In the first case, `DateValue` returns the first date. In the second case, it returns `Nil`.
 
-The date returned is the civil day on which the holiday is observed. Jewish holidays start at sunset on the evening before. You can calculate this time with [SunsetTime](#sunsettime).
+> [!NOTE]
+> The date returned is the civil day on which the holiday is observed. Jewish holidays start at sunset on the evening before. You can calculate this time with [SunsetTime](#sunsettime).
 
 ### Postponement rules
 

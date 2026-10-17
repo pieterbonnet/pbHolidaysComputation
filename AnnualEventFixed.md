@@ -330,7 +330,8 @@ Property NotLeapYearOffset As Integer
 
 **Notes**
 
-> **Note:** this property concerns only an event on February 29, that is, when `Month` is `2` and `Day` is `29`. For any other date it has no effect, whatever its value.
+> [!NOTE]
+> This property concerns only an event on February 29, that is, when `Month` is `2` and `Day` is `29`. For any other date it has no effect, whatever its value.
 
 The accepted values are:
 

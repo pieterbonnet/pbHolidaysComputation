@@ -21,7 +21,8 @@ A calendar whose `Enabled` property is `False` is ignored by all the methods. If
 
 The calendars are identified by their [Identifier](WorkCalendar.md#identifier) (for example `"FR"` or `"BE-WAL"`), which is also the region used in the database tables. See [WorkCalendar](WorkCalendar.md) for the definition of a working day, a closure period and an annual event.
 
-> **Warning:** the `WhereIs...` methods ([WhereIsAnnualEvent](#whereisannualevent), [WhereIsInClosurePeriod](#whereisinclosureperiod), [WhereIsNonWorkingDay](#whereisnonworkingday) and [WhereIsWorkingDay](#whereisworkingday)) return references to the `WorkCalendar` objects of the group, not copies. If you change a calendar of the result (its working week, its annual events, its closure periods, its `Enabled` property, etc.), you change the calendar of the group, and the answers of all the methods of the group change with it. Handle the result with care: read it, or work on a copy.
+> [!IMPORTANT]
+> The `WhereIs...` methods ([WhereIsAnnualEvent](#whereisannualevent), [WhereIsInClosurePeriod](#whereisinclosureperiod), [WhereIsNonWorkingDay](#whereisnonworkingday) and [WhereIsWorkingDay](#whereisworkingday)) return references to the `WorkCalendar` objects of the group, not copies. If you change a calendar of the result (its working week, its annual events, its closure periods, its `Enabled` property, etc.), you change the calendar of the group, and the answers of all the methods of the group change with it. Handle the result with care: read it, or work on a copy.
 >
 > The array that is returned is a new array: adding items to it or removing items from it does not change the group. To work on a copy of a calendar, use the copy constructor and pass the identifier and the caption, which are not copied: `Var copy As New WorkCalendar(c, c.Identifier, c.Caption)`.
 

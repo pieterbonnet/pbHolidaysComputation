@@ -157,5 +157,6 @@ To use these holidays in a calendar, add them with [AddAnnualEvents](WorkCalenda
 
 ## About this code and this documentation
 
-- The code is old code written with RealStudio (the former name of Xojo). It was updated last year, and reviewed and corrected this year with the help of Claude, an AI assistant made by Anthropic.
-- The author is not a native English speaker. This documentation was written in English with the help of Claude. If you find a mistake or an unclear sentence, please report it.
+> [!NOTE]
+> - The code is old code written with RealStudio (the former name of Xojo). It was updated last year, and reviewed and corrected this year with the help of Claude, an AI assistant made by Anthropic.
+> - The author is not a native English speaker. This documentation was written in English with the help of Claude. If you find a mistake or an unclear sentence, please report it.

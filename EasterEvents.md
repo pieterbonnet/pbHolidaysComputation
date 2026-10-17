@@ -471,7 +471,8 @@ The languages in which the caption of a predefined feast is returned.
 | BelgianFlemish | 3 |
 | Spanish | 4 |
 
-> **Note:** the values of this enumeration are used as an index to find the caption in each language. Do not change their order.
+> [!IMPORTANT]
+> The values of this enumeration are used as an index to find the caption in each language. Do not change their order.
 
 ---
 
@@ -532,7 +533,8 @@ The languages in which the caption of a predefined feast is returned.
 | Russian | 5 |
 | Greek | 6 |
 
-> **Note:** the values of this enumeration are used as an index to find the caption in each language. Do not change their order.
+> [!IMPORTANT]
+> The values of this enumeration are used as an index to find the caption in each language. Do not change their order.
 
 ---
 

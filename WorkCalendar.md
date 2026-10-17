@@ -218,7 +218,8 @@ The federal government and the states for which [AnnualEventsUSA](#annualeventsu
 | Federal | 0 |
 | Alabama, Alaska, Arkansas, Arizona, California, Colorado, Connecticut, Delaware, DistrictOfColumbia, Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, NewHampshire, NewJersey, NewMexico, NewYork, NorthCarolina, NorthDakota, Ohio, Oklahoma, Oregon, Pennsylvania, RhodeIsland, SouthCarolina, SouthDakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, WestVirginia, Wisconsin, Wyoming | 1 to 51, in this order |
 
-> **Note:** not all the states have a list of holidays yet. See [AnnualEventsUSA](#annualeventsusa).
+> [!NOTE]
+> Not all the states have a list of holidays yet. See [AnnualEventsUSA](#annualeventsusa).
 
 ---
 
@@ -688,7 +689,10 @@ See [IsAnnualEvent](#isannualevent).
 
 **Returns**
 
-The first event that falls on *d*, or `Nil` if there is none. The event is the object of the calendar, not a copy.
+The first event that falls on *d*, or `Nil` if there is none.
+
+> [!IMPORTANT]
+> The result is the event of the calendar itself, not a copy. If you change it, you change the calendar.
 
 ---
 
@@ -766,7 +770,10 @@ Function IsInClosurePeriodObject(d As DateTime) As ClosurePeriod
 
 **Returns**
 
-The first [ClosurePeriod](ClosurePeriod.md) that contains *d*, or `Nil` if there is none. The period is the object of the calendar, not a copy.
+The first [ClosurePeriod](ClosurePeriod.md) that contains *d*, or `Nil` if there is none.
+
+> [!IMPORTANT]
+> The result is the period of the calendar itself, not a copy. If you change it, you change the calendar.
 
 ---
 
